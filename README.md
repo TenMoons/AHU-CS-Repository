@@ -22,5 +22,5 @@
 
 E-mail: tenmoons@foxmail.com
 
-WeChat:  ![Snipaste_2021-09-15_09-17-38](E:\AHU-CS-Repository\other\Snipaste_2021-09-15_09-17-38.png)
+WeChat:  ![qrcode](https://z3.ax1x.com/2021/09/15/4Eh8qU.png)
 
