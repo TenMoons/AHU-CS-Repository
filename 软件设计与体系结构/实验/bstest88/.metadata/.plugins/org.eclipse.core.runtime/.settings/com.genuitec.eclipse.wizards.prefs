@@ -1,0 +1,19 @@
+#Tue Oct 19 11:11:18 CST 2010
+applet.template.2.label=Template for Applet with JDK1.4
+applet.template.1.label=Template for Applet with JDK1.3
+snippetLibIntalled_v5=true
+eclipse.preferences.version=1
+applethtml.template.1.label=Default Applet HTML template
+servlet.template.1=templates/Servlet.java
+applethtml.template.1=templates/Applet.html
+applet.template.2=templates/Applet14.java
+applet.template.1=templates/Applet.java
+servlet.template.1.label=Default template for Servlet
+doctype.html.8=<\!DOCTYPE HTML PUBLIC "-//IETF//DTD LEVEL1//EN">
+doctype.html.7=<\!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+doctype.html.6=<\!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 3.0//EN">
+doctype.html.5=<\!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+doctype.html.4=<\!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+doctype.html.3=<\!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+doctype.html.2=<\!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN">
+doctype.html.1=<\!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">

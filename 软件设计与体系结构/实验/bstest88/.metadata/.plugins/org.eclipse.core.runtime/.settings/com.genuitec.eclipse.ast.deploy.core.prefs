@@ -1,0 +1,12 @@
+#Tue Oct 19 11:00:03 CST 2010
+tomcat6Server.bs.isExploded=true
+tomcat6Server.bs.deploymentPath=C\:\\Program Files\\Apache Software Foundation\\Tomcat 6.0\\webapps\\bs
+tomcat6Server.bs.earProjectName=
+tomcat6Server.bs.isUptoDate=true
+tomcat6Server.bs.type=WebDeployment
+tomcat6Server.bs.isDeployed=true
+tomcat6Server.bs.shouldBackup=true
+tomcat6Server.bs.contextRoot=/bs
+tomcat6Server.bs.shouldOverwrite=false
+eclipse.preferences.version=1
+tomcat6Server.bs.deployIsOverProject=false

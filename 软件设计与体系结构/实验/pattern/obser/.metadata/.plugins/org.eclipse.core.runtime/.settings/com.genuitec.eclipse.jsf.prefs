@@ -1,0 +1,3 @@
+#Thu Dec 09 13:28:48 CST 2010
+jsf.config.templates=<?xml version\="1.0" encoding\="UTF-8"?><templates><template autoinsert\="true" context\="xml_tag" deleted\="false" description\="Creates new managed bean" enabled\="true" name\="managed-bean">&lt;managed-bean&gt;\r\n\thaha\r\n&lt;/managed-bean&gt;</template><template autoinsert\="true" context\="xml_tag" deleted\="false" description\="Creates new managed bean" enabled\="true" name\="managed-bean">&lt;managed-bean&gt;\r\n\thaha\r\n&lt;/managed-bean&gt;</template><template autoinsert\="true" context\="xml_tag" deleted\="false" description\="Creates new managed bean" enabled\="true" name\="managed-bean">&lt;managed-bean&gt;\r\n\thaha\r\n&lt;/managed-bean&gt;</template></templates>
+eclipse.preferences.version=1

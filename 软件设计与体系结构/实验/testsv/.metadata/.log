@@ -1,0 +1,284 @@
+!SESSION 2010-09-29 21:04:45.354 -----------------------------------------------
+eclipse.buildId=I20070625-1500
+java.version=1.5.0_11
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.873
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.873
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureTypeNodeContribution/com.genuitec.eclipse.sqlexplorer.actions.RefreshTypeNodeAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureTypeNodeContribution/com.genuitec.eclipse.sqlexplorer.actions.RefreshTypeNodeAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.actions.RefreshTypeNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureTypeNodeContribution/com.genuitec.eclipse.sqlexplorer.actions.RefreshTypeNodeAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.actions.RefreshTypeNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.873
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.actions.editNodeAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.actions.editNodeAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mysql.actions.EditNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.actions.editNodeAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mysql.actions.EditNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.873
+!MESSAGE Conflict for 'AUTOGEN:::ValidationMenuAction/ValidationAction':
+HandlerActivation(commandId=AUTOGEN:::ValidationMenuAction/ValidationAction,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.wst.validation.internal.ui.ValidationMenuAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::ValidationMenuAction/ValidationAction,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.wst.validation.internal.ui.ValidationMenuAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.873
+!MESSAGE Conflict for 'AUTOGEN:::org.eclipse.jst.ws.internal.consumption.ui.wizard.client.genwsil/org.eclipse.jst.ws.consumption.ui.wsilimport':
+HandlerActivation(commandId=AUTOGEN:::org.eclipse.jst.ws.internal.consumption.ui.wizard.client.genwsil/org.eclipse.jst.ws.consumption.ui.wsilimport,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.wst.command.internal.env.ui.widgets.popup.DynamicPopupWizard),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.eclipse.jst.ws.internal.consumption.ui.wizard.client.genwsil/org.eclipse.jst.ws.consumption.ui.wsilimport,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.wst.command.internal.env.ui.widgets.popup.DynamicPopupWizard),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.873
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.runFunctionAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.runFunctionAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.RunSybaseFunctionProcedureAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.runFunctionAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.RunMssqlFunctionProcedureAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.873
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.openTriggerAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.openTriggerAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mysql.actions.OpenTriggerAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.openTriggerAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mysql.actions.OpenTriggerAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.873
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.openTriggerAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.openTriggerAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.OpenTriggerAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.openTriggerAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.OpenTriggerAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.873
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.editProcedureAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.editProcedureAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.EditMssqlNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.editProcedureAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.EditMssqlNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.873
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.spHelpAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.spHelpAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.MssqlSpHelpAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.spHelpAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.MssqlSpHelpAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e),sourcePriority=16384)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.883
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-09-29 21:05:55.883
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.myeclipse.comunity.essentials/com.genuitec.com.tikal.eclipse.updatemanager.quicksetup.actions.QuickInstallAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.myeclipse.comunity.essentials/com.genuitec.com.tikal.eclipse.updatemanager.quicksetup.actions.QuickInstallAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.com.tikal.eclipse.updatemanager.quicksetup.actions.QuickInstallAction),
+	expression=AndExpression(ActionSetExpression(com.genuitec.myeclipse.comunity.essentials,org.eclipse.ui.internal.WorkbenchWindow@1ca209e),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.myeclipse.comunity.essentials/com.genuitec.com.tikal.eclipse.updatemanager.quicksetup.actions.QuickInstallAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.com.tikal.eclipse.updatemanager.quicksetup.actions.QuickInstallAction),
+	expression=AndExpression(ActionSetExpression(com.genuitec.myeclipse.comunity.essentials,org.eclipse.ui.internal.WorkbenchWindow@1ca209e),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1ca209e)),sourcePriority=16640)
+
+!ENTRY org.eclipse.jface 2 0 2010-09-29 21:05:55.932
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2010-09-29 21:05:55.932
+!MESSAGE A conflict occurred for ALT+SHIFT+T:
+Binding(ALT+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.refactor.quickMenu,Show Refactor Quick Menu,
+		Shows the refactor quick menu,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+T,
+	ParameterizedCommand(Command(com.genuitec.org.springframework.ide.eclipse.beans.ui.commands.openjavatype,Open Java Type,
+		,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2010-09-29 21:05:55.932
+!MESSAGE A conflict occurred for ALT+SHIFT+V:
+Binding(ALT+SHIFT+V,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.move.element,Move - Refactoring ,
+		Move the selected element to a new location,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+V,
+	ParameterizedCommand(Command(com.genuitec.org.springframework.ide.eclipse.beans.ui.commands.showinview,Show in Spring Beans View,
+		,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.genuitec.eclipse.core 1 0 2010-09-29 21:05:56.592
+!MESSAGE Unable to locate .myeclipse.properties file
+
+!ENTRY com.genuitec.eclipse.core 1 0 2010-09-29 21:05:56.651
+!MESSAGE Terminated startup QuickInstaller because of invalid subscription
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:05:59.292
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\html\css_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:05:59.401
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\html\forms_lists_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:05:59.455
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\html\htmlform_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:05:59.524
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\html\html_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:05:59.615
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\html\javascript_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:05:59.694
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\jsf_f_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:05:59.789
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\jsf_h_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:05:59.850
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\struts_bean_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:05:59.935
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\struts_html_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:06:00.024
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\struts_logic_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-09-29 21:06:00.110
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\struts_tiles_snippets.xml
+
+!ENTRY org.eclipse.osgi 2 0 2010-09-29 21:06:22.510
+!MESSAGE While loading class "com.genuitec.eclipse.j2eedt.core.ResourceChangeVisitor", thread "Thread[Worker-2,5,main]" timed out waiting (5000ms) for thread "Thread[Worker-0,5,main]" to finish starting bundle "update@../myeclipse/eclipse/plugins/com.genuitec.eclipse.j2eedt.core_5.9.100/ [196]". To avoid deadlock, thread "Thread[Worker-2,5,main]" is proceeding but "com.genuitec.eclipse.j2eedt.core.ResourceChangeVisitor" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "update@../myeclipse/eclipse/plugins/com.genuitec.eclipse.j2eedt.core_5.9.100/" by thread "Worker-0".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1141)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:258)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:400)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:189)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findLocalClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClassInternal(BundleLoader.java:408)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClass(BundleLoader.java:369)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClass(BundleLoader.java:357)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:83)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClassInternal(Unknown Source)
+	at com.genuitec.eclipse.j2eedt.core.A.resourceChanged(Unknown Source)
+	at org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:282)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:276)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:148)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:295)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:133)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 22 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1141)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:258)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:400)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:189)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findLocalClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClassInternal(BundleLoader.java:408)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClass(BundleLoader.java:369)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClass(BundleLoader.java:357)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:83)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClassInternal(Unknown Source)
+	at com.genuitec.eclipse.j2eedt.core.A.resourceChanged(Unknown Source)
+	at org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:282)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:276)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:148)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:295)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:133)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+
+!ENTRY org.eclipse.osgi 2 0 2010-09-29 21:06:27.515
+!MESSAGE While loading class "com.genuitec.eclipse.j2eedt.core.WebProjectModule", thread "Thread[Worker-2,5,main]" timed out waiting (5000ms) for thread "Thread[Worker-0,5,main]" to finish starting bundle "update@../myeclipse/eclipse/plugins/com.genuitec.eclipse.j2eedt.core_5.9.100/ [196]". To avoid deadlock, thread "Thread[Worker-2,5,main]" is proceeding but "com.genuitec.eclipse.j2eedt.core.WebProjectModule" may not be fully initialized.
+!STACK 0
+org.osgi.framework.BundleException: State change in progress for bundle "update@../myeclipse/eclipse/plugins/com.genuitec.eclipse.j2eedt.core_5.9.100/" by thread "Worker-0".
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1141)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:258)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:400)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:189)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findLocalClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClassInternal(BundleLoader.java:408)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClass(BundleLoader.java:369)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClass(BundleLoader.java:357)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:83)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClassInternal(Unknown Source)
+	at com.genuitec.eclipse.j2eedt.core.ResourceChangeVisitor.visit(Unknown Source)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:76)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:48)
+	at com.genuitec.eclipse.j2eedt.core.A.resourceChanged(Unknown Source)
+	at org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:282)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:276)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:148)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:295)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:133)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+Caused by: org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	... 26 more
+Root exception:
+org.eclipse.osgi.framework.internal.core.AbstractBundle$BundleStatusException
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.beginStateChange(AbstractBundle.java:1141)
+	at org.eclipse.osgi.framework.internal.core.AbstractBundle.start(AbstractBundle.java:258)
+	at org.eclipse.osgi.framework.util.SecureAction.start(SecureAction.java:400)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseLazyStarter.postFindLocalClass(EclipseLazyStarter.java:111)
+	at org.eclipse.osgi.baseadaptor.loader.ClasspathManager.findLocalClass(ClasspathManager.java:417)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.findLocalClass(DefaultClassLoader.java:189)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findLocalClass(BundleLoader.java:340)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClassInternal(BundleLoader.java:408)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClass(BundleLoader.java:369)
+	at org.eclipse.osgi.framework.internal.core.BundleLoader.findClass(BundleLoader.java:357)
+	at org.eclipse.osgi.internal.baseadaptor.DefaultClassLoader.loadClass(DefaultClassLoader.java:83)
+	at java.lang.ClassLoader.loadClass(Unknown Source)
+	at java.lang.ClassLoader.loadClassInternal(Unknown Source)
+	at com.genuitec.eclipse.j2eedt.core.ResourceChangeVisitor.visit(Unknown Source)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:67)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:76)
+	at org.eclipse.core.internal.events.ResourceDelta.accept(ResourceDelta.java:48)
+	at com.genuitec.eclipse.j2eedt.core.A.resourceChanged(Unknown Source)
+	at org.eclipse.core.internal.events.NotificationManager$2.run(NotificationManager.java:282)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:37)
+	at org.eclipse.core.internal.events.NotificationManager.notify(NotificationManager.java:276)
+	at org.eclipse.core.internal.events.NotificationManager.broadcastChanges(NotificationManager.java:148)
+	at org.eclipse.core.internal.resources.Workspace.broadcastBuildEvent(Workspace.java:295)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:133)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:235)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)

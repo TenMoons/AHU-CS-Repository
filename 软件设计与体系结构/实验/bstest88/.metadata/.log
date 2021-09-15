@@ -1,0 +1,173 @@
+!SESSION 2010-10-19 10:56:22.794 -----------------------------------------------
+eclipse.buildId=I20070625-1500
+java.version=1.5.0_11
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_CN
+Command-line arguments:  -os win32 -ws win32 -arch x86
+
+!ENTRY org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.247
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.247
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureTypeNodeContribution/com.genuitec.eclipse.sqlexplorer.actions.RefreshTypeNodeAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureTypeNodeContribution/com.genuitec.eclipse.sqlexplorer.actions.RefreshTypeNodeAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.actions.RefreshTypeNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureTypeNodeContribution/com.genuitec.eclipse.sqlexplorer.actions.RefreshTypeNodeAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.actions.RefreshTypeNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.247
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.actions.editNodeAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.actions.editNodeAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mysql.actions.EditNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.actions.editNodeAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mysql.actions.EditNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.247
+!MESSAGE Conflict for 'AUTOGEN:::ValidationMenuAction/ValidationAction':
+HandlerActivation(commandId=AUTOGEN:::ValidationMenuAction/ValidationAction,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.wst.validation.internal.ui.ValidationMenuAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::ValidationMenuAction/ValidationAction,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.wst.validation.internal.ui.ValidationMenuAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.247
+!MESSAGE Conflict for 'AUTOGEN:::org.eclipse.jst.ws.internal.consumption.ui.wizard.client.genwsil/org.eclipse.jst.ws.consumption.ui.wsilimport':
+HandlerActivation(commandId=AUTOGEN:::org.eclipse.jst.ws.internal.consumption.ui.wizard.client.genwsil/org.eclipse.jst.ws.consumption.ui.wsilimport,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.wst.command.internal.env.ui.widgets.popup.DynamicPopupWizard),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::org.eclipse.jst.ws.internal.consumption.ui.wizard.client.genwsil/org.eclipse.jst.ws.consumption.ui.wsilimport,
+	handler=ActionDelegateHandlerProxy(null,org.eclipse.wst.command.internal.env.ui.widgets.popup.DynamicPopupWizard),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.247
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.runFunctionAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.runFunctionAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.RunSybaseFunctionProcedureAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.runFunctionAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.RunMssqlFunctionProcedureAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.247
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.openTriggerAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.openTriggerAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mysql.actions.OpenTriggerAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mysql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mysql.openTriggerAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mysql.actions.OpenTriggerAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.247
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.openTriggerAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.openTriggerAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.OpenTriggerAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.triggerNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.openTriggerAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.OpenTriggerAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.247
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.editProcedureAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.editProcedureAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.EditMssqlNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.editProcedureAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.EditMssqlNodeAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.247
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.spHelpAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.spHelpAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.MssqlSpHelpAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.eclipse.sqlexplorer.mssql.procedureNodeActions/com.genuitec.eclipse.sqlexplorer.mssql.spHelpAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.eclipse.sqlexplorer.mssql.actions.MssqlSpHelpAction),
+	expression=WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5),sourcePriority=16384)
+
+!ENTRY org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.257
+!MESSAGE A handler conflict occurred.  This may disable some commands.
+!SUBENTRY 1 org.eclipse.ui.workbench 2 0 2010-10-19 10:56:41.258
+!MESSAGE Conflict for 'AUTOGEN:::com.genuitec.myeclipse.comunity.essentials/com.genuitec.com.tikal.eclipse.updatemanager.quicksetup.actions.QuickInstallAction':
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.myeclipse.comunity.essentials/com.genuitec.com.tikal.eclipse.updatemanager.quicksetup.actions.QuickInstallAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.com.tikal.eclipse.updatemanager.quicksetup.actions.QuickInstallAction),
+	expression=AndExpression(ActionSetExpression(com.genuitec.myeclipse.comunity.essentials,org.eclipse.ui.internal.WorkbenchWindow@1d709a5),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5)),sourcePriority=16640)
+HandlerActivation(commandId=AUTOGEN:::com.genuitec.myeclipse.comunity.essentials/com.genuitec.com.tikal.eclipse.updatemanager.quicksetup.actions.QuickInstallAction,
+	handler=ActionDelegateHandlerProxy(null,com.genuitec.com.tikal.eclipse.updatemanager.quicksetup.actions.QuickInstallAction),
+	expression=AndExpression(ActionSetExpression(com.genuitec.myeclipse.comunity.essentials,org.eclipse.ui.internal.WorkbenchWindow@1d709a5),WorkbenchWindowExpression(org.eclipse.ui.internal.WorkbenchWindow@1d709a5)),sourcePriority=16640)
+
+!ENTRY org.eclipse.jface 2 0 2010-10-19 10:56:41.285
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2010-10-19 10:56:41.285
+!MESSAGE A conflict occurred for ALT+SHIFT+T:
+Binding(ALT+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.refactor.quickMenu,Show Refactor Quick Menu,
+		Shows the refactor quick menu,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+T,
+	ParameterizedCommand(Command(com.genuitec.org.springframework.ide.eclipse.beans.ui.commands.openjavatype,Open Java Type,
+		,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+!SUBENTRY 1 org.eclipse.jface 2 0 2010-10-19 10:56:41.285
+!MESSAGE A conflict occurred for ALT+SHIFT+V:
+Binding(ALT+SHIFT+V,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.edit.text.java.move.element,Move - Refactoring ,
+		Move the selected element to a new location,
+		Category(org.eclipse.jdt.ui.category.refactoring,Refactor - Java,Java Refactoring Actions,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(ALT+SHIFT+V,
+	ParameterizedCommand(Command(com.genuitec.org.springframework.ide.eclipse.beans.ui.commands.showinview,Show in Spring Beans View,
+		,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY com.genuitec.eclipse.core 1 0 2010-10-19 10:56:42.000
+!MESSAGE Unable to locate .myeclipse.properties file
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.058
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\html\css_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.160
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\html\forms_lists_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.213
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\html\htmlform_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.270
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\html\html_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.341
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\html\javascript_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.400
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\jsf_f_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.485
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\jsf_h_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.548
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\struts_bean_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.622
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\struts_html_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.689
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\struts_logic_snippets.xml
+
+!ENTRY com.genuitec.eclipse.wizards 1 0 2010-10-19 10:56:45.758
+!MESSAGE Installed snippet library: C:\Program Files\MyEclipse-6.0M1\myeclipse\eclipse\plugins\com.genuitec.eclipse.wizards_5.9.100\snippets\jsp\struts_tiles_snippets.xml
+
+!ENTRY com.tikal.eclipse.updatemanager.quicksetup 4 4 2010-10-19 10:56:52.730
+!MESSAGE Network connection problems encountered during search.
+
+!ENTRY org.eclipse.wst.internet.cache 1 0 2010-10-19 10:57:10.740
+!MESSAGE wtp.autotest.noninteractive is set. Licenses dialogs will not be displayed.

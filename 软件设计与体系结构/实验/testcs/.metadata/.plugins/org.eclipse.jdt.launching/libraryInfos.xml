@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<libraryInfos>
+<libraryInfo home="C:\Program Files\MyEclipse-6.0M1\jre" version="1.5.0_11">
+<bootpath>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\rt.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\i18n.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\jce.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Program Files\MyEclipse-6.0M1" version="1.5.0_11">
+<bootpath>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\rt.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\i18n.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\jsse.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\jce.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\charsets.jar"/>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\MyEclipse-6.0M1\jre\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="C:\Program Files\Java\jre1.6.0" version="1.6.0">
+<bootpath>
+<entry path="C:\Program Files\Java\jre1.6.0\lib\resources.jar"/>
+<entry path="C:\Program Files\Java\jre1.6.0\lib\rt.jar"/>
+<entry path="C:\Program Files\Java\jre1.6.0\lib\sunrsasign.jar"/>
+<entry path="C:\Program Files\Java\jre1.6.0\lib\jsse.jar"/>
+<entry path="C:\Program Files\Java\jre1.6.0\lib\jce.jar"/>
+<entry path="C:\Program Files\Java\jre1.6.0\lib\charsets.jar"/>
+<entry path="C:\Program Files\Java\jre1.6.0\classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="C:\Program Files\Java\jre1.6.0\lib\ext"/>
+<entry path="C:\Windows\Sun\Java\lib\ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="C:\Program Files\Java\jre1.6.0\lib\endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>

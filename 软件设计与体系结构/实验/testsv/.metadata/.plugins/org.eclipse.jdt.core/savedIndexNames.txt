@@ -1,0 +1,10 @@
+INDEX VERSION 1.121+D:\shuya\sa-2008-2009\testsv\.metadata\.plugins\org.eclipse.jdt.core
+1261236.index
+3154670589.index
+1258753094.index
+2485855803.index
+3491559702.index
+2924758035.index
+4013130398.index
+1387976798.index
+664006906.index
