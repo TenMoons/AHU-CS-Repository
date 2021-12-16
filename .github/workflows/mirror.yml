@@ -12,8 +12,8 @@ jobs:
     name: Mirror
     runs-on: ubuntu-latest
     steps:
-    - name: Sleep
-      run: sleep $((RANDOM / 10))
+#     - name: Sleep
+#       run: sleep $((RANDOM / 10))
     - name: Manually mirror
       run: |
         mirror() {
@@ -27,7 +27,7 @@ jobs:
     #     mirror MikeMirzayanov testlib
     #     mirror itay-grudev SingleApplication
     # - name: Mirror 
-    #   uses: Yikun/hub-mirror-action@81f1a4c8d18ec3b443cc7e7980f1a067e327ce10
+    #   uses: Yikun/hub-mirror-action@v1.1
     #   with:
     #     src: github/alafun
     #     dst: gitee/alafun
