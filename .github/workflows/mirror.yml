@@ -19,7 +19,7 @@ jobs:
         mirror() {
           git clone "https://github.com/$1/$2"
           cd "$2"
-          git remote add gitee "https://ouuan:${{ secrets.GITEE_TOKEN }}@gitee.com/ouuan/$2.git"
+          git remote add gitee "https://alafun:${{ secrets.GITEE_TOKEN }}@gitee.com/alafun/$2.git"
           git remote set-head origin -d
           git push gitee --prune +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
           cd ..
@@ -29,19 +29,19 @@ jobs:
     - name: Mirror ouuan
       uses: Yikun/hub-mirror-action@81f1a4c8d18ec3b443cc7e7980f1a067e327ce10
       with:
-        src: github/ouuan
-        dst: gitee/ouuan
+        src: github/alafun
+        dst: gitee/alafun
         dst_key: ${{ secrets.SSH_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITEE_TOKEN }}
         force_update: true
         debug: true
-        mappings: "ouuan=>profile-readme"
+        mappings: "alafun=>profile-readme"
         black_list: ".github,cpeditor,QCodeEditor,QtFindReplaceDialog,lsp-cpp,cpeditor.github.io,docsy,qhttp,FakeVim,testlib,SingleApplication"
-    - name: Mirrow cpeditor
+    - name: Mirror
       uses: Yikun/hub-mirror-action@81f1a4c8d18ec3b443cc7e7980f1a067e327ce10
       with:
-        src: github/cpeditor
-        dst: gitee/ouuan
+        src: github/AHU-G
+        dst: gitee/alafun
         src_account_type: org
         dst_key: ${{ secrets.SSH_PRIVATE_KEY }}
         dst_token: ${{ secrets.GITEE_TOKEN }}
