@@ -24,20 +24,20 @@ jobs:
           git push gitee --prune +refs/remotes/origin/*:refs/heads/* +refs/tags/*:refs/tags/*
           cd ..
         }
-        mirror MikeMirzayanov testlib
-        mirror itay-grudev SingleApplication
-    - name: Mirror ouuan
-      uses: Yikun/hub-mirror-action@81f1a4c8d18ec3b443cc7e7980f1a067e327ce10
-      with:
-        src: github/alafun
-        dst: gitee/alafun
-        dst_key: ${{ secrets.SSH_PRIVATE_KEY }}
-        dst_token: ${{ secrets.GITEE_TOKEN }}
-        force_update: true
-        debug: true
-        mappings: "alafun=>profile-readme"
-        black_list: ".github,cpeditor,QCodeEditor,QtFindReplaceDialog,lsp-cpp,cpeditor.github.io,docsy,qhttp,FakeVim,testlib,SingleApplication"
-    - name: Mirror
+    #     mirror MikeMirzayanov testlib
+    #     mirror itay-grudev SingleApplication
+    # - name: Mirror 
+    #   uses: Yikun/hub-mirror-action@81f1a4c8d18ec3b443cc7e7980f1a067e327ce10
+    #   with:
+    #     src: github/alafun
+    #     dst: gitee/alafun
+    #     dst_key: ${{ secrets.SSH_PRIVATE_KEY }}
+    #     dst_token: ${{ secrets.GITEE_TOKEN }}
+    #     force_update: true
+    #     debug: true
+    #     mappings: "alafun=>profile-readme"
+    #     black_list: "AHU-CS-Repositor"
+    - name: Mirror AHU-CS-Repositor
       uses: Yikun/hub-mirror-action@81f1a4c8d18ec3b443cc7e7980f1a067e327ce10
       with:
         src: github/AHU-G
@@ -47,4 +47,4 @@ jobs:
         dst_token: ${{ secrets.GITEE_TOKEN }}
         force_update: true
         debug: true
-        black_list: ".github"
+        white_list: "AHU-CS-Repository"
