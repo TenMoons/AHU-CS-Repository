@@ -1,0 +1,52 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.s*; *.src; *.a*)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt; *.h; *.inc)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Simulator), 0x0000 // Tools: 'MCS-51'
+Target (Atmel SND1 Reference Board), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Group 1),1,0,0
+
+OPTFFF 1,1,1,2,0,1,1,0,<.\BLINKY.C><BLINKY.C> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,0,0,0,0,1,0,0,0,48,3,0,0,249,1,0,0 }
+OPTFFF 1,2,2,0,0,0,0,0,<.\STARTUP.A51><STARTUP.A51> 
+
+
+TARGOPT 1, (Simulator)
+ CLK51=33000000
+  OPTTT 0,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 0,0,0
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51R)(S8051.DLL)()(TP51.DLL)(-p51R)
+  OPTDBG 510,-1,()()()()()()()()()() (BIN\MON51.DLL)()()()
+  OPTDF 0x0
+  OPTLE <>
+  OPTLC <>
+EndOpt
+
+TARGOPT 2, (Atmel SND1 Reference Board)
+ CLK51=24000000
+  OPTTT 0,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51SND1)(S8051.DLL)()(TP51.DLL)(-p51SND1)
+  OPTDBG 1022,-1,()()()()()()()()()() (BIN\MON51.DLL)()()()
+  OPTDF 0x0
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

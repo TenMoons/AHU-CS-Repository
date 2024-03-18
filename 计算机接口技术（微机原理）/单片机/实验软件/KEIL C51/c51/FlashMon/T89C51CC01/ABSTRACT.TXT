@@ -1,0 +1,25 @@
+This Flash Monitor Version is configured to use the 
+on-chip flash of a T89C51CC01.
+
+With this configuration the following on-chip memory
+is allocated: 
+
+C:0x0000 - C:0x6FFF    Flash available for application
+C:0x7000 - C:0x7FFF    Flash used by Flash Monitor
+
+X:0x0000 - X:0x02FF    XDATA available for application
+X:0x0300 - X:0x03FF    XDATA used by Flash Monitor
+
+The resulting Monitor.HEX file must be programmed into 
+the on-chip Flash with the Atmel FLIP utility.
+In order to install the Flash Monitor at code address
+0x7000, the boot vector must be set to 0x7000.  This is 
+done by setting the following values in FLIP.
+
+- select the checkbox BLJB
+- set 'Device BSB' to a value other than 0
+- set 'Device SBV' to 70 (Hex)
+- press the 'Set' button to store these values
+
+ 
+ 

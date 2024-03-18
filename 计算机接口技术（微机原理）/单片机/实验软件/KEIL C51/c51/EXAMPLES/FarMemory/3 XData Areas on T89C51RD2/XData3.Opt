@@ -1,0 +1,49 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (3 XData Areas on T89C51RD2), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Files),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,0,0,0,0,0,<.\MAIN.C><MAIN.C> 
+OPTFFF 1,2,2,150994944,0,0,0,0,<.\XBANKING.A51><XBANKING.A51> 
+OPTFFF 1,3,1,251658240,0,0,0,0,<.\Eeprom.c><Eeprom.c> 
+OPTFFF 2,4,5,0,0,0,0,0,<.\ABSTRACT.TXT><ABSTRACT.TXT> 
+
+
+TARGOPT 1, (3 XData Areas on T89C51RD2)
+ CLK51=40000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 1,(Data Sheet)<DATASHTS\ATMELWM\T89C51rd2.PDF>
+  OPTBL 2,(Architectural Overview)<DATASHTS\ATMELWM\C51_AO.PDF>
+  OPTBL 3,(Hardware Description)<DATASHTS\ATMELWM\C51_HD.PDF>
+  OPTBL 4,(Programmer's Guide)<DATASHTS\ATMELWM\C51_PG.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51rd2)(S8051.DLL)()(TP51.DLL)(-p51rd2)
+  OPTDBG 2045,-1,()()()()()()()()()() (BIN\MON51.DLL)()()()
+  OPTKEY 0,(DLGDP51)((98=-1,-1,-1,-1,0)(82=-1,-1,-1,-1,0)(83=-1,-1,-1,-1,0)(84=-1,-1,-1,-1,0)(85=-1,-1,-1,-1,0)(5009=-1,-1,-1,-1,0)(5010=-1,-1,-1,-1,0)(99=-1,-1,-1,-1,0)(91=-1,-1,-1,-1,0)(92=-1,-1,-1,-1,0)(94=-1,-1,-1,-1,0)(95=-1,-1,-1,-1,0)(100=-1,-1,-1,-1,0)(5008=-1,-1,-1,-1,0)(2003=300,219,644,432,0)(5061=300,219,628,398,0)(5033=-1,-1,-1,-1,0))
+  OPTKEY 0,(DLGTP51)((98=-1,-1,-1,-1,0)(82=-1,-1,-1,-1,0)(83=-1,-1,-1,-1,0)(84=-1,-1,-1,-1,0)(85=-1,-1,-1,-1,0)(5009=-1,-1,-1,-1,0)(5010=-1,-1,-1,-1,0)(99=-1,-1,-1,-1,0)(91=-1,-1,-1,-1,0)(92=-1,-1,-1,-1,0)(94=-1,-1,-1,-1,0)(95=-1,-1,-1,-1,0)(100=-1,-1,-1,-1,0)(5008=-1,-1,-1,-1,0)(2003=-1,-1,-1,-1,0)(5061=-1,-1,-1,-1,0)(5033=-1,-1,-1,-1,0))
+  OPTKEY 0,(MON51)()
+  OPTBB 0,2,0,1,16777472,0,1,1,2,1,<>()(x:0x100)
+  OPTWA 0,1,(esample1)
+  OPTWA 1,1,(etxt_ptr)
+  OPTDF 0x8097
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

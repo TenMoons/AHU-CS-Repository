@@ -1,0 +1,34 @@
+*** IMPORTANT NOTE ***
+    Far Memory Support is only available in the PK51 package.
+    If you have an CA51, DK51, or Evaluation Package the far memory
+    support is not available and this example will not work.
+
+This example shows how you can locate text strings in the constant
+far memory.  It contains strings in different languages which is typically
+for embedded applications that are using a small text display and that
+need to be adaptable to different countries.
+
+The example program uses the new features of C51 Version 6.22 and 
+LX51 Linker/Locater Version 3.22 to access up to 1MB constants on
+classic 8051 devices.
+
+In this example we are using 16 memory banks for code.  Refer to the 
+"Macro Assembler and Utilities" User's Guide, "Chapter 9. Linker/Locater 
+- Bank Switching for more information about banking hardware.
+
+C51 provides you with the 'far' and 'const far' memory type that can be 
+used to access large memory.  The memory accesses routines are part of the
+L51_BANK.A51 configuration file.  The example includes a configured
+version of the L51_BANK.A51 file.
+
+In this example we are only using the 'const far' memory type.  The 'far
+and 'const far' memory types are handled at LX51 linker/locater level with 
+new memory classes:
+    HDATA   memory class for the 'banked' xdata memory.
+    HCONST  memory class for the 'banked' code memory.
+
+You may use the 'const far' memory banking together with code banking 
+to expand the program code memory. 
+
+
+

@@ -1,0 +1,86 @@
+C51 COMPILER V7.01  EE                                                                     10/03/2002 13:08:26 PAGE 1   
+
+
+C51 COMPILER V7.01, COMPILATION OF MODULE EE
+OBJECT MODULE PLACED IN ee.OBJ
+COMPILER INVOKED BY: d:\Keil\C51\BIN\C51.EXE ee.c OPTIMIZE(9,SPEED) BROWSE DEBUG OBJECTEXTEND CODE
+
+stmt level    source
+
+   1          // 本演示程序用来演示带有0xfd为第二内码的汉字字符串的编译结果
+   2          // 如果正确使用了补丁，编译结果的a51或hex文件中均可以看到fd码
+   3          // 目标代码长度应该是code=313是正确的
+   4          //#pragma src(cca.a51)           // 用于生成汇编代码查看编译结果
+   5          #include <reg51.h>
+   6          #include <string.h>
+   7          char cc[]="饼昌除待谍洱俘庚过糊积箭烬君魁例笼慢谬凝琵讫驱\
+   8          三升数她听妄锡淆旋妖引育札正铸佚";
+   9          void main(void) {
+  10   1      unsigned char c1,i;
+  11   1      unsigned int b1;
+  12   1              c1=strlen(cc);
+  13   1              for(i=0;i<c1;i++){
+  14   2                      b1+=cc[i];
+  15   2              }
+  16   1              while(1);
+  17   1      }
+  18          
+C51 COMPILER V7.01  EE                                                                     10/03/2002 13:08:26 PAGE 2   
+
+ASSEMBLY LISTING OF GENERATED OBJECT CODE
+
+
+             ; FUNCTION main (BEGIN)
+                                           ; SOURCE LINE # 9
+                                           ; SOURCE LINE # 12
+0000 7B00              MOV     R3,#00H
+0002 7A00        R     MOV     R2,#HIGH cc
+0004 7900        R     MOV     R1,#LOW cc
+0006 120000      E     LCALL   _strlen
+;---- Variable 'c1' assigned to Register 'R7' ----
+                                           ; SOURCE LINE # 13
+;---- Variable 'i' assigned to Register 'R6' ----
+0009 E4                CLR     A
+000A FE                MOV     R6,A
+000B         ?C0001:
+000B EE                MOV     A,R6
+000C C3                CLR     C
+000D 9F                SUBB    A,R7
+000E 5017              JNC     ?C0004
+                                           ; SOURCE LINE # 14
+0010 7400        R     MOV     A,#LOW cc
+0012 2E                ADD     A,R6
+0013 F8                MOV     R0,A
+0014 E6                MOV     A,@R0
+0015 FD                MOV     R5,A
+0016 33                RLC     A
+0017 95E0              SUBB    A,ACC
+0019 FC                MOV     R4,A
+001A ED                MOV     A,R5
+001B 2500        R     ADD     A,b1+01H
+001D F500        R     MOV     b1+01H,A
+001F EC                MOV     A,R4
+0020 3500        R     ADDC    A,b1
+0022 F500        R     MOV     b1,A
+                                           ; SOURCE LINE # 15
+0024 0E                INC     R6
+0025 80E4              SJMP    ?C0001
+0027         ?C0004:
+                                           ; SOURCE LINE # 16
+0027 80FE              SJMP    ?C0004
+             ; FUNCTION main (END)
+
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     41    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =     79       2
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

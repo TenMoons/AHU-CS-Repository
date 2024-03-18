@@ -1,0 +1,21 @@
+How to load the Monitor into the Systronix uCAN2:
+=================================================
+
+The µCAN2 has an integrated loader, that is able to load 
+the MON390 to RAM.  To perform this load, you have to:
+
+- Connect the board to the PC via the uCAN2 COM1 serial port.
+- Open a standard windows terminal emulation, like 'Hyperterminal'.
+- Activate the loader on uCAN2, by pressing the LOAD button.
+- Type Enter (CR) in the terminal emulation.  This displays:
+
+  Unified HSM HEX LOADER & DEMONSTRATOR Rev xxx
+  (C)1996-1999 SYSTRONIX, INC.
+  Type '?' for command help
+
+  uCAN2/prog:00>
+
+- Type 'L' and select the file sending option of your terminal emulation.
+  Select the file Keil\C51\MON390\Systronix uCAN2 Monitor\MON390.HEX and 
+  send it to the board.
+- Now you reset the board, to start the MON390.

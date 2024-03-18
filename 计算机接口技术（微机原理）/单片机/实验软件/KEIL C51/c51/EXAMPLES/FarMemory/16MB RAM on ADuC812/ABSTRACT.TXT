@@ -1,0 +1,26 @@
+*** IMPORTANT NOTE ***
+    Far Memory Support is only available in the PK51 package.
+    If you have an CA51, DK51, or Evaluation Package the far memory
+    support is not available and this example will not work.
+
+
+The ADuC812 16MB RAM DEMO program shows you how to use the new
+features of C51 Version 6.12 and LX51 Linker/Locater Version 3.10
+to access the large 16MB xdata space on this device.
+
+C51 provides you with the 'far' memory type that can be used to
+access large memory.  The memory accesses itself is performed in
+the XBANKING.A51 configuration file.  The example includes a configured
+version of the XBANKING.A51 file that accesses the large 16M Byte external 
+address space via the extended DPP register of the ADuC812 device.
+
+The 'far' memory type is handled at linker level via the memory class HDATA.
+You can enter the address range in uVision2 under Options for Target -
+LX51 Locate - User Classes as shown below: 
+   HDATA (X:0x020000-X:0x02FFFF) /* put 'far' into X:0x20000 - X:0x2FFFF */
+
+The large memory space is simulated under uVision2 with the X: memory type prefix.
+For example the uVision2 debugger command:
+   >D X:0x20000                   // displays external data starting at 0x20000
+
+

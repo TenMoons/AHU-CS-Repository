@@ -1,0 +1,38 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Standard), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Code),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,0,0,1,24,0,<.\Badcode.c><Badcode.c> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,22,0,0,0,22,0,0,0,68,4,0,0,43,2,0,0 }
+OPTFFF 2,2,5,0,0,1,6,0,<.\Abstract.txt><Abstract.txt> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,22,0,0,0,22,0,0,0,11,3,0,0,81,1,0,0 }
+
+ExtF <.\Abstract.txt> 1,6,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,22,0,0,0,22,0,0,0,11,3,0,0,81,1,0,0 }
+
+TARGOPT 1, (Standard)
+ CLK51=33000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\PHILIPS\8XC51.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Programmer's Guide & Instruction Set Manual)<DATASHTS\PHILIPS\UPROGGUI.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51)(S8051.DLL)()(TP51.DLL)(-p51)
+  OPTDBG 501,0,()()()()()()()()()() ()()()()
+  OPTDF 0x80
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

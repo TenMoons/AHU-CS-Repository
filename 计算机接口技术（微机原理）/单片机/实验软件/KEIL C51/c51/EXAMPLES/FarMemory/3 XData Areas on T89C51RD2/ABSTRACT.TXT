@@ -1,0 +1,65 @@
+*** IMPORTANT NOTE ***
+    Far Memory Support is only available in the PK51 package.
+    If you have an CA51, DK51, or Evaluation Package the far memory
+    support is not available and this example will not work.
+
+This T89C51RD2 DEMO program shows you how to use the new features of 
+C51 Version 7 and LX51 Linker/Locater to access the three available 
+xdata areas: EEPROM, on-chip XRAM and off-chip xdata RAM.
+
+All these memory areas (EEPROM, on-chip XRAM and off-chip xdata RAM)
+are accessed in the same xdata address space and are overlapping the
+same address ranges.  The 'far' memory support available in the PK51
+Professional Developers Kit is configure to switch between these three
+memory areas.  Therefore the user application has full access to all
+three memory types at the same time.
+
+
+This files can be used as template for own projects.
+
+XBANKING.A51 configures the expanded 'far' memory space as EEPROM space
+and on-chip XRAM space.
+
+EEPROM.H  contains the data definitions that are stored in the EEPROM space.
+EEPROM.C  defines the user class HDATA_EEPROM which starts at X:0x020000 
+
+The memory type 'far' is used to store variables in on-chip xdata RAM.
+The memory type 'xdata' is used to store variables in off-chip xdata RAM.
+
+The LX51 CLASSES directive specifies the address ranges for the HDATA_EEPROM
+and HDATA memory areas.  In uVision2 this memory classes are entered 
+under Options for Target - LX51 Locate - User's Classes.
+
+For save interrupt behaviour of the application it is required to invoke
+the C51 Compiler with the directive VARBANKING (1).  Therefore the uVision2
+project enables under Project - Options for Target: 'far' memory type support 
+and Save address extension SFR in interrupts.  During an interrupt, the register
+EECON that is defined as ?C?XPAGE1SFR will be saved and set to 0.
+
+This EEPROM space is simulated under uVision2 with the V: memory type prefix.
+This memory space can be manipulated using standard uVision2 debugging commands.
+For example:
+   D V:0                            // displays the EEPROM memory space
+   SAVE EEPROM.HEX V:0, V:0x7FF     // saves the EEPROM memory space
+   LOAD EEPROM.HEX                  // loads the EEPROM contents
+
+It is also possible to display variables in the EEPROM space using standard
+uVision2 features, i.e. the Watch Window.  The mapping for the uVision2 debugger
+is configured via the ?B?xMEM symbols in the XBANKING.A51 config file.
+
+*** Notes *** 
+1. In the current version of the uVision2 simulator it is not possible to 
+simulate the banking in the on-chip XRAM and off-chip xdata RAM space.
+
+2. The C51 compiler allows to save ONE address extension SFR. This feature is 
+enabled under Options for Target - Save Address Extensions SFR.  Since the
+on-chip XRAM and the EEPROM use two different SFR registers, it is impossible 
+to save both registers the EECON and the AUXR register during interrupts.
+Therefore it is required to disable and enable interrupts when accessing on-chip
+XRAM.
+
+3. When the EEPROM support is not required, you may use the XBANKING4XRAM.A51 file
+instead of the XBANKING.A51 file.  This file supports just the switching between
+on-chip and off-chip xdata memory and is therefore useful on many 8051 variants.
+
+

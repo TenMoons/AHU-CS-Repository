@@ -1,0 +1,66 @@
+; KEILUL.INF
+;
+; inf file for Keil ULINK 
+;
+; Copyright © 2002 Keil Elektronik GmbH
+;
+
+
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+provider=%Keil%
+LayoutFile=layout.inf
+DriverVer=10/22/2002,1.0.0.1
+
+[Manufacturer]
+%Keil%=Keil
+
+[Keil]
+%USB\VID_c251&PID_2710.DeviceDesc%=KEILUL.Dev,USB\VID_c251&PID_2710
+
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+KEILUL.Files.Ext = 10, system32\drivers  ; Windows System Drivers
+KEILUL.Files.Inf = 17  ; INF File folder
+
+
+[KEILUL.Dev]
+;CopyFiles=KEILUL.Files.Ext, KEILUL.Files.Inf
+AddReg=KEILUL.AddReg
+
+[KEILUL.Dev.NT]
+;CopyFiles=KEILUL.Files.Ext, KEILUL.Files.Inf
+AddReg=KEILUL.AddReg
+
+[KEILUL.Dev.NT.Services]
+Addservice=KEILUL,2,KEILUL.AddService
+
+[KEILUL.AddService]
+DisplayName    = %KEILUL.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 2                  ; SERVICE_AUTO_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\keilul.sys
+LoadOrderGroup = Base
+
+[KEILUL.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,"keilul.sys"
+
+[KEILUL.Files.Ext]
+keilul.sys
+
+[KEILUL.Files.Inf]
+keilul.Inf
+
+;---------------------------------------------------------------;
+
+[Strings]
+Keil="Keil Software"
+USB\VID_c251&PID_2710.DeviceDesc="Keil ULINK"
+
+KEILUL.SvcDesc="Keil ULINK SERVICE (keilul.sys)"

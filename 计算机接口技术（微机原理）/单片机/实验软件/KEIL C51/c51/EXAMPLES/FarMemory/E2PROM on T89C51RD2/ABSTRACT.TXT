@@ -1,0 +1,37 @@
+*** IMPORTANT NOTE ***
+    Far Memory Support is only available in the PK51 package.
+    If you have an CA51, DK51, or Evaluation Package the far memory
+    support is not available and this example will not work.
+
+The T89C51RD2 EEPROM DEMO program shows you how to use the new
+features of C51 Version 7 and LX51 Linker/Locater to access the 
+data in the EEPROM area.
+
+This files can be used as template for own projects.
+
+XBANKING.A51 configures the expanded 'far' memory space as EEPROM space.
+
+EEPROM.H  contains the data definitions that are stored in the EEPROM space.
+EEPROM.C  defines the user class HDATA_EEPROM.  This user class is located
+with the LX51 CLASSES directive into the address space X:0x020000 - X:0x0207FF.
+This address space reflects the EEPROM memory of the 89C51RD2 device.  
+In uVision2 the address range for the memory class is enter under Options for
+Target - LX51 Locate - User's Classes.
+
+For save interrupt behaviour of the application it is required to invoke
+the C51 Compiler with the directive VARBANKING (1).  Therefore the uVision2
+project enables under Project - Options for Target: 'far' memory type support 
+and Save address extension SFR in interrupts.  During an interrupt, the register
+EECON that is defined as ?C?XPAGE1SFR will be saved and set to 0.
+
+This EEPROM space is simulated under uVision2 with the V: memory type prefix.
+This memory space can be manipulated using standard uVision2 debugging commands.
+For example:
+   D V:0                            // displays the EEPROM memory space
+   SAVE EEPROM.HEX V:0, V:0x7FF     // saves the EEPROM memory space
+   LOAD EEPROM.HEX                  // loads the EEPROM contents
+
+It is also possible to display variables in the EEPROM space using standard
+uVision2 features, i.e. the Watch Window.  The mapping for the uVision2 debugger
+is configured via the ?B?xMEM symbols in the XBANKING.A51 config file.
+

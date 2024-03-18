@@ -1,0 +1,16 @@
+The BLINKY program is a very simple program that blinks the LED's on
+connected to Port 2 of the MCB900 or EPM900.  When you can successfully 
+build and run this program, you have used the entire toolset including:
+
+The uVision2 integrated development environment.
+The C51 compiler, linker and the µVision2 simulator/debugger.
+
+This BLINKY program is available in several targets:
+
+  Simulator:         for µVision2 Debugger testing with simulator
+  MCB900 - Run:      for MCB900 board in Run Mode
+  EPM900 - Emulator: for EPM900 Emulator/Programmer Module
+
+Use the following jumper settings on the MCB900 board:
+     RUN: ON    RESET: OFF   PROG: OFF
+

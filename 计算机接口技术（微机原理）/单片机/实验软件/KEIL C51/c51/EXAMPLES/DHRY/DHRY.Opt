@@ -1,0 +1,41 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Simulator: Large Model), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Code),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,0,0,747,759,0,<.\DHRY.C><DHRY.C> { 44,0,0,0,2,0,0,0,3,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,233,255,255,255,230,254,255,255,31,0,0,0,27,3,0,0,10,2,0,0 }
+OPTFFF 1,2,1,0,0,0,0,0,<.\TIME.C><TIME.C> 
+OPTFFF 2,3,5,0,0,0,0,0,<.\ABSTRACT.TXT><ABSTRACT.TXT> 
+OPTFFF 2,4,1,0,0,0,0,0,<.\README.C><README.C> 
+
+
+TARGOPT 1, (Simulator: Large Model)
+ CLK51=12000000
+  OPTTT 1,0,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,1,1,1,0,1
+  OPTXL 1,1,1,1,1,1,1,1,1
+  OPTFL 1,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\INTEL\80XXBH.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Instruction Set Manual)<DATASHTS\INTEL\ISM51.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51)(S8051.DLL)()(TP51.DLL)(-p51)
+  OPTDBG 497,0,()()()()(dhry.ini)()()()()() ()()()()
+  OPTSY 0,0,(*)
+  OPTDF 0x80000081
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

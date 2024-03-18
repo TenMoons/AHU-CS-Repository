@@ -1,0 +1,45 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (RTX51 Tiny Ex1), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Files),1,0,0
+
+OPTFFF 1,1,1,0,0,1,30,0,<.\RTX_EX1.C><RTX_EX1.C> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,232,255,255,255,92,0,0,0,92,0,0,0,141,4,0,0,125,2,0,0 }
+OPTFFF 1,2,5,2,0,1,1,0,<.\ABSTRACT.TXT><ABSTRACT.TXT> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,232,255,255,255,243,0,0,0,240,0,0,0,170,3,0,0,51,2,0,0 }
+
+ExtF <.\ABSTRACT.TXT> 1,1,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,252,255,255,255,232,255,255,255,243,0,0,0,240,0,0,0,170,3,0,0,51,2,0,0 }
+
+TARGOPT 1, (RTX51 Tiny Ex1)
+ CLK51=12000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\PHILIPS\8XC52_54.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Programmer's Guide & Instruction Set Manual)<DATASHTS\PHILIPS\UPROGGUI.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p52)(S8051.DLL)()(TP51.DLL)(-p52)
+  OPTDBG 501,0,()()()()(.\Debugger.ini)()()()()() ()()()()
+  OPTKEY 0,(DLGDP51)((98=-1,-1,-1,-1,0)(82=-1,-1,-1,-1,0)(83=-1,-1,-1,-1,0)(84=-1,-1,-1,-1,0)(85=-1,-1,-1,-1,0)(99=-1,-1,-1,-1,0)(91=-1,-1,-1,-1,0)(92=-1,-1,-1,-1,0)(93=-1,-1,-1,-1,0)(2000=-1,-1,-1,-1,0)(7000=-1,-1,-1,-1,0))
+  OPTWA 0,1,(counter0)
+  OPTWA 1,1,(counter1)
+  OPTWA 2,1,(counter2)
+  OPTMM 1,0,(D:0x21)
+  OPTMM 2,0,(\measure\save_record)
+  OPTDF 0x82
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

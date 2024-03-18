@@ -1,0 +1,62 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Simulator), 0x0000 // Tools: 'MCS-51'
+Target (MCBx51: 8xC51Rx), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Group 1),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,0,0,1,18,0,<.\BLINKY.C><BLINKY.C> { 44,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,7,2,0,0,252,255,255,255,233,255,255,255,24,0,0,0,76,0,0,0,133,3,0,0,58,2,0,0 }
+OPTFFF 2,2,5,0,0,1,4,0,<.\ABSTRACT.TXT><ABSTRACT.TXT> { 44,0,0,0,2,0,0,0,3,0,0,0,0,0,0,0,41,2,0,0,252,255,255,255,233,255,255,255,156,0,0,0,156,0,0,0,172,3,0,0,27,2,0,0 }
+
+ExtF <.\ABSTRACT.TXT> 1,4,0,{ 44,0,0,0,2,0,0,0,3,0,0,0,0,0,0,0,41,2,0,0,252,255,255,255,233,255,255,255,156,0,0,0,156,0,0,0,172,3,0,0,27,2,0,0 }
+
+TARGOPT 1, (Simulator)
+ CLK51=33000000
+  OPTTT 0,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\PHILIPS\89C51Rx2.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Programmer's Guide & Instruction Set Manual)<DATASHTS\PHILIPS\UPROGGUI.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51R)(S8051.DLL)()(TP51.DLL)(-p51R)
+  OPTDBG 509,0,()()()()()()()()()() ()()()()
+  OPTDF 0x96
+  OPTLE <>
+  OPTLC <>
+EndOpt
+
+TARGOPT 2, (MCBx51: 8xC51Rx)
+ CLK51=33000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,0
+  OPTBL 0,(Data Sheet)<DATASHTS\PHILIPS\8XC52_54.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Programmer's Guide & Instruction Set Manual)<DATASHTS\PHILIPS\UPROGGUI.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51R)(S8051.DLL)()(TP51.DLL)(-p51R)
+  OPTDBG 1022,0,()()()()()()()()()() ()()()()
+  OPTKEY 0,(MON51)(-S1 -B57600 -O15)
+  OPTMM 1,0,(c:0x11b1)
+  OPTMM 2,0,(\measure\save_record)
+  OPTMM 3,0,(y:0x87fff)
+  OPTMM 4,0,(Y:40700h)
+  OPTDF 0x84
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

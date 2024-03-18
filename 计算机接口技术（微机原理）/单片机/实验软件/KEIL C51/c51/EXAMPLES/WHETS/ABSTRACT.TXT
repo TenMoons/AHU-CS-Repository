@@ -1,0 +1,9 @@
+This program contains the Whetstone benchmarks.
+
+Whetstone is a benchmark test which attempts to
+measure the speed and efficiency at which a computer
+performs floating-point operations.  The results of
+the test are given in units called whetstones.
+
+The Whetstone program is available in different targets:
+  Simulator:  Whetstone example in TINY model for Simulation

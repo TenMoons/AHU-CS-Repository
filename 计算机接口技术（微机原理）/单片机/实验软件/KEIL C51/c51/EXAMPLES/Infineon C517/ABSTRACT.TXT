@@ -1,0 +1,24 @@
+The SAMPL517 program uses the additional features of the C517,
+C517A and C509 CPU to simulate a Hewlett Packard calculator.
+The following calculator features are supported:
+
++        -        *        /
+SIN      COS      TAN      SQRT
+LOG      ASIN     ACOS     ATAN
+EXP      LOG10
+
+
+The following source files provide useful 517 routines.
+
+*  GETKEY.C:  This file contains routines to get a char from
+   the 517's second serial port.
+
+*  PUTCHAR.C:  This file contains routines to output a char
+   to the 517's second serial port.
+
+Note that the second serial port is used in dScope by reassigning
+the second serial port to the serial window.  Look at the assign
+command.
+
+The SAMPL517 program is configured for testing with the
+µVision2 simulator.

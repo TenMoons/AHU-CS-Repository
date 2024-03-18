@@ -1,0 +1,35 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.s*; *.src; *.a*)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt; *.h; *.inc)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (User Monitor), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Group 1),1,0,0
+
+OPTFFF 1,1,2,704643074,0,27,27,0,<.\INSTALL.A51><INSTALL.A51> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,44,0,0,0,44,0,0,0,92,3,0,0,243,1,0,0 }
+OPTFFF 1,2,4,0,0,0,0,0,<..\mon390.LIB><mon390.LIB> 
+
+
+TARGOPT 1, (User Monitor)
+ CLK51=40000000
+  OPTTT 1,1,1,0
+  OPTHX 1,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTDL (S8051.DLL)(-c390)(DP51.DLL)(-p390)(S8051.DLL)(-c390)(TP51.DLL)(-p390)
+  OPTDBG 1021,-1,()()()()()()()()()() (BIN\MON51.DLL)()()()
+  OPTDF 0x0
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

@@ -1,0 +1,90 @@
+[SVCS]
+  DataBase=\\SERVER\SYS\VSS
+  MenuItem=SourceSafe &Explorer
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ssexp.exe
+    Arguments=
+    Environment=SSUSER=%U
+    RunMinimized=0
+    QueryComment=0
+    QueryRevision=0
+    QueryCheckPoint=0
+  MenuItem=Check &In '%F'
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ss.exe
+    Arguments=CheckIn "%F" -C@"%Q" -I-
+    Environment=SSDIR=%V; SSUSER=%U
+    RunMinimized=1
+    QueryComment=1
+    QueryRevision=0
+    QueryCheckPoint=0
+  MenuItem=Check &Out '%F'
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ss.exe
+    Arguments=CheckOut "%F" -C- -I-
+    Environment=SSDIR=%V; SSUSER=%U
+    RunMinimized=1
+    QueryComment=0
+    QueryRevision=0
+    QueryCheckPoint=0
+  MenuItem=&Undo Check Out '%F'
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ss.exe
+    Arguments=UndoCheckOut "%F" -I-
+    Environment=SSDIR=%V; SSUSER=%U
+    RunMinimized=1
+    QueryComment=0
+    QueryRevision=0
+    QueryCheckPoint=0
+  MenuItem=&Put Current Version of '%F'
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ss.exe
+    Arguments=CheckIn "%F" -C@"%Q" -I- -K
+    Environment=SSDIR=%V; SSUSER=%U
+    RunMinimized=1
+    QueryComment=1
+    QueryRevision=0
+    QueryCheckPoint=0
+  MenuItem=&Get Actual Version of '%F'
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ss.exe
+    Arguments=Get "%F" -I-
+    Environment=SSDIR=%V; SSUSER=%U
+    RunMinimized=1
+    QueryComment=0
+    QueryRevision=0
+    QueryCheckPoint=0
+  MenuItem=&Add '%F' to current Project
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ss.exe
+    Arguments=Add "%F" -I- -C-
+    Environment=SSDIR=%V; SSUSER=%U
+    RunMinimized=1
+    QueryComment=0
+    QueryRevision=0
+    QueryCheckPoint=0
+  MenuItem=&Differences of '%F'
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ss.exe
+    Arguments=Diff "%F" -I-
+    Environment=SSDIR=%V; SSUSER=%U
+    RunMinimized=1
+    QueryComment=0
+    QueryRevision=0
+    QueryCheckPoint=0
+  MenuItem=&History of '%F'
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ss.exe
+    Arguments=History "%F" -I-
+    Environment=SSDIR=%V; SSUSER=%U
+    RunMinimized=1
+    QueryComment=0
+    QueryRevision=0
+    QueryCheckPoint=0
+  MenuItem=&Create Project '@P'
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ss.exe
+    Arguments=Create $/"@P" -I-
+    Environment=SSDIR=%V; SSUSER=%U
+    RunMinimized=1
+    QueryComment=0
+    QueryRevision=0
+    QueryCheckPoint=0
+  MenuItem=&Set current Project '@P'
+    Command=C:\Program Files\Microsoft Visual Studio\VSS\win32\Ss.exe
+    Arguments=CP $/"@P" -I-
+    Environment=SSDIR=%V; SSUSER=%U
+    RunMinimized=1
+    QueryComment=0
+    QueryRevision=0
+    QueryCheckPoint=0

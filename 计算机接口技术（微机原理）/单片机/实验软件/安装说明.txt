@@ -1,0 +1,4 @@
+
+
+  1. 按照安装说明.txt，首先进入KEIL C51目录，安装Keil C51软件。
+  2. 进入监控下载程序目录下，将SST89E554目录下Convert_to_BSLx554.txt；      SoftIce554.hex； SSTEasyIAP11F.exe三个文件拷贝C盘根目录下。

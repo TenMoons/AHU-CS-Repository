@@ -1,0 +1,25 @@
+This Flash Monitor Version is configured to use the 
+on-chip flash of an AT89C51RD2.
+
+With this configuration the following on-chip memory
+is allocated: 
+
+C:0x0000 - C:0xDFFF    Flash available for application
+C:0xE000 - C:0xEFFF    Flash used by Flash Monitor
+
+X:0x0000 - X:0x05FF    XDATA available for application
+X:0x0600 - X:0x06FF    XDATA used by Flash Monitor
+
+The resulting Monitor.HEX file must be programmed into 
+the on-chip Flash with the Atmel FLIP utility.
+In order to install the Flash Monitor at code address
+0xE000, the boot vector must be set to 0xE000.  This is 
+done by setting the following values in FLIP.
+
+- select the checkbox BLJB
+- set 'Device BSB' to a value other than 0
+- set 'Device SBV' to E0 (Hex)
+- press the 'Set' button to store these values
+
+ 
+ 

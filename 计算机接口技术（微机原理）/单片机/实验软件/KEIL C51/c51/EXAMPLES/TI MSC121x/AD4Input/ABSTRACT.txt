@@ -1,0 +1,38 @@
+The AD4INPUT program reads the four input pairs AIN0-AIN1,
+AIN2-AIN3, AIN4-IN5, AIN6-AIN7 of the MSC121x and outputs 
+the values along with other A/D relevant information via 
+the serial interface.
+
+This example shows a simple method to convert the A/D HEX
+values into a voltage value that is more readable.  The 
+algorithm uses only long arithmetic and avoids any loss of
+precision as it would be the case when using single precision
+floating point arithmetic.
+
+Also shown is the usage of the uVision2 simulator. The file
+Debugger.INI defines a signal function that creates a voltage
+ramp on AIN0-AIN1. Toolbox buttons are defined for easy access
+to this signal function.  The other analog inputs are set to 
+random input voltages.
+
+The example is available in three targets:
+
+ISD51 - DAQ - 1.84MHz:
+generates the program for the TI MSC1210-DAQ-EVM board that uses
+1.8432MHz XTAL.  It can be debugged using the ISD51 In-System
+Debugger with 9600bps communication baudrate.
+(Note: The XTAL is given in the Options - C51 dialog)
+
+ISD51 - EVM - 11.0592MHz:
+generates the program for the TI MSC1210 EVM board that uses
+11.0592MHz XTAL.  It can be debugged using the ISD51 In-System
+Debugger with 9600bps communication baudrate.
+
+Simulator:
+generates the program for running without ISD51 (at 11.0592MHz)
+or with testing with the uVision2 Simulator.
+
+
+
+
+

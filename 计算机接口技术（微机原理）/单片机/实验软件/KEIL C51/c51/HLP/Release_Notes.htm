@@ -1,0 +1,847 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<title>C51 Release Notes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>p            { font-size: 10pt; font-family: Verdana }
+.LI2         { margin-top: 6px; margin-bottom: 6px }
+.Release     { font-weight: bold; background-color: #cccccc; padding: 6px }
+.ToolT       { font-size: 8pt; color: #808080 }
+.TinyT       { font-size: 8pt; text-align: center }
+ul           { font-size: 10pt; font-family: Verdana; list-style-type: square }
+ol           { font-size: 10pt; font-family: Verdana }
+h1           { font-weight: bold; font-size: 18pt; color: #000080; font-family: Verdana; 
+               text-align: center; margin-right: 3px }
+h2           { font-weight: bold; font-size: 14pt; color: #000080; font-family: Verdana; 
+               background-color: #cccccc; margin-top: 24px; margin-bottom: 3px; 
+               padding: 6px }
+h3           { font-weight: bold; font-size: 10pt; font-family: Verdana; background-color: 
+               #cccccc; margin-top: 24px; margin-bottom: 3px; padding: 6px }
+pre          { font-size: 10pt; font-family: Courier New; background-color: #ccffcc; 
+               margin-left: 24px; margin-right: 24px }
+li           { margin-top: 12px; margin-bottom: 6px }
+</style>
+<meta content="Microsoft FrontPage 4.0" name="GENERATOR">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+
+<META content="Microsoft FrontPage 4.0" name=GENERATOR>
+</head>
+
+<BODY>
+<H1>Release Notes for C51<BR><FONT size=2>8051 Development Tool Kits</FONT> 
+</H1>
+<P align=center>This file contains release notes and last minute changes that 
+are not found in the printed manuals. </P>
+<P class=TinyT>Information in this file, the accompany manuals, and software 
+is<BR>Copyright © Keil Software, Inc and Keil Elektronik GmbH.<BR>All rights 
+reserved. </P>
+<HR>
+
+<H2>Contents</H2>
+<OL>
+  <LI class=LI2><A 
+  href="#WhatsNew">What's New in C51</A> 
+  <LI class=LI2><A 
+  href="#ExamplePrograms">Example Programs</A> 
+  <LI class=LI2><A 
+  href="#DeviceDatabase">Device Database™</A> 
+  <LI class=LI2><A 
+  href="#PeripheralSimulation">Peripheral Simulation</A> 
+  <LI class=LI2><A 
+  href="#TechnicalSupport">Technical Support</A> 
+  <LI class=LI2><A 
+  href="#ContactDetails">Contact Details</A> </LI></OL>
+
+<H2><A name=WhatsNew></A>What's New in C51</H2>
+<P>The following sections list the changes instituted in each release of the C51 
+toolset.</P>
+
+
+<h3>C51 Version 7.07 Release</h3>
+
+<ul>
+  <li><font color="#800000" size="1"><b>[uVision2 IDE]</b></font><br>
+    Added a new dialog for project component management under <b>Project - Components, Environment
+    and Books</b>.  This dialog allows you to change the order of project targets and file groups.
+  </li>
+  
+  <li><font color="#800000" size="1"><b>[uVision2 Debugger/Simulator]</b></font><br>
+    Added simulation for the following devices:
+    <ul>
+      <li class="LI2">Atmel AT89C5131 (except USB)</li>
+      <li class="LI2">Atmel AT89C5132 (except A/D Converter, USB, Audio Interface, MMC Controller, and IDE/ATAPI Interface)</li>
+      <li class="LI2">Cygnal C8051F300</li>
+      <li class="LI2">Cygnal C8051F301</li>
+      <li class="LI2">Cygnal C8051F302</li>
+      <li class="LI2">Cygnal C8051F303</li>
+      <li class="LI2">Cygnal C8051F304</li>
+      <li class="LI2">Cygnal C8051F305</li>
+      <li class="LI2">Cygnal C8051F310</li>
+      <li class="LI2">Cygnal C8051F311</li>
+      <li class="LI2">Cygnal C8051F320</li>
+      <li class="LI2">Cygnal C8051F321</li>
+      <li class="LI2">Cygnal C8051F330</li>
+      <li class="LI2">Cygnal C8051F331</li>
+      <li class="LI2">TI MSC1210 (I&#61447;C Simulation)</li>
+      <li class="LI2">TI MSC1211</li>
+      <li class="LI2">TI MSC1212</li>
+    </ul>
+  </li>
+  
+  <li><font color="#800000" size="1"><b>[uVision2 Debugger/Simulator]</b></font><br>
+    Corrected the following simulation problems:
+    <ul>
+      <li>
+        Analog Devices ADuC831: The internal RC clock (32768 Hz) is used for the watchdog timer.
+        This was incorrectly documented in the first datasheets.
+      </li>
+
+      <li>
+        Dallas Semiconductor Devices: The Watchdog EWT reset is now performed only on power-up
+        reset and not on every reset.
+      </li>
+      
+      <li>
+        Winbond Devices: The Watchdog EWT reset is now performed only on power-up reset and not
+        on every reset.
+      </li>
+    </ul>
+  </li>
+  
+  <li><font color="#800000" size="1"><b>[uVision2 Debugger]</b></font><br>
+    Corrected problems viewing local variables in projects linked with the LX51 Extended Linker/Locater.
+  </li>
+    
+  <li><font color="#800000" size="1"><b>[C51 Compiler]</b></font><br>
+    Corrected problems in Dallas Contiguous Mode with *(*ptr++) type constructs and
+    far pointer initialization at file level.
+  </li>
+
+  <li><font color="#800000" size="1"><b>[CX51 Compiler]</b></font><br>
+    Corrected problems for Philips MX when with far/generic pointer assignments are reuse in the next statement, for example:
+<pre>  unsigned char far * far pbMemory;
+  unsigned long volatile ulAddress;
+
+  pbMemory += 1L;          // uses ?C?PSTPTR to save the result
+  ulAddress = pbMemory;    // uses wrong result of the previous ?C?PSTPTR library function</pre></li>
+  
+  <li><font color="#800000" size="1"><b>[C51 Compiler]</b></font><br>
+    Corrected problems with SRC output on extended 8051 platforms like Dallas Contiguous Mode or Philips MX.
+  </li>
+   
+  <li><font color="#800000" size="1"><b>[C51 Compiler]</b></font><br>
+    Added the ability to locate <b>far</b> memory variables in HDATA memory using the <b>_at_</b> keyword.
+  </li>
+
+  <li><font color="#800000" size="1"><b>[LX51 Linker]</b></font><br>
+    Improved memory allocation in linker code packing to reduce the size of segment gaps
+    when the <b>SEGMENTS</b> directive is used with assembler segments.
+  </li>
+  
+  <li><font color="#800000" size="1"><b>[Ax51 Macro Assembler]</b></font><br>
+    Added the <b>DEFINE</b> command line directive.  This directive allows you to supply C preprocessor
+    on the command line.  The syntax is identical to that of the Cx51 Compiler.
+  </li>
+
+  <li><font color="#800000" size="1"><b>[Monitor-390]</b></font><br>
+    Corrected problems with xdata memory updates.
+    Added support for Dallas 400 and Dallas 5240 devices.
+  </li>
+
+  <li><font color="#800000" size="1"><b>[ISD51 In-System Debugger - Version 2]</b></font><br>
+    Corrected a problem that caused serial break to fail when configured for non-Flash breakpoints.
+    Added example for TI MSC121x devices in the <b>\KEIL\C51\EXAMPLES\TI MSC121X</b> folder.
+  </li>
+</ul>
+
+
+
+<H3>C51 Version 7.06 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[Flash Monitor-51 Version 
+  4]</B></FONT><BR>Added configurations for Atmel AT89C51RD2 and AT89C51SND1. 
+  <LI><FONT color=#800000 size=1><B>[Flash Monitor-51 Version 
+  4]</B></FONT><BR>Corrected a problem that caused Break on Serial Interrupt to 
+  fail when the monitor was generated using older versions of the tools. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 
+  Debugger/Simulator]</B></FONT><BR>Added simulation for the following devices: 
+  <UL>
+    <LI>Atmel AT89C51RD2, AT89C51ED2, and AT89C51ID2. 
+    <LI>Dallas 80C530. 
+    <LI>Philips 8xC652 and 8xC654. </LI></UL>
+  <LI><FONT color=#800000 size=1><B>[uVision2 
+  Debugger/Simulator]</B></FONT><BR>Corrected simulation problems with the CCU 
+  Timer on the Philips P89LPC932. 
+  <LI><B><FONT color=#800000 size=1>[uVision2 
+  Debugger/Simulator]</FONT></B><BR>Added context menu commands in the Source 
+  Window and Disassembly Window for Set Program Counter, Show Disassembly, and 
+  Show Source Code. 
+  <LI><B><FONT color=#800000 size=1>[Cx51 Compiler]</FONT></B><BR>Corrected a 
+  problem that caused <B>far</B> pointer comparisons to NULL to fail when the 
+  statement immediately following re-used the same pointer. 
+  <LI><B><FONT color=#800000 size=1>[Cx51 Compiler]</FONT></B><BR>Corrected a 
+  problem with the <B>NOINTPROMOTE</B> directive that caused the compiler to 
+  generate incorrect code. This problem was introduced in C51 V7.04 in an effort 
+  to correct another integer promotion problem. </LI></UL>
+<H3>C51 Version 7.05 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[ISD51 In-System Debugger - Version 
+  2]</B></FONT><BR>Added several new features including: 
+  <UL>
+    <LI>Real-Time Flash Breakpoints using In-System Application Programming 
+    (IAP), 
+    <LI>User I/O via serial debugging interface, 
+    <LI>Address range support in the memory verify function. </LI></UL>
+  <LI><FONT color=#800000 size=1><B>[Flash Monitor-51 - Version 
+  4]</B></FONT><BR>A new variant of Monitor-51 is included in the PK51 
+  Professional Developers Kit. The new Monitor runs on unmodified Flash Devices 
+  that provide IAP programming. It requires no von-Neumann memory and can run 
+  from the on-chip resources of standard 8051 Flash Devices. The Flash Monitor 
+  includes Flash download and real-time breakpoint support. Currently the 
+  Monitor is pre-configured for the Atmel T89C51CC01, T89C51RC2, and T89C51RD2 
+  but it can easily be configured for other devices. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 
+  Debugger/Simulator]</B></FONT><BR>Added simulation support for the Atmel 
+  T89C51CC02, T8xC5115, AT89C1051, AT89C1051U, AT89C2051, and AT89C4051 devices. 
+
+  <LI><FONT color=#800000 size=1><B>[uVision2 
+  Debugger/Simulator]</B></FONT><BR>Added simulation support for the Philips 
+  P8xC51Rx2, P8xC51RB2H/RC2H/RD2H, and P8xC3xX2 devices. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 
+  Debugger/Simulator]</B></FONT><BR>Corrected a simulation problem with the 
+  AT89S8252 EEPROM and Dual DPTR access. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 
+  Debugger/Simulator]</B></FONT><BR>Corrected a simulation problem with the 
+  ADuC832 ADC DMA Stop. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 Debugger]</B></FONT><BR>Corrected 
+  a problem with local variables not displaying in the watch window - locals 
+  tab. 
+  <LI><FONT color=#800000 size=1><B>[LX51 Extended 
+  Linker]</B></FONT><BR>Corrected a potential problem with linker code packing 
+  on optimize level 10 and 11. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  erroneous combining of identical end sequences of while (1) loops. </LI></UL>
+<H3>C51 Version 7.04 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[Philips MX Device 
+  Support]</B></FONT><BR>Changed INIT_MX.A51. Now, initialization is enabled for 
+  <B>far variables</B> by default. <B>far variables</B> may now be absolutely 
+  located with <B>_at_</B>. 
+  <LI><FONT color=#800000 size=1><B>[MON390 Monitor for Dallas Contiguous 
+  Mode]</B></FONT><BR>Corrected problems with breakpoints above 64KB code. 
+  Corrected a problem with single-stepping in switch/case statements. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 Target 
+  Debugger]</B></FONT><BR>Added call stack display and step out command for 
+  classic 8051 devices. Added <A href="http://www.keil.com/epm900">EPM900</A> 
+  Emulator/Programmer support for Philips 89LPC9xx Devices. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  integer promotion problems with combined pointer and char arithmetic. For 
+  example: <PRE>int xdata *Test (int xdata * adr, unsigned char a, unsigned char b)  {
+  return adr+(a+b);       // did not promote 'a+b' to int
+}</PRE>
+  <LI><FONT color=#800000 size=1><B>[A51 Assembler, AX51 
+  Assembler]</B></FONT><BR>Added support for C-style bitwise operators (| (OR), 
+  &amp; (AND), ~ (NOT)) to the A51 Assembler and AX51 assembler. These operators 
+  are useful for common C and assembler header files that use <B>#define</B> 
+  statements. </LI></UL>
+<H3>C51 Version 7.03a Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[RTX51 Tiny2]</B></FONT><BR>Corrected 
+  os_wait problems on K_IVL, K_TMO+K_SIG events. Refer to 
+  <B>KEIL\C51\RTX51TINY2\README.TXT</B> for details. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 
+  Debugger/Simulator]</B></FONT><BR>Added <B>Cygnal 80C51F02x</B> device 
+  simulation. </LI></UL>
+<H3>C51 Version 7.03 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  incorrect warnings on enum mismatches. 
+  <LI><FONT color=#800000 size=1><B>[LX51 Linker]</B></FONT><BR>Corrected fixup 
+  error messages on Dallas 390 target. </LI></UL>
+<H3>C51 Version 7.02 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[LX51 Linker]</B></FONT><BR>Corrected 
+  problems with linker code packing and code banking and a potential problem 
+  with the bank switch table location in banking mode 4. 
+  <LI><FONT color=#800000 size=1><B>[LX51 Linker]</B></FONT><BR>Added the 
+  <B>SPEEDOVL</B> directive to makes LX51 and BL51 compatible for data 
+  overlaying. Detailed information on <B>SPEEDOVL</B> is available in the 
+  Assembler/Utilities User's Guide, Chapter 9, Control Summary. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker, LX51 Linker, 
+  Libraries]</B></FONT><BR>Added support for Mentor M8051EW Memory Extension 
+  that provides access to 1MB ROM and 1MB RAM. The <B>IBANKING</B> directive 
+  supports the on-chip banking hardware on M8051EW-based devices and is 
+  available in both the BL51 Linker and the LX51 Linker. Additionally, LX51 may 
+  be configured with the L51IBANK.A51 file that supports a 64KB bank for 
+  constants and 16 x 64KB banks for <B>far </B>variables. Refer to the 
+  <B>\C51\EXAMPLES\M8051EW</B> folder for example code and additional 
+  information. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler, CX51 
+  Compiler]</B></FONT><BR>Corrected a potential problem with generic and far 
+  pointer comparisons to a NULL pointer constant. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler, CX51 
+  Compiler]</B></FONT><BR>Enhanced warning messages for <B>enum</B> and 
+  <B>memory-typed pointer</B> assignments. 
+  <LI><FONT color=#800000 size=1><B>[Monitor for Dallas Contiguous 
+  Mode]</B></FONT><BR>Released MON390 which provides a target monitor for the 
+  Dallas Contiguous Mode. Detailed information, pre-configured Monitor versions, 
+  and example programs may be found in the <B>\C51\MON390</B> folder. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 
+  Debugger/Simulator]</B></FONT><BR>Added simulation for several new devices 
+  (Atmel 89C51Ix and the Cygnal 80C51F02x). The Cygnal 80C51F02x devices are 
+  currently in beta status. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]<BR></FONT></B>Added Flash 
+  menu to uVision2. This menu provides a direct interface to external Flash 
+  programming tools like Philips FlashMagic. Flash programming commands are 
+  configured under <B>Options for Target &shy; Utilities</B>. 
+  <LI><FONT color=#800000 size=1><B>[RTX51 Tiny Version 
+  2]</B></FONT><BR>Released RTX51 Tiny Version 2. This release contains several 
+  new enhancements like code banking support and cooperative task switching. 
+  </LI></UL>
+<H3>C51 Version 7.01 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added support 
+  for Extended Call Return Mode (ECRM) available in the new Philips 51MX 
+  devices. This mode is configured in <B>START_MX.A51</B>. It enhances the code 
+  density of the <B>ROM(HUGE)</B> memory model. This optimization requires that 
+  <A href="http://www.keil.com/support/docs/2214.htm">Linker Code Packing</A> is 
+  enabled. Once enabled, ACALL, LCALL, and ECALL instructions are optimized. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected minor 
+  problems in the <B>ROM(HUGE)</B> memory model. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added several 
+  new devices to the uVision2 device database. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  peripheral simulation for the new Philips 89LPC932. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  peripheral simulation for the second UART in Winbond devices. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  peripheral simulation for the four priority levels in the new version of the 
+  Philips 8xC552 device. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  problems in <B>L51_BANK.A51</B> with regards to variable code banking on 
+  classic 8051 devices that used standard banking hardware. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected a 
+  syntax problem (that was introduced in Version 7.00) in the <B>setjmp.h</B> 
+  header file. 
+  <LI><FONT color=#800000 size=1><B>[LX51 Linker]</B></FONT><BR>Validated LX51 
+  <A href="http://www.keil.com/support/docs/2214.htm">Linker Code Packing</A> 
+  for Philips 51MX and Dallas 390/400 devices. 
+  <LI><FONT color=#800000 size=1><B>[BETA RELEASE]</B></FONT><BR>Released RTX51 
+  Tiny Version 2 BETA with the following new features and enhancements: 
+  <UL>
+    <LI>Code Banking Support 
+    <LI>Explicit Task Switch Function 
+    <LI>RUN Status Flag 
+    <LI>CPU IDLE Mode Support 
+    <LI>Hooks for Adding User Code to the RTX51 Tiny Hardware Timer Interrupt 
+    <LI>Improved Handling for Interval Events 
+    <LI>Reduced Code and Data Size 
+    <LI>Improved Performance </LI></UL>
+  <LI><FONT color=#800000 size=1><B>[BETA RELEASE]</B></FONT><BR>Released MON390 
+  BETA which provides a target monitor for the Dallas Contiguous Mode. Detailed 
+  information, pre-configured Monitor versions, and example programs may be 
+  found in the <B>\C51\MON390</B> folder. </LI></UL>
+<H3>C51 Version 7.00 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added the 
+  <B>ROM(HUGE)</B> directive which provides support for the Philips 51MX Linear 
+  Programming Model. Select this option in uVision2 using Options for 
+  Target-Code Rom Size: Huge: 8MB program. More information is available in <A 
+  href="http://www.keil.com/appnotes/docs/apnt_160.asp">Application Note 
+  160</A>: Programming the Philips 51MX Architecture with the Keil PK51. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added the 
+  ability to perform 24-bit arithmetic calculations using <B>far</B> pointers. 
+  For more information, refer to <A 
+  href="http://www.keil.com/appnotes/docs/apnt_160.asp">Application Note 
+  160</A>: Programming the Philips 51MX Architecture with the Keil PK51. 
+  <LI><FONT color=#800000 size=1><B>[ISD51]</B></FONT><BR>Released <A 
+  href="http://www.keil.com/c51/isd51.htm">ISD51 (In-System Debugger)</A>: a new 
+  target debugger that may be linked to user applications. Refer to 
+  <B>\C51\ISD51</B> for more information. 
+  <LI><FONT color=#800000 size=1><B>[LX51 Linker]</B></FONT><BR>Added a new LX51 
+  Linker-Level Optimization called <A 
+  href="http://www.keil.com/support/docs/2214.htm">Linker Code Packing</A>. This 
+  optimization analyzes and reduces total program size. In uVision2, enable this 
+  optimization in Options for Target - C51: Code Optimization: Linker Code 
+  Packing. This optimization is available for all projects even those that use 
+  code banking. Note that this optimization is still a BETA RELEASE for the 
+  Philips 51MX and Dallas 390/400 devices. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added two new 
+  optimizations to the C51 Compiler that reduce program code size. In uVision2, 
+  enable these optimization in Options for Target - C51: Code Optimization: 
+  Level. 
+  <LI><FONT color=#800000 size=1><B>[Lx51 Linker]</B></FONT><BR>Added Linker <A 
+  href="http://www.keil.com/support/docs/148.htm">Disassembly Output File</A>. 
+  This output file contains the complete disassembly of your application 
+  complete with intermixed high-level source and all addresses. In uVision2, 
+  enable this option in Options for Target - Listing - Linker Code Listing. 
+</LI></UL>
+<H3>C51 Version 6.23 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  problems with register optimizations in while loops. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  problems implicitly casting types in ternary statements. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Enhanced 
+  performance of the run-time library and pointer operations for the Dallas 
+  Semiconductor 80C390 Contiguous Mode. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added ability 
+  to locate XDATA and CODE in regions other than 00:xxxx for the Dallas 
+  Semiconductor 80C390. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  various problems with initializations with Lx51 and bit objects. 
+  <LI><FONT color=#800000 size=1><B>[A51 Assembler]</B></FONT><BR>Corrected 
+  problems <A href="http://www.keil.com/support/docs/2202.htm">synchronizing MPL 
+  Macros</A> while debugging. 
+  <LI><FONT color=#800000 size=1><B>[OHx51 Object File 
+  Converter]</B></FONT><BR>Added the <B>MERGE32K</B> directive which generates 
+  merged HEX files for hardware with 32K common areas. Refer to the Ax51 User's 
+  Guide, Chapter 9, Bank Switch Configuration for more information. In uVision2, 
+  select this option in Options for Target - Output - Merge32K HEX File. 
+  <LI><FONT color=#800000 size=1><B>[OHx51 Object File 
+  Converter]</B></FONT><BR>Corrected problems with Lx51 HEX file generation. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  simulation support for Analog Devices MicroConverters. 
+  <LI><FONT color=#800000 size=1><B>[BETA RELEASE]</B></FONT><BR><A 
+  href="http://www.keil.com/c51/isd51.htm">ISD51 In-System Debugger</A> is a new 
+  target debugger that may be linked to user applications. Refer to 
+  <B>\C51\ISD51</B> for more information. 
+  <LI><FONT color=#800000 size=1><B>[BETA RELEASE]</B></FONT><BR>Added a new 
+  LX51 Linker-Level Optimization called <A 
+  href="http://www.keil.com/support/docs/2214.htm">Linker Code Packing</A>. This 
+  optimization analyzes and reduces total program size. In uVision2, enable this 
+  optimization in Options for Target - C51: Code Optimization: Linker Code 
+  Packing. 
+  <LI><FONT color=#800000 size=1><B>[BETA RELEASE]</B></FONT><BR>Added two new 
+  optimizations to the C51 Compiler that reduce program code size. In uVision2, 
+  enable these optimization in Options for Target - C51: Code Optimization: 
+  Level. 
+  <LI><FONT color=#800000 size=1><B>[BETA RELEASE]</B></FONT><BR>Added Linker <A 
+  href="http://www.keil.com/support/docs/148.htm">Disassembly Output File</A>. 
+  This output file contains the complete disassembly of your application 
+  complete with intermixed high-level source and all addresses. In uVision2, 
+  enable this option in Options for Target - Listing - Linker Code Listing. 
+</LI></UL>
+<H3>C51 Version 6.22 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  several problems that were introduced with Dynamic Register Allocation in 
+  Version 6.21. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added new 
+  examples for the const far memory type. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added support 
+  for the extended stack in the Analog Devices MicroConverters. 
+  <LI><FONT color=#800000 size=1><B>[Lx51 Linker]</B></FONT><BR>Added examples 
+  for <B>far const</B> memory with classic 8051 devices in 
+  <B>\C51\EXAMPLES\FARMEMORY\1MB CONSTANTS ON CLASSIC 8051</B>. These examples 
+  show how to use memory banking with text constants. </LI></UL>
+<H3>C51 Version 6.21 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  several minor problems. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added the 
+  <B>MODDA</B> directive and library support for the Dallas 390 Math 
+  Accelerator. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added <A 
+  href="http://www.keil.com/c51/new_62x.htm">dynamic register allocation</A> 
+  optimization which reduces program size and data usage. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added <A 
+  href="http://www.keil.com/c51/new_62x.htm">switch/if path combination</A> 
+  optimization. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added 
+  optimization for <A href="http://www.keil.com/c51/new_62x.htm">long 0 
+  comparisons</A>. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  several optimizer problems that were introduced in C51 V6.20. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker]</B></FONT><BR>Corrected 
+  several minor problems. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  simulation support for the Dallas Semiconductor 80C390 peripherals. </LI></UL>
+<H3>C51 Version 6.20 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Enhanced the 
+  <B>L51_BANK.A51</B> file to support even larger code banking programs (up to 
+  4MB). 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added enhanced 
+  optimization for register variables. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added variable 
+  banking support for classic 8051 devices. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added debug 
+  dialogs for classic 8051 devices. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added four 64KB 
+  user memory areas (S:, T:, U:, and V:) that may be used when debugging. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added functions 
+  or for special simulation capabilities (E<SUP>2</SUP>PROM, I<SUP>2</SUP>C 
+  communication, and so on). 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Improved the 
+  Version Control (SVCS) Connection and corrected several problems with 
+  environment variables. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added several 
+  new items to the Help Menu. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added several 
+  project management enhancements. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added numerous 
+  chips to the Device Database. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  simulation support for the on-chip peripherals of the following devices 
+  (complete information is available in the µVision2 Help Menu - Simulated 
+  Peripherals item.): 
+  <UL>
+    <LI class=LI2>Infineon C504. 
+    <LI class=LI2>Infineon C505C. 
+    <LI class=LI2>Infineon C508. 
+    <LI class=LI2>Infineon C515A. </LI></UL>
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added new 
+  debugging dialogs for MON51. </LI></UL>
+<H3>C51 Version 6.14 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added examples 
+  to demonstrate the Dallas 390 contiguous mode (\C51\EXAMPLES\DALLAS 390). 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added examples 
+  to demonstrate the Philips 51MX architecture 16MB support 
+  (\C51\EXAMPLES\PHILIPS 80C51MX). 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added 
+  <B>far</B> memory (above 64K) support using the \C51\LIB\XBANKING.A51 
+  configuration file. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added 
+  <B>far</B> memory examples for the 16MB memory space of the Analog Devices 
+  ADuC812 and for the AtmelWM 89C51RD E2PROM area (\C51\EXAMPLES\FARMEMORY). 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added macros 
+  for absolute <B>far</B> memory access in <B>ABSACC.H</B>. 
+  <LI><FONT color=#800000 size=1><B>[Cx51 Compiler]</B></FONT><BR>Added the 
+  <B>INCDIR</B> directive <FONT size=2>where you may specify include 
+  paths.</FONT> 
+  <LI><FONT color=#800000 size=1><B>[Ax51 Assembler]</B></FONT><BR>Added the 
+  <FONT size=2><B>INCDIR</B> directive where you may specify include 
+  paths.</FONT> 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  simulation support for the on-chip peripherals of the following devices: 
+  <UL>
+    <LI class=LI2>Infineon C509. 
+    <LI class=LI2>Infineon C517A. 
+    <LI class=LI2>Infineon C515C. </LI></UL></LI></UL>
+<H3>C51 Version 6.12 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Removed the 
+  256-symbol limit from OMF51 object files. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Extended the 
+  length of C variable names to 256 characters. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  simulation support for the on-chip peripherals of the following devices: 
+  <UL>
+    <LI class=LI2>Atmel WM T87C5111. 
+    <LI class=LI2>Atmel WM T87C5112. </LI></UL></LI></UL>
+<H3>C51 Version 6.11 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added the 
+  <B>ROM(512K)</B> and <B>ROM(D16M)</B> directives to select the contiguous 
+  modes of the Dallas Semiconductor 80C390. This directive must be used with the 
+  <B>OMF2</B> directive. Refer to <B>\C51\EXAMPLES\DALLAS390\README.TXT</B> for 
+  more information. </LI></UL>
+<H3>C51 Version 6.10 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Finalized 
+  support for the Philips 80C51MX. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Finalized 
+  support for the Dallas Semiconductor 80C390. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added banking 
+  mode 4 to <B>L51_BANK.A51</B> for user-provided bank switching macros. 
+</LI></UL>
+<H3>C51 Version 6.03 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[BETA RELEASE]</B></FONT><BR>Added support 
+  for the Philips 80C51MX, Dallas Semiconductor 80C390, and LX51 Extended 
+  Linker. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added the 
+  <B>OMF2</B> directive which causes the C51 Compiler to output object files for 
+  the LX51 Extended Linker. This new object file format supports 16MB code space 
+  for constants and 16MB xdata space and is required for extended 8051 device 
+  variants like the Analog Devices ADuC812, Dallas 390, and others. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker]</B></FONT><BR>Added a new 
+  warning if your program CODE or XDATA exceeds the specified memory area size. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  simulation support for the on-chip peripherals of the following devices: 
+  <UL>
+    <LI class=LI2>Dallas 320/323/520/530. 
+    <LI class=LI2>Philips 80C552/554. 
+    <LI class=LI2>Temic 89C51RD2 (including on-chip E<SUP>2</SUP>PROM). 
+    <LI class=LI2>Temic 80C51CC02. </LI></UL>
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Integrated 
+  debugger interface for the Triscend E5 CSoC. Refer to 
+  <B>\C51\HLP\README_FOR_TE5_UV2.TXT</B> for more information. </LI></UL>
+<H3>C51 Version 6.02 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Corrected 
+  several minor problems with Optimizer Level 9. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  simulation support for the on-chip peripherals of the following devices: 
+  <UL>
+    <LI class=LI2>Analog Devices ADuC812. 
+    <LI class=LI2>Philips LPC Devices. </LI></UL>
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  simulation support for multiple DPTR registers. </LI></UL>
+<H3>C51 Version 6.01 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added the 
+  <B>RET_ISTK</B>, <B>RET_PSTK</B>, and <B>RET_XSTK</B> directives which unload 
+  the on-chip stack and use the reentrant stack for storing return 
+  addresses.<BR><BR>Refer to <A 
+  href="http://www.keil.com/support/docs/1434.htm">The RET_ISTK Directive</A>, 
+  <A href="http://www.keil.com/support/docs/1435.htm">The RET_PSTK 
+  Directive</A>, or <A href="http://www.keil.com/support/docs/1436.htm">The 
+  RET_XSTK Directive</A> for more information. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added ANSI 
+  library routines modf, strtod, strtol, and strtoul. Refer to the on-line 
+  compiler manual for more information. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker]</B></FONT><BR>Modified the 
+  <B>CODE</B> and <B>XDATA</B> directives to allow address ranges. For example: <PRE>BL51 my_prog.obj CODE(0x0000-0x3FFF, 0x8000-0xFFFF)</PRE>
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker]</B></FONT><BR>Modified segment 
+  control directives to allow wildcards in segment names. For example: <PRE>BL51 my_file.obj (CODE (?PR?*?my_file (0x100))</PRE>Locates all program 
+  code segments in the module my_file to address 0x100 and up. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added debugger 
+  support for <A href="http://www.keil.com/c51/mon51.htm">MON51</A>. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  simulation support for almost all 40-pin DIP devices (8051FC, RD, RD+, 8052, 
+  and so on). 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added support 
+  for syntax coloring in assembler code. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added&nbsp;item 
+  in the context menu to insert the CPU register definition file. 
+  <LI><FONT color=#800000 size=1><B>[uVision2 IDE]</B></FONT><BR>Added 
+  context-sensitive help for library routines and error messages. To get help 
+  for a library routine, position the cursor on the function and press the 
+  <B>F1</B> key. To get help for an error or warning message, select the message 
+  and press the <B>F1</B> key. </LI></UL>
+<H3>C51 Version 6.00 Release</H3>
+<UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added 3 new 
+  optimizer levels which shrink program size up to 15%. 
+  <UL>
+    <LI class=LI2>Optimize Level 7 (Extended Access Optimization) uses DPTR for 
+    register variables. Pointer and array accesses have been optimized for both 
+    speed and code size. 
+    <LI class=LI2>Optimize Level 8 (Reuse of Common Entry Code) moves common 
+    function entry code to the beginning of a function which saves code memory. 
+    Optimize (8) is the new default optimization level for C51 Version 6.xx. 
+    <LI class=LI2>Optimize Level 9 (Common Block Subroutines) detects and packs 
+    multiple-instruction sequences into subroutines. This optimization is most 
+    efficient on large source files. </LI></UL>
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added specific 
+  header file support for almost all devices. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added 
+  configuration file (<B>\C51\LIB\CONF151.A51</B>) for the Intel 151. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Updated the 
+  enum type to automatically adjust to 8 or 16 bits. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added dual data 
+  pointer support for Atmel devices (AT89S8252). Use the <B>MODA2</B> directive 
+  to enable dual data pointer support. Use the <B>NOMODA2</B> directive to 
+  disable support. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added dual data 
+  pointer support for Philips devices. Use the <B>MODP2</B> directive to enable 
+  dual data pointer support. Use the <B>NOMODP2</B> directive to disable 
+  support. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>Added dual data 
+  pointer support for Temic devices. Use the <B>MODP2</B> directive to enable 
+  dual data pointer support. Use the <B>NOMODP2</B> directive to disable 
+  support. 
+  <LI><FONT color=#800000 size=1><B>[C51 Compiler]</B></FONT><BR>C51 now ensures 
+  that register bank 0 is selected for interrupts declared without the 
+  <B>using</B> attribute. The instruction MOV PSW, #0 is added to these 
+  routines.<BR><BR>Previously, you were required to added the <B>using 0</B> 
+  attribute to high-priority interrupts when low-priority interrupts used a 
+  different register bank. This was the case for RTX51 Full and RTX51 Tiny 
+  applications.<BR><BR>If your application uses only register bank 0, you may 
+  use the <B>ONEREGBANK</B> directive to specify that the C51 compiler does not 
+  generate the additional MOV PSW, #0 instruction. 
+  <LI><FONT color=#800000 size=1><B>[A51 Assembler]</B></FONT><BR>Added C 
+  preprocessor support that expands text before the source file is assembled. 
+  Directives like <B>#if</B>, <B>#else</B>, <B>#endif</B>, and <B>#include</B> 
+  are supported in assembly source code (refer to the C51 User's Guide, Chapter 
+  4). The <B>#include</B> file path is obtained from the <B>C51INC</B> 
+  environment variable. 
+  <LI><FONT color=#800000 size=1><B>[A51 Assembler]</B></FONT><BR>Added the 
+  following predefined Macros: 
+  <UL>
+    <LI class=LI2><B>__FILE__</B>: Name of the file being assembled. 
+    <LI class=LI2><B>__LINE__</B>: Current line number in the file being 
+    assembled. 
+    <LI class=LI2><B>__TIME__</B>: Time when the assembly was started. 
+    <LI class=LI2><B>__DATE__</B>: Date when the assembly was started. 
+    <LI class=LI2><B>__STDC__</B>: Defined to 1. 
+    <LI class=LI2><B>__A51__</B>: Version number of the A51 Assembler (for 
+    example 600 for V6.00). 
+    <LI class=LI2><B>__KEIL__</B>: Defined to 1. </LI></UL>
+  <LI><FONT color=#800000 size=1><B>[A51 Assembler]</B></FONT><BR>Added support 
+  for C-style sfr and sbit declarations. The A51 Assembler now accepts standard 
+  C-style register definition files. This allows you to use the same header 
+  files for your C and assembler source files. The following sfr and sbit 
+  declarations were added: <PRE>sfr P0 = 0x80;
+sbit P0_1 = P0^1;</PRE>
+  <LI><FONT color=#800000 size=1><B>[A51 Assembler]</B></FONT><BR>Added error 
+  output using the <B>__ERROR__</B> directive. For example: <PRE>IF CVAR1LEN &gt; 10
+__ERROR__ &quot;CVAR1 LEN EXCEEDS 10 BYTES&quot;
+ENDIF</PRE>Or using the C-style preprocessor. <PRE>#ifdef TESTVERS &amp;&amp; RELEASE
+#error TESTVERS GENERATED IN RELEASE MODE
+#endif</PRE>
+  <LI><FONT color=#800000 size=1><B>[A51 Assembler]</B></FONT><BR>Added the 
+  <B>INCDIR</B> (abbreviation <B>ID</B>) directive where you may specify the 
+  paths to assembler include files. You may specify one or more paths to search 
+  when a <B>$INCLUDE</B> directive is processed. The search order for 
+  <B>$INCLUDE</B> is: 
+  <UL>
+    <LI class=LI2>Current directory (typically, the folder of the uVision2 
+    project file). 
+    <LI class=LI2>Paths specified with <B>$INCDIR</B>. 
+    <LI class=LI2>Path derived from the bin folder using <B>..\ASM</B> 
+    (<B>\C51\ASM</B>). </LI></UL>For example: <PRE>$INCDIR (C:\C51\ASM)
+A51 STARTUP.A51 INCDIR (C:\C51\INC,C:\MYDIR)</PRE>The search order for 
+  <B>#include</B> is identical to that used by the C51 Compiler. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker]</B></FONT><BR>Added the 
+  <B>DISABLEWARNING</B> directive (abbreviation <B>DW</B>) which allows you to 
+  selectively disable linker warning messages. For example: <PRE>BL51 myfile.obj DISABLEWARNING (1,5)</PRE>Disables warnings 1 and 5. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker]</B></FONT><BR>BL51 now sorts 
+  and locates segments according to their length. This ensures fewer gaps in 
+  memory. Use the <B>NOSORTSIZE</B> directive (abbreviation <B>NOSO</B>) to 
+  disable this feature. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker]</B></FONT><BR>Added the 
+  <B>SPEEDOVL</B> directive (abbreviation <B>SP</B>) which causes the linker to 
+  ignore references to constant segments that start with ?CO?. This speeds up 
+  the overlay process but may result in a lack of warnings with regard to 
+  constant segments. This could lead to problems if you use pointers to 
+  functions and do not manually specify the call tree references to the linker. 
+  Refer to <A href="http://www.keil.com/support/docs/1445.htm">SPEEDOVL 
+  Directive</A> and <A 
+  href="http://www.keil.com/appnotes/docs/apnt_129.asp">Application Note 
+  129</A>: Function Pointers in C51 for more details.<BR><BR>This directive may 
+  be useful for applications with complex pointer to function tables. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker]</B></FONT><BR>Added the 
+  <B>RECURSIONS</B> directive (abbreviation <B>RC</B>) which allows you to 
+  specify the maximum number of recursive calls allowed before the linker 
+  aborts. The default number of recursions allowed is 10.<BR><BR>A recursive 
+  call generates the following linker warning: <PRE>*** WARNING L13: RECURSIVE CALL TO SEGMENT</PRE>When the maximum number 
+  of recursions is exceeded, the linker responds with the following error: <PRE>FATAL ERROR 232: APPLICATION CONTAINS TOO MANY RECURSIONS.</PRE>To use 
+  this directive, enter the following on the linker command line or in the Misc 
+  box in uVision2. <PRE>BL51 test.obj RECURSIONS (100)</PRE>Note that the linker may run a long 
+  time to detect all recursions and remove the references. Unless you have 
+  specific reasons to change this setting, you should leave it at the default 
+  level of 10. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker - Code 
+  Banking]</B></FONT><BR>Added the <B>NOAJMP</B> directive (abbreviation 
+  <B>NOAJ</B>) which&nbsp;disables use of the AJMP instruction in the inter-bank 
+  jump table in code banking programs. This option is required for 8051 
+  derivatives which do not support the AJMP instruction. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker - Code 
+  Banking]</B></FONT><BR>Added the <B>NOINDIRECTCALL</B> directive (abbreviation 
+  <B>NOIC</B>) which specifies that function pointers do not access functions 
+  outside the current code bank (in code banking programs). By default, in code 
+  banking programs the BL51 Linker inserts inter-bank calls into the call table 
+  for functions called through a function pointer. If your application uses 
+  function pointers and if you can ensure that indirect calls never cross a code 
+  bank you may use the <B>NOINDIRECTCALL</B> directive to save space in the call 
+  table.<BR><BR>Refer to <A href="http://www.keil.com/support/docs/1059.htm">The 
+  Code Banking Mechanism</A> for more information about the scheme used by the 
+  BL51 Linker for code banking. 
+  <LI><FONT color=#800000 size=1><B>[BL51 Linker - Code 
+  Banking]</B></FONT><BR>Added the <B>NOJMPTAB</B> directive (abbreviation 
+  <B>NOJT</B>) which specifies that the call tree is not created for code 
+  banking applications. This feature is provided for developers who will create 
+  their own code banking scheme. This directive modifies the behavior of the 
+  BL51 Linker as follows: 
+  <UL>
+    <LI class=LI2>The L51_BANK.A51 code banking logic file is not required. 
+    <LI class=LI2>The jump and call instructions are not modified for banked 
+    functions. 
+    <LI class=LI2>No warnings are generated if a jump or call is made to another 
+    code bank. </LI></UL>If you use this directive you must ensure that the proper 
+  bank is selected before a call is performed. The BL51 Linker no longer selects 
+  the code bank. </LI></UL>
+<H2><A name=ExamplePrograms></A>Example Programs</H2>
+<P>Example programs included in the <B>\C51\EXAMPLES</B> folder demonstrate how 
+to use the uVision2 Project Manager and Debugger (see the uVision2 Quick Start 
+Guide for details). Please refer to these if you are new to the tools and want 
+to get started quickly. </P>
+<H2><A name=DeviceDatabase></A>Device Database™</H2>
+<P>A unique feature of the Keil uVision2 IDE is the <A 
+href="http://www.keil.com/dd">Device Database™</A> which contains information 
+about more than 400 supported microcontrollers. When you create a new uVision2 
+project and select the target chip from the database, uVision2 sets all 
+assembler, compiler, linker, and debugger options for you. The only option you 
+must configure is the memory map. </P>
+<P>As new devices become available, they are added to the database along with 
+data sheets and header files. For information about adding your own chips to the 
+database or about creating your own personal databases refer to the following 
+knowledgebase articles. </P>
+<UL>
+  <LI class=LI2><A href="http://www.keil.com/support/docs/1421.htm">Adding 
+  Custom Parts to the Device Database</A> 
+  <LI class=LI2><A href="http://www.keil.com/support/docs/1645.htm">Creating 
+  Custom Databases</A> </LI></UL>
+<H2><A name=PeripheralSimulation></A>Peripheral Simulation</H2>
+<P>The uVision2 Debugger provides <A 
+href="http://www.keil.com/uvision2/what_is_sim.htm">complete simulation</A> for 
+the CPU and on-chip peripherals of most embedded devices. To discover which 
+peripherals of a device are supported, in uVision2 select the Simulated 
+Peripherals item from the Help menu. You may also use the web-based <A 
+href="http://www.keil.com/dd">Device Database™</A>. We are constantly adding new 
+devices and simulation support for on-chip peripherals so be sure to check 
+Device Database™ often.</P>
+<H2><A name=TechnicalSupport></A>Technical Support</H2>
+<P>At Keil Software, we are dedicated to providing you with the best development 
+tools and technical support. That's why we offer numerous ways you can get the 
+technical support you need to complete your embedded projects. </P>
+<UL>
+  <LI class=LI2><A href="http://www.keil.com/support"><B>Technical Support 
+  Knowledgebase</B></A><BR>More than 1500 technical support questions and 
+  answers are available in the Support Solutions Knowledgebase. When a new 
+  question arises, it is added to the knowledgebase which is continuously 
+  published to the Web. This enables you to get technical support at times when 
+  our support staff is unavailable. 
+  <LI class=LI2><A href="http://www.keil.com/appnotes"><B>Application 
+  Notes</B></A><BR>Numerous Application Notes help you decipher complex features 
+  and implement robust applications. 
+  <LI class=LI2><A href="http://www.keil.com/download"><B>Example Programs and 
+  Files</B></A><BR>Utility programs, example code, and sample projects are 
+  regularly added to the Download File section of the web site. 
+  <LI class=LI2><A href="http://www.keil.com/discuss"><B>Discussion 
+  Forum</B></A><BR>Post questions, comments, and suggestions to the Keil 
+  Software Discussion Forum and interact with other Keil users around the world. 
+  </LI></UL>
+<P>Many of the features of our Technical Support Knowledgebase and Web Site are 
+the results of your suggestions. If you have any ideas that will improve them, 
+please <A href="http://www.keil.com/support/feedback.asp">give us your 
+feedback</A>! </P>
+<H2><A name=ContactDetails></A>Contact Details</H2>
+<P>If you experience any problems or have any questions about this product, 
+contact one of our <A href="http://www.keil.com/distis">distributors</A> or 
+offices for assistance. </P>
+<DIV align=center>
+<CENTER>
+<TABLE cellSpacing=0 cellPadding=5 border=0>
+  <TBODY>
+  <TR>
+    <TD 
+    style="BORDER-RIGHT: #800000 1px solid; BORDER-TOP: #800000 1px solid; BORDER-LEFT: #800000 1px solid; BORDER-BOTTOM: #800000 1px solid" 
+    vAlign=top noWrap bgColor=#ffffcc>
+      <P><B>In the USA...<BR></B><BR><B>Keil Software, Inc.</B><BR>1501 10th 
+      Street, Suite 110<BR>Plano, TX&nbsp; 75074<BR>USA<BR><BR>800-348-8051 - 
+      Sales<BR>972-312-1107 - Support<BR>972-312-1159 - Fax<BR><A 
+      href="mailto:sales.us@keil.com"><BR>sales.us@keil.com</A> - Sales E-Mail<A 
+      href="mailto:E-Mailsupport.us@keil.com"><BR>support.us@keil.com</A> - 
+      Support E-mail&nbsp;<BR>&nbsp;&nbsp; </P></TD>
+    <TD vAlign=top noWrap width=30></TD>
+    <TD 
+    style="BORDER-RIGHT: #800000 1px solid; BORDER-TOP: #800000 1px solid; BORDER-LEFT: #800000 1px solid; BORDER-BOTTOM: #800000 1px solid" 
+    vAlign=top noWrap bgColor=#ffffcc>
+      <P><B>In Europe...<BR></B><BR><B>Keil Elektronik GmbH<BR></B>Bretonischer 
+      Ring 15<BR>D-85630 Grasbrunn<BR>Germany<BR><BR>+49 89 456040-0 - 
+      Sales<BR>+49 89 456040-24 - Support<BR>+49 89 468162 - Fax<BR><A 
+      href="mailto:sales.intl@keil.com"><BR>sales.intl@keil.com</A> - Sales 
+      E-Mail<A 
+      href="mailto:E-Mailsupport.intl@keil.com"><BR>support.intl@keil.com</A> - 
+      Support E-Mail<BR>&nbsp;&nbsp; </P></TD></TR></TBODY></TABLE></CENTER></DIV>
+<HR>
+
+<P class=TinyT>Copyright © Keil Software, Inc. and Keil Elektronik GmbH.<BR>All 
+rights reserved.<BR>Visit our web site at <A 
+href="http://www.keil.com/">http://www.keil.com/</A>. </P></BODY></HTML>

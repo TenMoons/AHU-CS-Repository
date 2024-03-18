@@ -1,0 +1,5 @@
+The CSAMPLE program implements a simple addition and subtraction
+calculator.  Numbers and operators are entered via serial I/O.
+
+The CSAMPLE program is available in different targets:
+  Standard:  CSAMPLE example in SMALL model for Simulation

@@ -1,0 +1,47 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src; *.s)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Monitor for Flash), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Configuration),1,0,0
+GRPOPT 2,(Monitor Code),1,0,0
+GRPOPT 3,(Documentation),1,0,0
+
+OPTFFF 1,1,5,1375731712,0,21,46,0,<.\CONFIG.INC><CONFIG.INC> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,6,0,0,0,8,0,0,0,93,3,0,0,0,2,0,0 }
+OPTFFF 2,2,2,150994944,0,0,0,0,<.\INSTALL.A51><INSTALL.A51> 
+OPTFFF 2,3,4,0,0,0,0,0,<.\MON51.LIB><MON51.LIB> 
+OPTFFF 3,4,5,2,0,1,1,0,<.\ABSTRACT.TXT><ABSTRACT.TXT> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,24,0,0,0,47,0,0,0,253,2,0,0,162,1,0,0 }
+
+ExtF <.\CONFIG.INC> 21,46,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,6,0,0,0,8,0,0,0,93,3,0,0,0,2,0,0 }
+ExtF <.\ABSTRACT.TXT> 1,1,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,24,0,0,0,47,0,0,0,253,2,0,0,162,1,0,0 }
+
+TARGOPT 1, (Monitor for Flash)
+ CLK51=40000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,0,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,1,0
+  OPTFL 1,0,1
+  OPTBL 0,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 1,(Data Sheet)<DATASHTS\ATMELWM\80C51RX2.PDF>
+  OPTBL 2,(Architectural Overview)<DATASHTS\ATMELWM\C51_AO.PDF>
+  OPTBL 3,(Hardware Description)<DATASHTS\ATMELWM\C51_HD.PDF>
+  OPTBL 4,(Programmer's Guide)<DATASHTS\ATMELWM\C51_PG.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51rd2)(S8051.DLL)()(TP51.DLL)(-p51rd2)
+  OPTDBG 509,-1,()()()()()()()()()() (Sle66Mon\SLE66MON.DLL)()()()
+  OPTKEY 0,(DLGDP51)((98=-1,-1,-1,-1,0)(82=-1,-1,-1,-1,0)(83=-1,-1,-1,-1,0)(84=-1,-1,-1,-1,0)(85=-1,-1,-1,-1,0)(5009=-1,-1,-1,-1,0)(5010=-1,-1,-1,-1,0)(99=-1,-1,-1,-1,0)(91=-1,-1,-1,-1,0)(92=-1,-1,-1,-1,0)(94=-1,-1,-1,-1,0)(95=-1,-1,-1,-1,0)(100=-1,-1,-1,-1,0)(5008=-1,-1,-1,-1,0)(2003=-1,-1,-1,-1,0)(5061=-1,-1,-1,-1,0)(5033=-1,-1,-1,-1,0))
+  OPTDF 0x80
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

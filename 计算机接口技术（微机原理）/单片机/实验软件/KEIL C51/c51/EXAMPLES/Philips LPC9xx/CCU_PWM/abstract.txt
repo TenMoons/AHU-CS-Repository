@@ -1,0 +1,28 @@
+LPC932 EXAMPLE:	CREATING PWM SIGNALS USING THE CAPTURE COMPARE UNIT (CCU)
+by Christian Kulig, Philips Semiconductor, 12/06/02
+
+
+INTRODUCTION:
+The LPC932 can be used to create Pulse Width Modulated PWM signals. 
+With a PWM signal and a simple RC-filter it is possible to generate an 
+analog output signal. The current analog value of this signal at a certain 
+point in time is proportional to its Duty Cycle which is percentage of  
+High Time during one period or the average value during a particular 
+period. That means after low pass filtering, (e.g. RC circuit) the signal 
+becomes analog, with an actual value controlled by the microcontroller. 
+The PWM functionality enables the LPC932 to control for example the speed 
+of DC motors or the brightness of electric lighting.
+
+
+DESCRIPTION:
+The LPC932 has various ways to create many types of PWM signals.
+This sample utilizes the Capture Compare Unit (CCU) to create two 
+independent PWM signals, which are used to control the brightness of two 
+LEDs on port P2.1 and P2.6. The program sets up two Compare Channels to 
+provide asymmetrical PWM with a fixed frequency, but variable Duty Cycle. 
+The selected frequency is high enough, so that the eye cannot recognize, 
+that the LED is actually switched on and off alternately, but it sees 
+different brightness according to different duty cycles. To show the 
+independence of both Compare Channels, their Duty Cycles are varied in 
+opposite directions. That means, while one LED turns brighter, the 
+other one turns darker.

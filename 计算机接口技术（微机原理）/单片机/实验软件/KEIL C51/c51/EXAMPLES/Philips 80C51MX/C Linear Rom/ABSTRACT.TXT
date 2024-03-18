@@ -1,0 +1,27 @@
+For using the Philips 80C51MX, you need to have an PK51 package.
+Details about the Philips 80C51MX are discussed in the Application
+Note 160 available at www.keil.com.
+
+C Program Example for the Philips 80C51MX Architecture in Linear Mode
+
+The program contains the configuration file:
+START_MX.A51:  C start-up for the Philips 80C51MX devices which is
+configured for extended 24-bit interrupt frame.  
+
+This program shows how to use the ROM(HUGE) directive that allows you to use
+the linear programming model for the code space.  This option is selected in
+uVision2 under Options for Target - Target - Code ROM Size.
+
+When the ROM(HUGE) directive is used, all CALL instructions are encoded as ECALL.
+The memory types 'xdata' and 'code' still access 64KB regions.  This implies that
+program sections that address 'code' space must be located in the same 64KB 'code'
+space as well.  Other program sections will go into ECODE space.
+
+You may access the full address space using the memory type 'far' and 'const far'.
+The program code is located to the memory class ECODE.
+
+In addition the program code of the module 'main_a' is located to the user
+defined memory class ECODE_APPL.  This allows you to locate the program code easily
+with the LX51 CLASSES directive.  The memory area for this user defined memory classes
+is specified in uVision2 under Options for Target - LX51 Locate - User Classes.
+

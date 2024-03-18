@@ -1,0 +1,44 @@
+Small Model Sieve Program
+
+The Sieve of Erosthostenes is a program that calculates
+Prime numbers.  It is a standard benchmark used to determine
+the relative speed of different computers or the efficiency
+of the code generated for the same computer by different
+compilers.
+
+The sieve algorithm was developed in ancient Greece and is
+one of a number of methods used to find prime numbers.
+The sieve works by a process of elimination using an array
+that starts with 2 and keeps all the numbers in position.
+The process is:
+
+2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+
+Starting after 2, eliminate all multiples of 2.
+
+2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+X   X   X   X   XX    XX    XX    XX    XX    XX    XX    XX
+
+Starting after 3, eliminate all multiples of 3.
+
+2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+X   X   X   X X XX    XX    XX XX XX    XX    XX XX XX    XX
+
+Starting after 5, eliminate all multiples of 5.
+
+2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25
+X   X   X   X X XX    XX    XX XX XX    XX    XX XX XX    XX XX
+
+Continue until the next remaining number is greater than
+
+the square root of the largest number in the original series.
+
+In this case, the next number, 7, is greater than the square
+root of 25, so the process stops.  The remaining numbers are all
+prime!
+
+The SIEVE program is available in different targets:
+  Simulator: Small Model:  SIEVE example in SMALL model 
+                           for Simulation
+  Simulator: Large MOdel:  SIEVE example in LARGE model
+                           for Simulation

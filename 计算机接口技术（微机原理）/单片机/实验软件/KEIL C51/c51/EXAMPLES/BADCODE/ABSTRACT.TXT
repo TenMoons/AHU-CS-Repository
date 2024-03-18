@@ -1,0 +1,3 @@
+BADCODE is a program that has a lot of errors.  When
+you compile this file, uVision reports a number of
+problems that you may interactively correct.

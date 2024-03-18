@@ -1,0 +1,190 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (Source Files), 0x0000 // Tools: 'MCS-51'
+
+Group (Source File)
+Group (System Files)
+Group (Documentation)
+
+File 1,1,<.\Task0.c><Task0.c>
+File 1,1,<.\Task1.c><Task1.c>
+File 1,1,<.\Task2.c><Task2.c>
+File 1,1,<.\Task3.c><Task3.c>
+File 2,2,<.\startup.a51><startup.a51>
+File 2,2,<.\l51_bank.a51><l51_bank.a51>
+File 2,2,<.\Conf_tny.a51><Conf_tny.a51>
+File 3,5,<.\Abstract.txt><Abstract.txt>
+
+
+Options 1,0,0  // Target 'Source Files'
+ Device (8xC51RD2)
+ Vendor (Philips)
+ Cpu (IRAM(0 - 0xFF) IROM(0-0xFFFF) XRAM(0 - 0x2FF) CLOCK(33000000) MODP2)
+ FlashUt ((null))
+ StupF ((null))
+ FlashDR ((null))
+ Rgf (REG51F.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ UseEnv=0
+ EnvBin ()
+ EnvInc ()
+ EnvLib ()
+ EnvReg (ÿPhilips\)
+ OrgReg (ÿPhilips\)
+ TgStat=0
+ OutDir (.\)
+ OutName (Banking)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=0
+ LstDir (.\)
+ HexSel=0
+ MG32K=0
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ SVCSID <>
+ MODEL5=0
+ RTOS5=1
+ ROMSZ5=2
+ DHOLD5=0
+ XHOLD5=0
+ T51FL=8816
+ CBANKS5=1
+ XBANKS5=0
+ RCB51 { 0,0,128,0,0,255,255,0,0 }
+ RXB51 { 0,0,0,0,0,0,0,0,0 }
+ OCM51 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCR51 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IRO51 { 1,0,0,0,0,0,0,1,0 }
+ IRA51 { 0,0,0,0,0,0,1,0,0 }
+ XRA51 { 0,0,0,0,0,0,3,0,0 }
+ C51FL=21630224
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+ AX51FL=4
+ AX51MSC ()
+ AX51SET ()
+ AX51RST ()
+ INCA5 ()
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ BankNo=65535
+ LX51FL=292
+ LX51OVL ()
+ LX51MSC ()
+ LX51DWN ()
+ LX51LFI ()
+ LX51ASN ()
+ LX51RES ()
+ LX51CCL ()
+ LX51UCL ()
+ LX51CSC ()
+ LX51UCS ()
+ LX51COB ()
+ LX51XDB ()
+ LX51PDB ()
+ LX51BIB ()
+ LX51DAB ()
+ LX51IDB ()
+ LX51PRC ()
+ LX51STK ()
+ LX51COS ()
+ LX51XDS ()
+ LX51BIS ()
+ LX51DAS ()
+ LX51IDS ()
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51R2)(S8051.DLL)()(TP51.DLL)(-p51R2)
+  OPTDBG 509,-1,()()()()()()()()()() (BIN\MON51.DLL)()()()
+ FLASH1 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ FLASH2 ()
+ FLASH3 ()
+EndOpt
+
+Options 1,1,1  // File 'Task0.c'
+ IncBld=2
+ AlwaysBuild=2
+ GenAsm=2
+ AsmAsm=2
+ PublicsOnly=2
+ StopCode=11
+ CustArgs ()
+ LibMods ()
+ BankNo=1
+ C51FL=42902186
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+EndOpt
+
+Options 1,1,2  // File 'Task1.c'
+ IncBld=2
+ AlwaysBuild=2
+ GenAsm=2
+ AsmAsm=2
+ PublicsOnly=2
+ StopCode=11
+ CustArgs ()
+ LibMods ()
+ BankNo=2
+ C51FL=42902186
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+EndOpt
+
+Options 1,1,3  // File 'Task2.c'
+ IncBld=2
+ AlwaysBuild=2
+ GenAsm=2
+ AsmAsm=2
+ PublicsOnly=2
+ StopCode=11
+ CustArgs ()
+ LibMods ()
+ BankNo=3
+ C51FL=42902186
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+EndOpt
+
+Options 1,1,4  // File 'Task3.c'
+ IncBld=2
+ AlwaysBuild=2
+ GenAsm=2
+ AsmAsm=2
+ PublicsOnly=2
+ StopCode=11
+ CustArgs ()
+ LibMods ()
+ BankNo=4
+ C51FL=42902186
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+EndOpt
+

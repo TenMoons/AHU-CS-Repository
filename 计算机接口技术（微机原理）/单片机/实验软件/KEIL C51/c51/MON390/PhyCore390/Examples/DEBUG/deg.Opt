@@ -1,0 +1,35 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.s*; *.src; *.a*)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt; *.h; *.inc)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Target 1), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Group 1),1,0,0
+
+OPTFFF 1,1,1,2,0,21,21,0,<.\DEBUG.C><DEBUG.C> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,0,0,0,0,0,0,0,0,39,4,0,0,52,2,0,0 }
+OPTFFF 1,2,2,0,0,0,0,0,<.\START390.A51><START390.A51> 
+
+
+TARGOPT 1, (Target 1)
+ CLK51=40000000
+  OPTTT 0,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTDL (S8051.DLL)(-c390)(DP51.DLL)(-p390)(S8051.DLL)(-c390)(TP51.DLL)(-p390)
+  OPTDBG 49142,-1,()()()()()()()()()() (d:\src32\uv3\mon390\Debug\mon390.dll)()()()
+  OPTDF 0x0
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

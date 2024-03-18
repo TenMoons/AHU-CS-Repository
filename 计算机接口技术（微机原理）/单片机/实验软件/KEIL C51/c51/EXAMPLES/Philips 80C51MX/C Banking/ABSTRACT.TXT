@@ -1,0 +1,27 @@
+For using the Philips 80C51MX, you need to have an PK51 package.
+Details about the Philips 80C51MX are discussed in the Application
+Note 160 available at www.keil.com.
+
+C Program Example for the Philips 80C51MX Architecture
+
+The program contains two configuration files:
+START_MX.A51:  C start-up for the Philips 80C51MX devices.
+MX51BANK.A51:  Banking support for large programs on Philips 80C51MX devices.
+
+This program shows how to handle the expanded program memory via the code banking
+mechanism known from the classic 8051 architecture.  This technique can be also
+used for existing assembler code and C51 source code to grow into the MX code 
+address space.  Code banking has the following benefits:
+
+* User (programmer) needs not to take care of near and far function call attributes. 
+  The stack overhead is minimal since long return addresses (ECALL) are used only 
+  when crossing banks.
+
+* Existing assembler programs can be re-linked and can grow beyond the 64KB limit.
+  No or only minimal assembler source code modifications are required.
+
+* The common space is used for frequently used C51 run-time library functions.
+  Since the instruction encoding for LCALL is 3 bytes (vs. ECALL 5 bytes), code 
+  space for the library CALLs is reduced.  Typical size for the common code is 
+  1 .. 4 KB.  This common code overhead is compensated by the reduced instruction 
+  length for library calls and function calls to different modules.

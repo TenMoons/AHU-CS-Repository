@@ -1,0 +1,329 @@
+<html>
+
+<head>
+<title>Application Note 171: Using M8051EW Memory Extension</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<style>
+<!--
+/*-----------------------------------------------------------
+Keil Software CHM Style Sheet
+-----------------------------------------------------------*/
+body         { color: #000000; background-color: #FFFFFF; font-size: 75%; font-family: 
+               Verdana, Arial, 'Sans Serif' }
+a:link       { color: #0000FF; text-decoration: underline }
+a:visited    { color: #0000FF; text-decoration: underline }
+a:active     { color: #FF0000; text-decoration: underline }
+a:hover      { color: #FF0000; text-decoration: underline }
+h1           { font-family: Verdana; font-size: 18pt; color: #000080; font-weight: bold; 
+               text-align: Center; margin-right: 3 }
+h2           { font-family: Verdana; font-size: 14pt; color: #000080; font-weight: bold; 
+               background-color: #CCCCCC; margin-top: 24; margin-bottom: 3; 
+               padding: 6 }
+h3           { font-family: Verdana; font-size: 10pt; font-weight: bold; background-color: 
+               #CCCCCC; margin-top: 24; margin-bottom: 3; padding: 6 }
+pre          { font-family: Courier New; font-size: 10pt; background-color: #CCFFCC; 
+               margin-left: 24; margin-right: 24 }
+ul           { list-style-type: square; margin-top: 6pt; margin-bottom: 0 }
+ol           { margin-top: 6pt; margin-bottom: 0 }
+li           { clear: both; margin-bottom: 6pt }
+table        { font-size: 100%; border-width: 0; padding: 0 }
+th           { color: #FFFFFF; background-color: #000080; text-align: left; vertical-align: 
+               bottom; padding-right: 6pt }
+tr           { text-align: left; vertical-align: top }
+td           { text-align: left; vertical-align: top; padding-right: 6pt }
+.ToolT       { font-size: 8pt; color: #808080 }
+.TinyT       { font-size: 8pt; text-align: Center }
+code         { color: #000000; background-color: #E0E0E0; font-family: 'Courier New', Courier; 
+               line-height: 120%; font-style: normal }
+/*-----------------------------------------------------------
+Notes
+-----------------------------------------------------------*/
+p.note       { font-weight: bold; clear: both; margin-bottom: 3pt; padding-top: 6pt }
+/*-----------------------------------------------------------
+Expanding/Contracting Divisions
+-----------------------------------------------------------*/
+#expand      { text-decoration: none; margin-bottom: 3pt }
+img.expand   { border-style: none; border-width: medium }
+div.expand   { display: none; margin-left: 9pt; margin-top: 0 }
+/*-----------------------------------------------------------
+Where List Tags
+-----------------------------------------------------------*/
+p.wh         { font-weight: bold; clear: both; margin-top: 6pt; margin-bottom: 3pt }
+table.wh     { width: 100% }
+td.whItem    { white-space: nowrap; font-style: italic; padding-right: 6pt; padding-bottom: 
+               6pt }
+td.whDesc    { padding-bottom: 6pt }
+/*-----------------------------------------------------------
+Keil Table Tags
+-----------------------------------------------------------*/
+table.kt     { width: 100%; border: 1pt solid #000000 }
+th.kt        { white-space: nowrap; border-bottom: 1pt solid #000000; padding-left: 6pt; 
+               padding-right: 6pt; padding-top: 4pt; padding-bottom: 4pt }
+tr.kt        {  }
+td.kt        { color: #000000; background-color: #E0E0E0; border-top: 1pt solid #A0A0A0; 
+               padding-left: 6pt; padding-right: 6pt; padding-top: 2pt; 
+               padding-bottom: 2pt }
+/*-----------------------------------------------------------
+-----------------------------------------------------------*/
+-->
+
+</style>
+</head>
+
+<body>
+
+<h1>Application Note 171<br>
+Using M8051EW Memory Extension</h1>
+
+<p align="center">Revision 1 - 28 Oct. 2002</p>
+
+<p align="center">This application note tells you how to configure the Keil 8051
+development tools for Mentor M8051EW based devices with integrated Memory
+Extension. With this Memory Extension it is possible to access up to 1MByte code
+and data space.</p>
+
+<p class="TinyT">Information in this file, the accompany manuals, and software
+is<br>
+Copyright © Keil Software, Inc and Keil Elektronik GmbH.<br>
+All rights reserved.</p>
+
+<hr>
+<h2>Contents</h2>
+<ol>
+  <li class="LI2"><a href="#Overview">Overview</a></li>
+  <li class="LI2"><a href="#IBANKING">IBANKING Linker/Locater Control</a></li>
+  <li class="LI2"><a href="#L51IBANK">L51IBANK.A51 Memory Extension
+    Configuration File</a></li>
+  <li class="LI2"><a href="#Examples">Example Programs</a></li>
+  <li class="LI2"><a href="#Restrictions">Restrictions with RTX51</a></li>
+  <li class="LI2"><a href="#TechnicalSupport">Technical Support</a></li>
+  <li class="LI2"><a href="#ContactDetails">Contact Details</a></li>
+</ol>
+<h2><a name="Overview"></a>Overview</h2>
+
+<p>Some 8051 devices that are based on the M8051EW core offer a set of Memory
+Extension registers (MEX1, MEX2 and MEX3) that support an extended code and data
+memory space of up to 1 Mbyte.</p>
+
+<p><b>NOTE:</b> <i>M8051EW Memory Extension registers are supported by the LX51
+Linker/Locater Version 3.52 or higher. This linker is part of PK51 Version 7.02
+or higher. You need to upgrade your software if you plan to use the LX51
+Extended Linker/Locater.</i></p>
+
+<h3>Program Code Extension</h3>
+
+<p>Program Code is always fetched from the 64K block pointed to by a Current
+Bank value (CB). CB is updated from the Next Bank value (NB) upon execution of
+long jump (LJMP) and call (LCALL, ACALL) instructions. The MEX1 register
+contains NB (MEX1.3 - MEX1.0) and CB (MEX1.7 - MEX.4). An extra Memory Extension
+Stack space is used to save and restore the MEX1 register on call (LCALL, ACALL)
+and return (RET, RETI) instructions. Interrupt service routines are always
+executed from code in the 64K block pointed to by the Interrupt Bank value (IB)
+(MEX2.3 - MEX2.0).</p>
+
+<p>The program code extension of the M8051EW core is supported with the <b>IBANKING</b>
+linker control that is available in the BL51 Linker/Locater and the LX51
+Linker/Locater.</p>
+
+<h3>Constant and Data Memory Extension</h3>
+
+<p>Constant and Data Memory can be extended with additional fields in the Memory
+Extensions registers. The Memory Constant Bank pointer (MCB) (MEX3.7, MEX2.6 -
+MEX2.4) is enabled with the MCM bit (MEX2.7) and defines a 64KB memory bank that
+is used for constants that are defined with the C51 memory type <b>code</b>. The
+Memory XRAM Bank pointer (MX) (ME3.4, MEX3.2 - MEX3.0) is enabled with the MXM
+bit (MEX3.3) and defines a 64KB memory bank that is used for variables that are
+defined with the C51 memory type <b>far</b>.</p>
+
+<p>Constant and Data Memory Extension is only supported with the LX51
+Linker/Locater and is therefore only available in the Keil PK51 Professional
+Developers Kit. The bank used for constant and the number of xdata banks is
+configured in the <b>L51IBANK.A51</b> file that is part of this Application
+Note.</p>
+
+<h2><a name="IBANKING"></a>IBANKING Linker/Locater Control</h2>
+
+<p>With the linker/locater control <b>IBANKING</b> the linker uses the on-chip
+code banking hardware of the M8051EW devices. The linker/locater places
+automatically all code segments in the bank area, which do not have the ?CO?
+prefix or ?CO postfix. Segments with a ?CO prefix or postfix are placed into the
+common area.</p>
+
+<p>Interrupt Functions and the startup code must be located to the code bank 0
+which is the IB reset value.</p>
+
+<p>The standard bank configuration module L51_BANK.A51 is not required when the
+control <b>IBANKING</b> is used. Instead the linker/locater generates in this
+operation mode a jump table with the following format:</p>
+
+<pre>     MOV MEX1,#BANK_NUMBER
+     LJMP target</pre>
+
+<p>The IBANKING control is entered in uVision2 under <b>Options - Lx51 Misc -
+Misc Controls</b>.</p>
+
+<p><b>NOTE:</b> <i>Program code banking with Mentor M8051EW devices requires
+special C51 run-time libraries. These C51 run-time libraries have the name
+format <b>C51M*.LIB </b>and are automatically added when using the
+Linker/Locator control <b>IBANKING.</b></i></p>
+
+<h2><a name="L51IBANK"></a>L51IBANK.A51 Memory Extension Configuration File</h2>
+
+<p>The <b>L51IBANK.A51</b> file allows configuration of both program code and
+variable banking. You can specify a separate code memory bank used for program
+constants and the memory bank used for interrupt functions.</p>
+
+<p>When using this configuration file it is possible to use up to:</p>
+
+<ul>
+  <li class="LI2">16 x 64KB banks for program code</li>
+  <li class="LI2">a 64KB bank for constants defined with the memory type <b>code</b></li>
+  <li class="LI2">a 64KB bank for variables defined with the memory type <b>xdata</b></li>
+  <li class="LI2">16 x 64KB banks for variables defined with the memory type <b>far</b></li>
+</ul>
+
+<p>The <b>L51IBANK.A51</b> configuration file is only supported with the LX51
+Linker/Locater and is therefore only available in the Keil PK51 Professional
+Developers Kit. The constant variable bank, interrupt code bank, and the far
+variable banks are configured in the <b>L51IBANK.A51</b> file. The
+Linker/Locater control <b>IBANKING</b> is not required when you are using the <b>L51IBANK.A51</b>
+configuration file.</p>
+
+<p><b>NOTES:</b> <i>The C51 Compiler must be invoked with the directive <b>VARBANKING(1)</b>
+when you are using the <b>L51IBANK.A51</b> configuration file. In uVision2 this
+directive is specified under <b>Options for Target - Target - 'far' memory type
+support</b> and <b>Options for Target - Target - Save address extension SFR in
+interrupts.</b></i></p>
+
+<h3>Optimum Bank Layout with L51IBANK.A51 Configuration File</h3>
+
+<p>The following design rules help you to get optimum results when you are using
+the L51IBANK.A51 configuration file.</p>
+
+<ul>
+  <li>You may use a <b>?B_CB</b> value in the L51IBANK.A51 configuration file to
+    define a single 64KB bank for constants. In this way the constants are not
+    copied into the common bank.</li>
+  <li>For complex switch/case statements the C51 compiler generates intrinsic
+    function calls (?C?CCASE, ?C?ICASE, or ?C?LCASE) that embed constants into
+    program code. If a constant bank is defined with the <b>?B_CB </b>value, the
+    LX51 Linker/Locater automatically relocates such functions into the common
+    area. These relocations are listed in the Linker/Locater MAP file under the
+    section<b> FUNCTION CONTAINING SPECIAL LIB CALLS RELOCATED TO COMMON</b>.
+    You can avoid function relocation to the common area with two ways:
+
+    <p><b>1: </b>Locate modules that are using the intrinsic functions ?C?CCASE,
+    ?C?ICASE, or ?C?LCASE into the same code bank defined for constants with the
+    <b>?B_CB</b> value.</p>
+
+    <p><b>2: </b>Optimizing the program code as explained under <a href="http://www.keil.com/support/docs/1316.htm" target="_blank">C51:
+    SWITCH/CASE STATEMENTS</a> or split the switch/case into several smaller
+    switch/case statements.</li>
+  <li>Modules that contain interrupt functions should be located to the code
+    bank defined interrupt bank with the <b>?B_IB</b> value. For such interrupt
+    functions, the LX51 Linker/Locater does not generate any bank switch code.</li>
+</ul>
+<h2><a name="Examples"></a>Example Programs</h2>
+
+<p>Example programs in the folder <b>..\C51\EXAMPLES\M8051EW</b> demonstrate to
+usage of the Memory Extension on M8051EW based devices. The examples show the
+configuration of the uVision2 IDE. The programs can be fully simulated with the
+uVision2 Debugger.</p>
+
+<h2><a name="Restrictions"></a>Restrictions with RTX51</h2>
+
+<p>Program code banking with the Mentor M8051EW Memory Extension registers is
+not supported by RTX51 Full or RTX51 Tiny, since it is not possible to access
+the Memory Extension Stack space.</p>
+
+<h2><a name="TechnicalSupport"></a>Technical Support</h2>
+
+<p>At Keil Software, we are dedicated to providing you with the best development
+tools and technical support. That's why we offer numerous ways you can get the
+technical support you need to complete your embedded projects.</p>
+
+<ul>
+  <li class="LI2"><a href="http://www.keil.com/support"><b>Technical Support
+    Knowledgebase</b></a><br>
+    More than 1500 technical support questions and answers are available in the
+    Support Solutions Knowledgebase. When a new question arises, it is added to
+    the knowledgebase which is continuously published to the Web. This enables
+    you to get technical support at times when our support staff is unavailable.</li>
+  <li class="LI2"><a href="http://www.keil.com/appnotes"><b>Application Notes</b></a><br>
+    Numerous Application Notes help you decipher complex features and implement
+    robust applications.</li>
+  <li class="LI2"><a href="http://www.keil.com/download"><b>Example Programs and
+    Files</b></a><br>
+    Utility programs, example code, and sample projects are regularly added to
+    the Download File section of the web site.</li>
+  <li class="LI2"><a href="http://www.keil.com/discuss"><b>Discussion Forum</b></a><br>
+    Post questions, comments, and suggestions to the Keil Software Discussion
+    Forum and interact with other Keil users around the world.</li>
+</ul>
+
+<p>Many of the features of our Technical Support Knowledgebase and Web Site are
+the results of your suggestions. If you have any ideas that will improve them,
+please <a href="http://www.keil.com/support/feedback.asp">give us your feedback</a>!</p>
+
+<h2><a name="ContactDetails"></a>Contact Details</h2>
+
+<p>If you experience any problems or have any questions about this Application
+Note, contact one of our <a href="http://www.keil.com/distis">distributors</a>
+or offices for assistance.</p>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="5" cellspacing="0">
+    <tr>
+      <td valign="top" nowrap bgcolor="#FFFFCC" style="border: 1 solid #800000">
+
+        <p><b>In the USA...<br>
+        </b><br>
+        <b>Keil Software, Inc.</b><br>
+        1501 10th Street, Suite 110<br>
+        Plano, TX&nbsp; 75074<br>
+        USA<br>
+        <br>
+        800-348-8051 - Sales<br>
+        972-312-1107 - Support<br>
+        972-312-1159 - Fax<br>
+        <a href="mailto:sales.us@keil.com"><br>
+        sales.us@keil.com</a> - Sales E-Mail<a href="mailto:E-Mailsupport.us@keil.com"><br>
+        support.us@keil.com</a> - Support E-mail&nbsp;<br>
+        &nbsp;&nbsp;</p>
+
+      </td>
+      <td valign="top" width="30" nowrap></td>
+      <td valign="top" nowrap style="border: 1 solid #800000" bgcolor="#FFFFCC">
+
+        <p><b>In Europe...<br>
+        </b><br>
+        <b>Keil Elektronik GmbH<br>
+        </b>Bretonischer Ring 15<br>
+        D-85630 Grasbrunn<br>
+        Germany<br>
+        <br>
+        +49 89 456040-0 - Sales<br>
+        +49 89 456040-24 - Support<br>
+        +49 89 468162 - Fax<br>
+        <a href="mailto:sales.intl@keil.com"><br>
+        sales.intl@keil.com</a> - Sales E-Mail<a href="mailto:E-Mailsupport.intl@keil.com"><br>
+        support.intl@keil.com</a> - Support E-Mail<br>
+        &nbsp;&nbsp;</p>
+
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<hr>
+
+<p class="TinyT">Copyright © Keil Software, Inc. and Keil Elektronik GmbH.<br>
+All rights reserved.<br>
+Visit our web site at <a href="http://www.keil.com">www.keil.com</a>.</p>
+
+</body>
+
+</html>

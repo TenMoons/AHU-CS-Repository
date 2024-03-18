@@ -1,0 +1,9 @@
+The HELLO program is a very simple program that prints "Hello World"
+to the serial port of the 8051.  When you can successfully build and
+run this program, you have used the entire toolset including:
+
+The uVision2 integrated development environment.
+The C51 compiler, linker and the µVision2 simulator/debugger.
+
+The ASM program is available in one target:
+  Simulator:    uses the µVision2 simulator for testing

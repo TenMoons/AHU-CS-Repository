@@ -1,0 +1,565 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html>
+
+<head>
+<title>uVision2 Release Notes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<style>
+<!--
+p            { font-family: Verdana; font-size: 10pt }
+.Release     { background-color: #CCCCCC; font-weight: bold; padding: 6 }
+.ToolT       { font-size: 8pt; color: #808080 }
+.TinyT       { font-size: 8pt; text-align: Center }
+ul           { font-family: Verdana; font-size: 10pt; list-style-type: square }
+ol           { font-family: Verdana; font-size: 10pt }
+h1           { font-family: Verdana; font-size: 18pt; color: #000080; font-weight: bold; text-align: Center; margin-right: 3 }
+h2           { font-family: Verdana; font-size: 14pt; color: #000080; font-weight: bold; margin-top: 24; margin-bottom: 3; background-color: #CCCCCC; padding: 6 }
+h3           { font-family: Verdana; font-size: 10pt; font-weight: bold; margin-top: 24; margin-bottom: 3; background-color: #CCCCCC; padding: 6 }
+pre          { font-family: Courier New; font-size: 10pt; background-color: #CCFFCC; margin-left: 24; margin-right: 24 }
+li           { margin-top: 6; margin-bottom: 6 }
+-->
+</style>
+</head>
+
+<body>
+
+<h1>
+Release Notes for uVision2<br>
+<font size="2">IDE and Debugger</font>
+</h1>
+
+<p align="center">
+This file contains release notes and last minute changes that are not found
+in the printed manuals.
+</p>
+
+<p class="TinyT">
+Information in this file, the accompany manuals, and software is<br>
+Copyright © Keil Software, Inc and Keil Elektronik GmbH.<br>
+All rights reserved.
+</p>
+
+<hr>
+
+<h2>Contents</h2>
+
+<ol>
+  <li><a href="#WhatsNew">What's New in uVision2</a></li>
+  <li><a href="#uVision2">What is uVision2?</a></li>
+  <li><a href="#EvaluationLimits">Limitations of Evaluation Software</a></li>
+  <li><a href="#ExamplePrograms">Example Programs</a></li>
+  <li><a href="#DeviceDatabase">Device Database™</a></li>
+  <li><a href="#PeripheralSimulation">Peripheral Simulation</a></li>
+  <li><a href="#TechnicalSupport">Technical Support</a></li>
+  <li><a href="#ContactDetails">Contact Details</a></li>
+</ol>
+
+<h2><a name="WhatsNew"></a>What's New in uVision2</h2>
+
+<p>The following sections list the changes instituted in each release of the uVision2 IDE and Debugger.</p>
+
+
+<h3>uVision2 Version 2.39 Release</h3>
+
+<ul>
+  <li>
+    New dialog for project component management under <b>Project - Components, Environment and Books</b> that allows you to change
+    the order or project targets and file groups.
+  </li>
+  <li>
+    Docking Windows have now a descriptive text in the navigation bar.
+  </li>
+  <li>
+    New configuration file for Microsoft Source Safe 6.0 added.
+  </li>
+  <li>
+    ARM specific support added.
+  </li>
+</ul>
+
+
+<h3>uVision2 Version 2.36 Release</h3>
+
+<ul>
+  <li>
+    In some cases, projects that include user libraries were always linked-even when
+	the library was up-to-date.  This problem has been corrected.
+  </li>
+</ul>
+
+
+<h3>uVision2 Version 2.33 Release</h3>
+
+<ul>
+  <li>Corrected minor problems with OCDS Debugging and ULINK.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.32 Release</h3>
+
+<ul>
+  <li>
+    Added Flash menu commands and configuration dialog under <b>Options for
+    Target - Utilities</b>.
+  </li>
+  <li>
+    Added listing of files included in each C source file to the Project
+    Window  - File tab.
+  </li>
+  <li>
+    Added ability to automatically copy startup code into the project.
+  </li>
+</ul>
+
+
+<h3>uVision2 Version 2.31 Release</h3>
+
+<ul>
+  <li>
+    Added a Device tab in the Options for Target dialog.  From this tab, you may
+    select the device you use as well as any additional options like whether or
+    not to use the extended linker and extended assembler.
+  </li>
+  <li>
+    Corrected several minor problems with the IDE.
+  </li>
+</ul>
+
+
+<h3>uVision2 Version 2.30 Release</h3>
+
+<ul>
+  <li>
+    Added Copy to Clipboard and Find functionality for Disassembly Window
+    and Output Window in the debugger.
+  </li>
+  <li>
+    Made several minor improvements in the Options for Target Dialog.
+  </li>
+  <li>
+    Added simulation support and monitor peripheral dialogs for all SST
+    devices (SST89x554, SST89x554Rx, SST89x556, and SST89x556Rx).
+  </li>
+  <li>
+    Added simulation support for all Analog Devices parts (ADuC812, ADuC814,
+    ADuC816, ADuC824, ADuC831, ADuC832, ADuC834, and ADuC836).
+  </li>
+  <li>
+    Added simulation support and monitor peripheral dialogs for the Atmel AT89LS53 and AT89LS8252.
+  </li>
+  <li>
+    Added simulation support for the Infineon C505A and C505CA.
+  </li>
+  <li>
+    Added simulation support and monitor peripheral dialogs for the Winbond W77E468.
+  </li>
+</ul>
+
+
+<h3>uVision2 Version 2.23 Release</h3>
+
+<ul>
+  <li>Updated dialogs to support new features in C51 V6.23.</li>
+  <li>Corrected several minor problems.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.20a Release</h3>
+
+<ul>
+  <li>Corrected various minor problems.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.20 Release</h3>
+
+<ul>
+  <li>Improved the SVCS connection.
+  <li>Corrected several problems with environment variables.</li>
+  <li>Added several new items to the Help Menu.
+  <li>Added several minor project management enhancements.</li>
+  <li>Added support for the ST Microelectronics ST10F280.
+  <li>Added RTX166 Full Kernel-Aware Debugging.
+  <li>Completed simulation support for all C16x devices.
+  <li>Added several new devices to the device database.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.14 Release</h3>
+
+<ul>
+  <li>Added simulation support for the Dallas 320, 323 and 520.
+  <li>Added simulation support for the Infineon C509, C517A, C515C.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.12 Release</h3>
+
+<ul>
+  <li>Added simulation support for the Atmel WM T87C5111 and T87C5112.</li>
+  <li>Added simulation support for the Infineon C161xx, C163, C164, C165xx, 80C166, and C167xx.</li>
+  <li>Added simulation support for the ST Microelectronics ST10F163, ST10x167, ST10F168, ST10R262, ST10R272, and ST10F269.</li>
+  <li>Added simulation support for devices with on-chip CAN controllers (C167CR & C167CS).</li>
+</ul>
+
+
+<h3>uVision2 Version 2.10 Release</h3>
+
+<ul>
+  <li>Corrected various minor problems.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.06 Release</h3>
+
+<ul>
+  <li>Added simulation support for the Analog Devices ADuC812.</li>
+  <li>Added simulation support for the Philips LPC Devices.</li>
+  <li>Added simulation support for most standard 40-pin 8051 devices (8051FC, RD, RD+, 8052, and so on).</li>
+  <li>Added simulation support for multiple DPTR registers.</li>
+  <li>Corrected various incompatibilities with DAvE2.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.05 Release</h3>
+
+<ul>
+  <li>Corrected various minor problems.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.04 Release</h3>
+
+<ul>
+  <li>Added support for the C51 toolset.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.03 Release</h3>
+
+<ul>
+  <li>Added extensible emulator support (via AGDI) for the Hitex DProbe.</li>
+  <li>Corrected minor problems in the source browser.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.02 Release</h3>
+
+<ul>
+  <li>Changed project file format to ASCII Text.</li>
+  <li>Added support for software version control systems (SVCS).</li>
+  <li>Added RTX166 Tiny Kernel-Aware Debugging.</li>
+</ul>
+
+
+<h3>uVision2 Version 2.00 Release</h3>
+
+<p>This is the initial release of uVision2. The following new/enhanced features
+are included.</p>
+
+<ul>
+  <li>Added support for the C16x/ST10 toolset.</li>
+  <li>Added source browser capability.</li>
+  <li>Added direct support for PC-Lint.</li>
+  <li>Added application manager that allows you to incorporate user programs
+    into the uVision2 menus.</li>
+</ul>
+
+
+<h2><a name="uVision2"></a>What is uVision2?</h2>
+
+<p>
+uVision2 is an IDE (Integrated Development Environment) that helps you write, compile, and debug
+embedded programs. It encapsulates the following components:
+</p>
+
+<ul>
+  <li>A project manager.</li>
+  <li>A make facility.</li>
+  <li>Tool configuration.</li>
+  <li>Editor.</li>
+  <li>A powerful debugger.</li>
+</ul>
+
+<p>
+To help you get started, several example programs (located in the <b>\C51\EXAMPLES</b>,
+<b>\C251\EXAMPLES</b>, and <b>\C166\EXAMPLES</b>) are provided.
+</p>
+
+<ul>
+  <li><b>HELLO</b> is a simple program that prints the string "Hello World" using the Serial Interface.</li>
+  <li><b>MEASURE</b> is a data acquisition system for analog and digital systems.</li>
+  <li><b>TRAFFIC</b> is a traffic light controller with the RTX Tiny operating system.</li>
+  <li><b>SIEVE</b> is the SIEVE Benchmark.</li>
+  <li><b>DHRY</b> is the Dhrystone Benchmark.</li>
+  <li><b>WHETS</b> is the Single-Precision Whetstone Benchmark.</li>
+</ul>
+
+<p>Additional example programs not listed here are provided for each device architecture.</p>
+
+
+<h3>Building an Application in uVision2</h3>
+
+<p>To build (compile, assemble, and link) an application in uVision2, you must:</p>
+
+<ol>
+  <li>Select Project - Open Project (for example,&nbsp;<b>\C166\EXAMPLES\HELLO\HELLO.UV2</b>).</li>
+  <li>Select Project - Rebuild all target files or Build target.</li>
+</ol>
+
+<p>uVision2 compiles, assembles, and links the files in your project.</p>
+
+
+<h3>Creating Your Own Application in uVision2</h3>
+
+<p>To create a new project in uVision2, you must:</p>
+
+<ol>
+  <li>Select Project - New Project.</li>
+  <li>Select a directory and enter the name of the project file.</li>
+  <li>Select Project - Select Device and select an 8051, 251, or C16x/ST10 device from the Device Database™.</li>
+  <li>Create source files to add to the project.</li>
+  <li>Select Project - Targets, Groups, Files. Add/Files, select Source Group1, and add the source files to the project.</li>
+  <li>
+    Select Project - Options and set the tool options. Note when you select
+    the target device from the Device Database™ all special options are set
+    automatically. You typically only need to configure the memory map of your
+    target hardware. Default memory model settings are optimal for most
+    applications.
+  </li>
+  <li>Select Project - Rebuild all target files or Build target.</li>
+</ol>
+
+
+<h3>Debugging an Application in uVision2</h3>
+
+<p>To debug an application created using uVision2, you must:</p>
+
+<ol>
+  <li>Select Debug - Start/Stop Debug Session.</li>
+  <li>
+    Use the Step toolbar buttons to single-step through your program. You may
+    enter <b>  G, main</b> in the Output Window to execute to the main C
+    function.
+  </li>
+  <li>Open the Serial Window using the <b>Serial #1</b> button on the toolbar.</li>
+  <li>Debug your program using standard options like Step, Go, Break, and so on.</li>
+</ol>
+
+<h2><a name="EvaluationLimits"></a>Limitations of Evaluation Software</h2>
+
+<p>
+The following limitations apply to the evaluation versions of the C51, C251,
+or C166 tool chains.
+</p>
+
+
+<h3>C51 Evaluation Software Limitations</h3>
+
+<ul>
+  <li>
+    The compiler, assembler, linker, and debugger are limited to 2&nbsp;Kbytes of object code but source code
+    may be any size. Programs that generate more than 2&nbsp;Kbytes of object code will not compile, assemble, or link.
+  </li>
+  <li>
+    The startup code generated includes LJMP's and cannot be used in single-chip devices supporting less than
+    2&nbsp;Kbytes of program space like the Philips 750/751/752.
+  </li>
+  <li>The debugger supports files that are 2&nbsp;Kbytes and smaller.</li>
+  <li>Programs begin at offset 0x0800 and cannot be programmed into single-chip devices.</li>
+  <li>No hardware support is available for multiple DPTR registers.</li>
+  <li>No support is available for user libraries or floating-point arithmetic.</li>
+</ul>
+
+<p>
+The following components, which are present in the PK51 Full Version, are not included in the C51 Evaluation Software:
+</p>
+
+<ul>
+  <li>Code-Banking Linker/Locator.</li>
+  <li>Library Manager.</li>
+  <li>RTX-51 Tiny Real-Time Operating System.</li>
+</ul>
+
+
+<h3>C251 Evaluation Software Limitations</h3>
+
+<ul>
+  <li>
+    The compiler, assembler, linker, and debugger are limited to 4&nbsp;Kbytes of object code but source code may be
+    any size. Programs that generate more than 4&nbsp;Kbytes of object code will not compile, assemble, or link.
+  </li>
+  <li>The debugger supports files that are 4 Kbytes and smaller.</li>
+</ul>
+
+
+<h3>C166 Evaluation Software Limitations</h3>
+
+<ul>
+  <li>
+    The compiler, assembler, linker, and debugger are limited to 4&nbsp;Kbytes of object code but source code may be
+    any size. Programs that generate more than 4&nbsp;Kbytes of object code will not compile, assemble, or link.
+  </li>
+  <li>The debugger supports files that are 4 Kbytes and smaller.</li>
+</ul>
+
+
+<h2><a name="ExamplePrograms"></a>Example Programs</h2>
+
+<p>
+Example programs included in the <b>\C51\EXAMPLES</b>, <b>\C251\EXAMPLES</b>, and <b>C166\EXAMPLES</b>
+directories demonstrate how to use the uVision2 Project Manager and Debugger
+(see the uVision2 Quick Start Guide for details). Please refer to these example
+projects if you are new to the tools and want to get started quickly.
+</p>
+
+
+<h2><a name="DeviceDatabase"></a>Device Database™</h2>
+
+<p>
+A unique feature of the Keil uVision2 IDE is the <a href="http://www.keil.com/dd"> Device Database™</a>
+which contains information about more than 400 supported microcontrollers. When you create a new uVision2
+project and select the target chip from the database, uVision2 sets all assembler, compiler, linker,
+and debugger options for you. The only option you must configure is the memory map.
+</p>
+
+<p>
+As new devices become available, they are added to the database along with data
+sheets and header files. For information about adding your own chips to the
+database or about creating your own personal databases refer to the following
+knowledgebase articles.
+</p>
+
+<ul>
+  <li class="LI2"><a href="http://www.keil.com/support/docs/1421.htm">Adding Custom Parts to the Device Database</a></li>
+  <li class="LI2"><a href="http://www.keil.com/support/docs/1645.htm">Creating Custom Databases</a></li>
+</ul>
+
+
+<h2><a name="PeripheralSimulation"></a>Peripheral Simulation</h2>
+
+<p>
+The uVision2 Debugger provides
+<a href="http://www.keil.com/uvision2/what_is_sim.htm">complete simulation</a>
+for the CPU and on-chip peripherals of most embedded devices.
+To discover which peripherals of a device are supported, in uVision2 select the
+Simulated Peripherals item from the Help menu. You may also use the web-based
+<a href="http://www.keil.com/dd">Device Database™</a>. We are constantly adding
+new devices and simulation support for on-chip peripherals so be sure to check  Device
+Database™ often.</p>
+
+
+<h2><a name="TechnicalSupport"></a>Technical Support</h2>
+
+<p>
+At Keil Software, we are dedicated to providing you with the best development
+tools and technical support. That's why we offer numerous ways you can get the
+technical support you need to complete your embedded projects.
+</p>
+
+<ul>
+  <li>
+    <a href="http://www.keil.com/support"><b>Technical Support Knowledgebase</b></a><br>
+    More than 1500 technical support questions and answers are available in the Support
+    Solutions Knowledgebase. When a new question arises, it is added to the knowledgebase
+    which is continuously published to the Web. This enables you to get technical support
+    at times when our support staff is unavailable.
+  </li>
+  <li>
+    <a href="http://www.keil.com/appnotes"><b>Application Notes</b></a><br>
+    Numerous Application Notes help you decipher complex features and implement
+    robust applications.
+  </li>
+  <li>
+    <a href="http://www.keil.com/download"><b>Example Programs and Files</b></a><br>
+    Utility programs, example code, and sample projects are regularly added to
+    the Download File section of the web site.
+  </li>
+  <li>
+    <a href="http://www.keil.com/discuss"><b>Discussion Forum</b></a><br>
+    Post questions, comments, and suggestions to the Keil Software Discussion
+    Forum and interact with other Keil users around the world.
+  </li>
+</ul>
+
+<p>
+Many of the features of our Technical Support Knowledgebase and
+Web Site are the results of your suggestions. If you have any
+ideas that will improve them, please
+<a href="http://www.keil.com/support/feedback.asp"> give us your feedback</a>!
+</p>
+
+
+<h2><a name="ContactDetails"></a>Contact Details</h2>
+
+<p>
+If you experience any problems or have any questions about this
+product, contact one of our <a href="http://www.keil.com/distis">distributors</a>
+or offices for assistance.
+</p>
+
+<div align="center">
+  <center>
+<table border="0" cellpadding="5" cellspacing="0">
+  <tr>
+    <td valign="top" nowrap bgcolor="#FFFFCC" style="border: 1 solid #800000">
+      <p>
+      <b>
+      In the USA...<br>
+      </b>
+      <br>
+      <b>
+      Keil Software, Inc.</b><br>
+      1501 10th Street, Suite 110<br>
+      Plano, TX&nbsp; 75074<br>
+      USA<br>
+      <br>
+      800-348-8051 - Sales<br>
+      972-312-1107 - Support<br>
+      972-312-1159 - Fax<br>
+      <a href="mailto:sales.us@keil.com"><br>
+      sales.us@keil.com</a> - Sales E-Mail<a href="mailto:E-Mailsupport.us@keil.com"><br>
+      support.us@keil.com</a> - Support E-mail&nbsp;<br>
+      &nbsp;&nbsp;
+      </p>
+    </td>
+    <td valign="top" width="30" nowrap>
+    </td>
+    <td valign="top" nowrap style="border: 1 solid #800000" bgcolor="#FFFFCC">
+      <p>
+      <b>
+      In Europe...<br>
+      </b>
+      <br>
+      <b>
+      Keil Elektronik GmbH<br>
+      </b>
+      Bretonischer Ring 15<br>
+      D-85630 Grasbrunn<br>
+      Germany<br>
+      <br>
+      +49 89 456040-0 - Sales<br>
+      +49 89 456040-24 - Support<br>
+      +49 89 468162 - Fax<br>
+      <a href="mailto:sales.intl@keil.com"><br>
+      sales.intl@keil.com</a> - Sales E-Mail<a href="mailto:E-Mailsupport.intl@keil.com"><br>
+      support.intl@keil.com</a> - Support E-Mail<br>
+      &nbsp;&nbsp;
+      </p>
+    </td>
+  </tr>
+</table>
+  </center>
+</div>
+
+<hr>
+
+<p class="TinyT">
+Copyright © Keil Software, Inc. and Keil Elektronik GmbH.<br>
+All rights reserved.<br>
+Visit our web site at <a href="http://www.keil.com">www.keil.com</a>.
+</p>
+
+</body>
+
+</html>

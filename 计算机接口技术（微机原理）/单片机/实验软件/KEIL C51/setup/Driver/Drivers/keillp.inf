@@ -1,0 +1,65 @@
+; KEILLP.INF
+;
+; inf file for Keil EMP900 (Emulator/Programmer Module for Philips LPC900)
+;
+; Copyright © 2002 Keil Elektronik GmbH
+;
+
+
+[Version]
+Signature="$CHICAGO$"
+Class=USB
+provider=%Keil%
+LayoutFile=layout.inf
+DriverVer=10/22/2002,1.0.0.1
+
+[Manufacturer]
+%Keil%=Keil
+
+[Keil]
+%USB\VID_c251&PID_2711.DeviceDesc%=KEILLP.Dev,USB\VID_c251&PID_2711
+
+[PreCopySection]
+HKR,,NoSetupUI,,1
+
+[DestinationDirs]
+KEILLP.Files.Ext  = 10,system32\drivers  ; Windows System Drivers
+KEILLP.Files.Inf  = 17  ; INF File folder
+
+
+[KEILLP.Dev]
+;CopyFiles=KEILLP.Files.Ext, KEILLP.Files.Inf
+AddReg=KEILLP.AddReg
+
+[KEILLP.Dev.NT]
+;CopyFiles=KEILLP.Files.Ext, KEILLP.Files.Inf
+AddReg=KEILLP.AddReg
+
+[KEILLP.Dev.NT.Services]
+Addservice=KEILLP,2,KEILLP.AddService
+
+[KEILLP.AddService]
+DisplayName    = %KEILLP.SvcDesc%
+ServiceType    = 1                  ; SERVICE_KERNEL_DRIVER
+StartType      = 2                  ; SERVICE_AUTO_START
+ErrorControl   = 1                  ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\keillp.sys
+LoadOrderGroup = Base
+
+[KEILLP.AddReg]
+HKR,,DevLoader,,*ntkern
+HKR,,NTMPDriver,,"keillp.sys"
+
+[KEILLP.Files.Ext]
+keillp.sys
+
+[KEILLP.Files.Inf]
+keillp.Inf
+
+;---------------------------------------------------------------;
+
+[Strings]
+Keil="Keil Software"
+USB\VID_c251&PID_2711.DeviceDesc="Keil USB LPC900 EPM"
+
+KEILLP.SvcDesc="Keil USB LPC900 Service"

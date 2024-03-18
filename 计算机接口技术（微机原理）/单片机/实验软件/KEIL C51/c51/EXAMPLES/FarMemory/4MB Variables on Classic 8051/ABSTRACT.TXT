@@ -1,0 +1,44 @@
+*** IMPORTANT NOTE ***
+    Far Memory Support is only available in the PK51 package.
+    If you have an CA51, DK51, or Evaluation Package the far memory
+    support is not available and this example will not work.
+
+
+The following example program shows you how to use the new features
+of C51 Version 6.23 and LX51 Linker/Locater Version 3.23 to access
+up to 4MB xdata and code space on classic 8051 devices.
+
+In this example we are using 7 memory banks for xdata and 7 memory
+banks for code.  Refer to the "Macro Assembler and Utilities" User's
+Guide, "Chapter 9. Linker/Locater - Bank Switching - Configuration
+Examples: Banking with Common Area" for a hardware schematic that
+matches to this tool configuration.
+
+C51 provides you with the 'far' memory type that can be used to
+access large memory.  The memory accesses routines are part of the
+L51_BANK.A51 configuration file.  The example includes a configured
+version of the L51_BANK.A51 file.
+
+You may use the 'far' memory banking together with code banking 
+to expand the program code memory. 
+
+The 'far' memory type is handled at LX51 linker/locater level with 
+new memory classes:
+    HDATA   memory class for the 'banked' xdata memory.
+    HCONST  memory class for the 'banked' code memory.
+
+To configure the LX51 Linker/Locater you the following options
+under Options for Target - LX51 Locate:
+
+Disable: Use Memory Layout from Target Dialog.
+
+Enter under User Classes:
+XDATA (X:0x0-X:0x7FFF), CODE (C:0x0-C:0x7FFF), 
+HDATA (X:0x028000-X:0x02FFFF, X:0x038000-X:0x03FFFF, X:0x048000-X:0x04FFFF,X:0x058000-X:0x05FFFF, 
+                  X:0x068000-X:0x06FFFF, X:0x078000-X:0x07FFFF, X:0x088000-X:0x08FFFF) ,
+HCONST (B1:0x8000-B1:0xFFFF, B2:0x8000-B2:0xFFFF, B3:0x8000-B3:0xFFFF,B4:0x8000-B4:0xFFFF,
+                     B5:0x8000-B5:0xFFFF, B6:0x8000-B6:0xFFFF, B7:0x8000-B7:0xFF
+
+
+
+

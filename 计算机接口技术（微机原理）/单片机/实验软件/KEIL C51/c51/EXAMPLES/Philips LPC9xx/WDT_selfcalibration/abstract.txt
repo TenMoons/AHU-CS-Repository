@@ -1,0 +1,96 @@
+LPC932 EXAMPLE:    AUTOCALIBRATION OF INTERNAL LOW POWER OSCILLATOR FOR    
+                                   CLOCKING THE UART
+Christian Kulig, 12/06/02
+
+
+INTRODUCTION:
+The LPC932 provides a number of features, which help to reduce power 
+consumption as well as to minimize external components.
+
+For example, it might be an option for applications in battery powered and 
+handheld devices to clock the µC with the internal watchdog timer (WDT). 
+(See figure 1) This lowers the power consumption considerably compared to 
+the use of an external crystal or the internal RC oscillator. And of 
+course, there's no need for the crystal and its two capacitors anymore. 
+Thus, applications, which don't need a high clock frequency, can be 
+developed more economically.
+
+
+APPLICATION TO THE UART:
+Nevertheless, it's possible to achieve a highly accurate time base if 
+required. For example to drive the integrated UART, it's necessary to set 
+up a baud rate with a deviation smaller than ±2.5%. Since the watchdog 
+oscillators frequency is in a range between -30% and +20% of 400kHz, the 
+actual frequency must be measured and considered before setting up the 
+particular baud rate. This means the watchdog oscillator has to be 
+calibrated. 
+
+Fortunately, the actual frequency is very stable, so that the WDT only 
+needs to be calibrated once. The results are written into the EEPROM and 
+can be used from then on.
+
+This description shows in detail how to setup the UART as an example, but 
+the calibration itself and its results can be used for any other purpose 
+requiring an accurate time base.
+
+CALIBRATION PRINCIPLE (See figure 2)
+A convenient way to generate a baud rate for the UART is to use the 
+internal baud rate generator. It divides the CCLK by a factor that is 
+defined by two registers BRG0 and BRG1. If CCLK is fWDT =400kHz and the 
+intended baud rate is 9600 the factor should be 42. Obviously, this factor 
+is proportional to CCLK and fWDT. 
+
+To get the frequency of the WDT we just have to count watchdog timer 
+events (counts, overflows) during a certain period. It's easy to use 
+overflows, because they cause an interrupt, which can be used to increment 
+a counter. To maximize the accuracy we set up the highest overflow 
+frequency, by writing a 0 into the watchdog timer reload register. Now 
+every 80µs an overflow occurs. The resulting count value could be used 
+directly as the factor for the baud rate generator, but it's advantageous 
+to count a value that's 4 times the required factor. By shifting the 
+result by 2 digits to right, the LSB error can be removed. 
+Now the measurement time is 4x42x80µs = 13.44ms. The result of the 
+calibration is as accurate as this time can be measured. 
+
+When the LPC932 is powered up for the first time, it uses the internal RC 
+oscillator as its clock source. It has a tolerance of 2.5% over the whole 
+temperature range and is better than 0.8% when used at room temperature. 
+This tolerance is well suitable for performing the calibration. The RC 
+oscillator has a frequency of 7.373Mhz, this means an internal timer 
+(e.g. Timer0) increments every 0.271µs. To get a total measurement time 
+of 13.44ms it has to count 49547 times until it overflows and causes an 
+interrupt. This interrupt must stop all timers  (T0 and WDT) and write 
+the current count value into the EEPROM.
+
+Now that the WDT is calibrated, an IAP routine is called to set up the µC 
+to use the WDT as its clock source. The last step is to execute a 
+software reset to let the new clock settings take effect. 
+
+On further powerups this calibration procedure can be skipped, since the 
+EEPROM contains the necessary information. It can be read, shifted right 
+by 2 digits and used as the factor for the baud rate generator to clock 
+the UART. It can also be used for the prescaler of any other peripheral 
+of the LPC932 that needs an accurate time base. 
+
+
+SOFTWARE EXAMPLE:
+The following code implements the calibration of the WDT. It's divided 
+into two major parts, so that it's easy to include it in existing 
+projects. 
+
+The first four files are a simple example of customer software. It uses 
+the UART for receiving a command ('S' = Send Data) from the PC and 
+sending back some data. The last two files contain the necessary code, 
+which calibrates the watchdog timer. 
+
+To test this example, the LPC932 needs a RS232 interface to a PC, which 
+may be provided by the evaluation board. Start the program 
+'Hyperterminal' (Start --> Programs --> Accessories --> Communications) 
+and set the configuration to 9600 baud, 8 data bits, 1 stop bit, no parity 
+bit and no flow control. Then click on 'Wait for Call'. After a power up, 
+the programmed device blinks the LEDs on Port 2. That means, it has 
+already calibrated the watchdog timer and is using it as the clock source.
+By pressing 'S' in Hyperterminal, the LPC932 sends out some data to the 
+PC, which are displayed by Hyperterminal.
+
+

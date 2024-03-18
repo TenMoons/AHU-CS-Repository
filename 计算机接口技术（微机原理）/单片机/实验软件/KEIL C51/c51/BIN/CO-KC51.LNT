@@ -1,0 +1,124 @@
+//    co-kc51.lnt      -  7/21/2000
+//    Compiler Options for the Keil C51 Compiler Version 5/6
+//
+//    This file contains options to allow PC-lint to process source
+//    files for your compiler.  It is used as follows:
+//
+//    lint  co-kc51.lnt  source-file(s)
+//
+//    You may contact Keil Software, Inc. at:
+//
+//    16990 Dallas Parkway, Suite 120
+//    Dallas, Texas  75248-1903
+//    Phone:  972-735-8052  Fax:  972-735-8052
+//    Sales:  800-348-8051
+
+-hsb_3           // formatting options required for MicroVision IDE
+-format="*** LINT: %(%f(%l) %)%t %n: %m"
+-width(0,10)     // Don't break lines
+
+	    // while processing compiler (library) header files ...
+-wlib(1)    // sets the warning level within library headers to 1
+	    // (no warnings, just syntax errors).  Comment out if you
+	    // are actually linting library headers.  This
+	    // option makes obsolete options of the form -elib(axxx) where
+	    // xxx >= 400 which may be retained for historical reasons.
++v
+-elib(652)   // suppress message about #define of earlier declared symbols
+-elib(762)   // suppress message about multiple identical declarations and
+-elib(760)   // suppress message about multiple identical macro defs
++rw(_bit)                 // activate the _bit datatype
++rw(bool)                 // activate the bool datatype
+-dbit=bool                // #define bit as bool
++rw(_gobble)              // activate the _gobble keyword
+                          // causes _gobble token to be both ignored
+-dinterrupt=_gobble       // defines interrupt to be a _gobble
+-dusing=_gobble           // defines using to be a _gobble
+-d_at_=_gobble            // defines _at_ to be a _gobble
++rw(_ignore_init)         // activate this keyword
++rw(__declspec)           // activate this MS keyword
+-d"sbit=__declspec(selectany) bool" // the __declspec(selectany) has the ...
+-d"sfr=__declspec(selectany) unsigned char"     // effect of allowing ...
+-d"sfr16=__declspec(selectany) unsigned short"  // multiple definitions.
+
+-e34    // ignore complaints about non-constant initializers.
+        // this is because of things like:
+        // sbit  ResetClock = P3^3;
+-e430   // ignore complaints about @ mask for function definitions.
+-e557   // ignore complaints about not recognizing printf formats
+-sp3    // size of generic pointer is 3 bytes
+
++rw(xdata,pdata,data,bdata,idata,code)   // ignore these keywords
++rw(small,compact,large,alien)
+
+-dreentrant=    // ignore reentrant
+
++d__MODEL__=0     // set memory model to small
++d__C51__=401     // set C51 compiler version to 4.01
++d__DATE__="09/05/95" // set C51 compiler date macro
++d__TIME__="11:55:00" // set C51 compiler time macro
++d__FILE__="MYFILE.C" // set C51 compiler file macro
++d__LINE__=100        // set C51 compiler line macro
++d__STDC__=1          // set C51 compiler STDC macro
+
+    // But since these types take initializers, objects like those
+    // below are considered to be multiply defined if they appear in
+    // more than one module.  Ergo we suppress 14 - Multiply-defined.
+    // Oh what a tangled web we weave ...
+-esym(14,AA,AC,ACC,ACH0,ACH1,ACH2,ACH3,ACMP,ADCH,ADCON,ADCON0)
+-esym(14,ADCON1,ADDAT,ADEX,ADM,ADR0,ADR1,ADR2,ADR3,ADRES,ADRES0,ADRES1)
+-esym(14,ADRES2,ADRES3,ADRES4,ADRES5,ADRES6,ADRES7,AE,AMSK0,AMSK1,ARCON,AUXR)
+-esym(14,B,BAUD,BCRH0,BCRH1,BCRL0,BCRL1,BD,BGEN,BKOFF,BSY,C1)
+-esym(14,C1CAP0H,C1CAP0L,C1CAP1H,C1CAP1L,C1CAP2H,C1CAP2L,C1CAP3H,C1CAP3L,C1CAP4H,C1CAP4L,C1CAPM0)
+-esym(14,C1CAPM1,C1CAPM2,C1CAPM3,C1CAPM4,C1CF0,C1CF1,C1CF2,C1CF3,C1CF4,C1CON,C1EX0)
+-esym(14,C1EX1,C1EX2,C1EX3,C1EX4,C1MOD,CBP,CC1,CC2,CC3,CC4,CC4EN)
+-esym(14,CCAP0H,CCAP0L,CCAP1H,CCAP1L,CCAP2H,CCAP2L,CCAP3H,CCAP3L,CCAP4H,CCAP4L,CCAPM0)
+-esym(14,CCAPM1,CCAPM2,CCAPM3,CCAPM4,CCEN,CCF0,CCF1,CCF2,CCF3,CCF4,CCH1)
+-esym(14,CCH2,CCH3,CCH4,CCL1,CCL2,CCL3,CCL4,CCON,CEX0,CEX1,CEX2)
+-esym(14,CEX3,CEX4,CF,CF1,CH,CH1,CIN,CL,CL1,CLK,CM0)
+-esym(14,CM1,CM2,CM3,CM4,CM5,CM6,CM7,CMEN,CMH0,CMH1,CMH2)
+-esym(14,CMH3,CMH4,CMH5,CMH6,CMH7,CMI0,CMI1,CMI2,CML0,CML1,CML2)
+-esym(14,CML3,CML4,CML5,CML6,CML7,CMOD,CMSEL,COUT,CPRL2,CP_RL2,CR)
+-esym(14,CR0,CR1,CRC,CRCE,CRCH,CRCL,CRE,CSR,CT2,CTCON,CTH0)
+-esym(14,CTH1,CTH2,CTH3,CTI0,CTI1,CTI2,CTI3,CTL0,CTL1,CTL2,CTL3)
+-esym(14,CTREL,CTRELH,CTRELL,CY,C_T2,DAPR,DARH0,DARH1,DARL0,DARL1,DCON0)
+-esym(14,DCON1,DEN,DMA,DPH,DPL,DPSEL,EA,EAD,EADC,EAI,EAL)
+-esym(14,EC,ECI,ECM0,ECM1,ECM2,ECT0,ECT1,ECT2,ECT3,EDMA0,EDMA1)
+-esym(14,EFIFO,EGSRE,EGSRV,EGSTE,EGSTV,ENS1,ES,ES0,ES1,ET0,ET1)
+-esym(14,ET2,Ex,EX0,EX1,EX2,EX3,EX4,EX5,EX6,EXEN2,EXF2)
+-esym(14,EXICON,F0,F1,FE,FIN,FOUT,FRZ,GMOD,GREN,GRXD,GTXD)
+-esym(14,HABEN,HCON,HLD,HLDA,HSTAT,I2FR,I3FR,IADC,IBF,ICII,ICOI)
+-esym(14,IDSM,IE,IE0,IE1,IEA,IEN0,IEN1,IEN2,IEP,IEX2,IEX3)
+-esym(14,IEX4,IEX5,IEX6,IFI,IFRS,IFS,IMIN,IMOUT,INT0,INT1,INT2)
+-esym(14,INT3,INT4,INT5,INT6,IP,IP0,IP1,IPA,IPA1,IPN1,IRCON)
+-esym(14,IRPR,IT0,IT1,ITHR,IWPR,LNI,MA0,MA1,MB0,MB1,MD0)
+-esym(14,MD1,MD2,MD3,MD4,MD5,MODE,MX0,MX1,MX2,MYSLOT,NOACK)
+-esym(14,OBF,OBFC,OFDCON,OFI,OFRS,ORPR,OTHR,OV,OVR,OWPR,P)
+-esym(14,P0,P1,P2,P3,P4,P5,P6,P7,P8,PAD,PAI)
+-esym(14,PCM0,PCM1,PCM2,PCON,PCT0,PCT1,PCT2,PCT3,PDMA0,PDMA1,PFIFO)
+-esym(14,PGSRE,PGSRV,PGSTE,PGSTV,PPC,PRBS,PS,PS0,PS1,PSW,PT0)
+-esym(14,PT1,PT2,PWM0,PWM1,PWMP,PX0,PX1,RB8,RCABT,RCAP2H,RCAP2L)
+-esym(14,RCLK,RD,RDN,REN,RFIFO,RFNE,RI,RS0,RS1,RSTAT,RTE)
+-esym(14,RXC,RXD,S0BUF,S0CON,S1ADR,S1BUF,S1CON,S1DAT,S1REL,S1STA,SADDR)
+-esym(14,SADEN,SARH0,SARH1,SARL0,SARL1,SBUF,SCON,SEPCLK,SEPCON,SEPDAT,SEPIO)
+-esym(14,SEPSTA,SI,SLCON,SLOTTM,SM0,SM1,SM2,SP,SSTAT,STA,STE)
+-esym(14,STO,SWDT,T0,T1,T2,T20V,T2CM,T2CON,T2EX,T2I0,T2I1)
+-esym(14,T2IE,T2IP,T2MOD,T2PS,T2R0,T2R1,T2RSE,T3,TB8,TCDCNT,TCDT)
+-esym(14,TCLK,TCON,TDN,TEN,TF0,TF1,TF2,TFIFO,TFNF,TH0,TH1)
+-esym(14,TH2,TI,TL0,TL1,TL2,TM2CON,TM2IR,TMH2,TML2,TMOD,TR0)
+-esym(14,TR1,TR2,TSTAT,TXC,TXD,UR,WDT,WDTCON,WDTDIS,WDTH,WDTL)
+-esym(14,WDTLB,WDTREL,WDTUB,WR,XPAGE,SRELL,SYSCON,SRELH,ADDATH,ADDATL)
+
+//  The following functions exhibit variable return modes.
+//  That is, they may equally-usefully be called for a value
+//  as called just for their effects.  Accordingly we inhibit
+//  Warning 534 for these functions.
+//  Feel free to add to or subtract from this list.
+
+-esym(534,close,creat,fclose,fprintf,fputc)
+-esym(534,fputs,fscanf,fseek,fwrite,lseek,memcpy,memmove,memset)
+-esym(534,printf,putchar,puts,scanf,sprintf,sscanf,strcat,strcpy)
+-esym(534,strncat,strncpy,unlink,write)
+
+-emacro(413,offsetof)  // use of NULL pointer creates a stir
+-emacro(545,offsetof)  // addressing an array member is OK

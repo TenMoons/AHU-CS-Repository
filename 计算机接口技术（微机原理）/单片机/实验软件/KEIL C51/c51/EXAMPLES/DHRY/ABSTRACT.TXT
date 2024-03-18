@@ -1,0 +1,21 @@
+The DHRY program performs the dhrystone benchmarks on the 8051.
+
+Dhrystone is a general-performance benchmark test originally
+developed by Reinhold Weicker in 1984.  This benchmark is
+used to measure and compare the performance of different
+computers or, in this case, the efficiency of the code
+generated for the same computer by different compilers.
+The test reports general performance in dhrystones per second.
+
+Like most benchmark programs, dhrystone consists of standard
+code and concentrates on string handling.  It uses no
+floating-point operations.  It is heavily influenced by
+hardware and software design, compiler and linker options,
+code optimizing, cache memory, wait states, and integer
+data types.
+
+The DHRY program is available in different targets:
+  Simulator: Large Model:  DHRY example in LARGE model 
+                           for Simulation
+  Philips 80C51MX:         DHRY example in LARGE model
+                           for the Philips 80C51MC

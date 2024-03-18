@@ -1,0 +1,17 @@
+The ISD51_Demo project for the Infineon C868 shows how to use the ISD51
+In-System-Debugger with flash breakpoints.
+ 
+This example blinks the LED's on the Keil MiniC868 or the SK-C868 evaluation 
+board in different colors.
+
+In order to run this example you have to do the following steps:
+- Select the right uVision target for your evaluation board.
+- Rebuild the project.
+- Set the Boot jumper on the evaluation board
+- Download the application with the Infineon C868.EXE utility by selecting
+  the 'LOAD' button in the uVision toolbar.
+- Remove the Boot jumper on the evaluation board.
+- Start the uVision Debugger.
+
+
+

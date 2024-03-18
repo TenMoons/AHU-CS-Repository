@@ -1,0 +1,12 @@
+Special Notes on the MON390 for DALLAS5240:
+===========================================
+
+Limitations:
+
+- The Monitor uses the RAM1 area for XDATA. The extended stack
+  cannot be enabled with the monitor.
+
+- The Monitor will *not work* in the 128KB DS5002 compatiblity mode.
+
+
+

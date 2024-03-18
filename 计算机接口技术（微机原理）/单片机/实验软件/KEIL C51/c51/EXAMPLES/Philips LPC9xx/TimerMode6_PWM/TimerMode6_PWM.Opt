@@ -1,0 +1,86 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Simulator), 0x0000 // Tools: 'MCS-51'
+Target (MCB900 - Run), 0x0000 // Tools: 'MCS-51'
+Target (EPM900 - Emulator), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Files),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,150994945,0,0,0,0,<.\TimerMode6_PWM.c><TimerMode6_PWM.c> 
+OPTFFF 2,2,5,2,0,1,1,0,<.\abstract.txt><abstract.txt> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,0,0,0,0,0,0,0,0,101,2,0,0,80,1,0,0 }
+
+ExtF <.\abstract.txt> 1,1,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,0,0,0,0,0,0,0,0,101,2,0,0,80,1,0,0 }
+
+TARGOPT 1, (Simulator)
+ CLK51=12000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 1,(80C51 Family Programmer's Guide)<DATASHTS\PHILIPS\P51_PG.PDF>
+  OPTBL 2,(Data Sheet)<DATASHTS\PHILIPS\P89LPC932_DS.PDF>
+  OPTBL 3,(User's Manual)<DATASHTS\PHILIPS\P89LPC932_UM.PDF>
+  OPTDL (S8051.DLL)()(DLPC.DLL)(-pLPC932)(S8051.DLL)()(TLPC.DLL)(-pLPC932)
+  OPTDBG 49149,-1,()()()()()()()()()() (BIN\LPC2EMP.DLL)()()()
+  OPTKEY 0,(LPC2EMP)(-O8331051 -C1667432448 -S0 -T0)
+  OPTDF 0x0
+  OPTLE <>
+  OPTLC <>
+EndOpt
+
+TARGOPT 2, (MCB900 - Run)
+ CLK51=12000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,0
+  OPTBL 0,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 1,(80C51 Family Programmer's Guide)<DATASHTS\PHILIPS\P51_PG.PDF>
+  OPTBL 2,(Data Sheet)<DATASHTS\PHILIPS\P89LPC932_DS.PDF>
+  OPTBL 3,(User's Manual)<DATASHTS\PHILIPS\P89LPC932_UM.PDF>
+  OPTDL (S8051.DLL)()(DLPC.DLL)(-pLPC932)(S8051.DLL)()(TLPC.DLL)(-pLPC932)
+  OPTDBG 49149,-1,()()()()()()()()()() (BIN\LPC2EMP.DLL)()()()
+  OPTKEY 0,(LPC2EMP)(-O8331051 -C1667432448 -S0 -T0)
+  OPTDF 0x0
+  OPTLE <>
+  OPTLC <>
+EndOpt
+
+TARGOPT 3, (EPM900 - Emulator)
+ CLK51=12000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,0
+  OPTBL 0,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 1,(80C51 Family Programmer's Guide)<DATASHTS\PHILIPS\P51_PG.PDF>
+  OPTBL 2,(Data Sheet)<DATASHTS\PHILIPS\P89LPC932_DS.PDF>
+  OPTBL 3,(User's Manual)<DATASHTS\PHILIPS\P89LPC932_UM.PDF>
+  OPTDL (S8051.DLL)()(DLPC.DLL)(-pLPC932)(S8051.DLL)()(TLPC.DLL)(-pLPC932)
+  OPTDBG 49150,-1,()()()()()()()()()() (BIN\LPC2EMP.DLL)()()()
+  OPTKEY 0,(LPC2EMP)(-O8329003 -C1667440128 -S0 -T0)
+  OPTDF 0x0
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

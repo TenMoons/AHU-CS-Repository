@@ -1,0 +1,8 @@
+The DES example is taken from the book "Applied Cryptography" 
+by Bruce Schneier.  It is adapted for the Keil C51-Compiler.
+The example code is not optimized for code or data space and
+shows the processing from long value arithmetics (56 bit) on
+an 8051 microcontroller.
+
+The DES program is available in different targets:
+  Simulator:  DES example in TINY model for Simulation

@@ -1,0 +1,102 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (Standard), 0x0000 // Tools: 'MCS-51'
+
+Group (Source Code)
+Group (Documentation)
+
+File 1,1,<.\Badcode.c><Badcode.c>
+File 2,5,<.\Abstract.txt><Abstract.txt>
+
+
+Options 1,0,0  // Target 'Standard'
+ Device (80C31)
+ Vendor (Philips)
+ Cpu (IRAM(0 - 0x7F) CLOCK(33000000))
+ Rgf (REG51.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ UseEnv=0
+ EnvBin ()
+ EnvInc ()
+ EnvLib ()
+ EnvReg (ÿPhilips\)
+ OrgReg (ÿPhilips\)
+ TgStat=0
+ OutDir (.\)
+ OutName (BadCode)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=0
+ LstDir (.\)
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ MODEL5=0
+ RTOS5=0
+ ROMSZ5=2
+ DHOLD5=128
+ XHOLD5=0
+ T51FL=16
+ CBANKS5=0
+ XBANKS5=0
+ RCB51 { 0,0,0,0,0,0,0,0,0 }
+ RXB51 { 0,0,0,0,0,0,0,0,0 }
+ OCM51 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCR51 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IRO51 { 1,0,0,0,0,0,128,0,0 }
+ IRA51 { 0,0,0,0,0,128,0,0,0 }
+ XRA51 { 0,0,248,0,0,0,8,0,0 }
+ C51FL=21597456
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+ AX51FL=4
+ AX51MSC ()
+ AX51SET ()
+ AX51RST ()
+ INCA5 ()
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ BankNo=65535
+ LX51FL=292
+ LX51OVL ()
+ LX51MSC ()
+ LX51DWN ()
+ LX51LFI ()
+ LX51ASN ()
+ LX51RES ()
+ LX51CCL ()
+ LX51UCL ()
+ LX51CSC ()
+ LX51UCS ()
+ LX51COB ()
+ LX51XDB ()
+ LX51PDB ()
+ LX51BIB ()
+ LX51DAB ()
+ LX51IDB ()
+ LX51PRC ()
+ LX51STK ()
+ LX51COS ()
+ LX51XDS ()
+ LX51BIS ()
+ LX51DAS ()
+ LX51IDS ()
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51)(S8051.DLL)()(TP51.DLL)(-p51)
+  OPTDBG 501,0,()()()()()()()()()() ()()()()
+EndOpt
+

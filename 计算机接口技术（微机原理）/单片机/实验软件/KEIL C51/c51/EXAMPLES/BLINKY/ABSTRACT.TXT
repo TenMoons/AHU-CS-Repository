@@ -1,0 +1,13 @@
+The BLINKY project is the example program used in User's
+Guide: MCBx51 Evaluation Board - Chapter 5 Programming.
+ 
+It does nothing more than blink the LEDs on the MCBx51 
+evaluation board.           
+
+
+The Blinky program is available in different targets:
+  Simulator:       Blinky example in SMALL model for Simulation
+
+  MCBx51: 8xC51Rx: Blinky example for the MCBx51 Eval Board
+                   running on 80C51Rx+, 80C51RD2, or compatible
+
