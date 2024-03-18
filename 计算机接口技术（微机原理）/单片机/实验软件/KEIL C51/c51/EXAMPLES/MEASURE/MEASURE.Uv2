@@ -1,0 +1,130 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (Simulator), 0x0000 // Tools: 'MCS-51'
+
+Group (Source Code)
+Group (Documentation)
+
+File 1,1,<.\Measure.c><Measure.c>
+File 1,1,<.\Mcommand.c><Mcommand.c>
+File 1,1,<.\Getline.c><Getline.c>
+File 2,5,<.\Abstract.txt><Abstract.txt>
+
+
+Options 1,0,0  // Target 'Simulator'
+ Device (C515A-L)
+ Vendor (Infineon)
+ Cpu (IRAM(0 - 0xFF) CLOCK(24000000) XRAM (0xFC00-0xFFFF))
+ Rgf (REG515A.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ UseEnv=0
+ EnvBin (C:\Keil\C51\BIN\)
+ EnvInc (C:\Keil\C51\INC\)
+ EnvLib (C:\Keil\C51\LIB\)
+ EnvReg (ÿInfineon\)
+ OrgReg (ÿInfineon\)
+ TgStat=8
+ OutDir (.\)
+ OutName (Measure)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=1
+ LstDir (.\)
+ HexSel=0
+ MG32K=0
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ SVCSID <>
+ MODEL5=0
+ RTOS5=0
+ ROMSZ5=2
+ DHOLD5=128
+ XHOLD5=0
+ T51FL=48
+ CBANKS5=0
+ XBANKS5=0
+ RCB51 { 0,0,0,0,0,0,0,1,0 }
+ RXB51 { 0,0,0,0,0,0,0,0,0 }
+ OCM51 { 0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCR51 { 0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IRO51 { 1,0,0,0,0,0,0,0,0 }
+ IRA51 { 0,0,0,0,0,0,1,0,0 }
+ XRA51 { 0,0,252,0,0,0,4,0,0 }
+ C51FL=21646608
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+ AX51FL=4
+ AX51MSC ()
+ AX51SET ()
+ AX51RST ()
+ INCA5 ()
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ BankNo=65535
+ LX51FL=292
+ LX51OVL ()
+ LX51MSC ()
+ LX51DWN ()
+ LX51LFI ()
+ LX51ASN ()
+ LX51RES ()
+ LX51CCL ()
+ LX51UCL ()
+ LX51CSC ()
+ LX51UCS ()
+ LX51COB (0X0000-0XFFFF)
+ LX51XDB (0X0000-0XFFFF)
+ LX51PDB ()
+ LX51BIB ()
+ LX51DAB ()
+ LX51IDB ()
+ LX51PRC ()
+ LX51STK ()
+ LX51COS ()
+ LX51XDS ()
+ LX51BIS ()
+ LX51DAS ()
+ LX51IDS ()
+  OPTDL (S8051.DLL)()(D500.DLL)(-p515A)(S8051.DLL)()(T500.DLL)(-p515A)
+  OPTDBG 2033,0,()()()()(.\Measure.ini)()()()()() ()()()()
+EndOpt
+
+Options 1,1,0  // Group 'Source Code'
+ IncBld=0
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ BankNo=65535
+ C51FL=42902186
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+ AX51FL=170
+ AX51MSC ()
+ AX51SET ()
+ AX51RST ()
+ INCA5 ()
+EndOpt
+

@@ -1,0 +1,43 @@
+uVision2/ARM Developers Kit - RESTRICTIONS IN THE EVAL VERSION
+
+1.  The µVision2 IDE/Debugger provided in the BETA release is unrestricted. However, it only works until September 2003. Thereafter, you must license a fully functioning version of the software. 
+
+2.  We provide the GNU ARM tools (compiler, assembler, and so on). These are not limited or restricted in any way. 
+
+
+PK51/C51 Compiler - RESTRICTIONS IN THE EVAL VERSION
+
+1.  The 8051 compiler, assembler, linker, and debugger are limited to 2 Kbytes of object code but source code can be any size.  Programs generating more than 2 Kbytes of object code will not compile, assemble, or link.
+ 
+2.  The debugger supports 2 Kbyte files or smaller. 
+
+3.  The startup code generated includes LJMPs and code generated cannot be used in single-chip devices supporting less than 2K of program space (for example, Philips 750/751/752).
+ 
+4.  Programs begin at offset 0x0800 and code generated with the evaluation software cannot be programmed into single-chip devices. 
+
+5.  No hardware support is available for multiple DPTR registers.
+
+6.  No support is available for user libraries or floating point arithmetic.
+
+7.  The following Code Banking Linker, Library Manager and RTX-51 Tiny Real-Time Operating System, which are present in the PK51 Full Version, are not included in the PK51/C51 Eval Version.
+
+8.  It is not possible to generate assembler source files or use in-line assembler features.
+
+
+PK166/C166 COMPILER - RESTRICTIONS IN THE EVAL VERSION
+
+1.  The 166 compiler, assembler, linker, and debugger are limited to 4 Kbytes of object code but source code can be any size. Programs generating more than 4 Kbytes of object code will not compile, assemble, or link.
+
+2.  The debugger supports 4 Kbyte files or smaller. 
+
+3.  It is not possible to generate assembler source files or use in-line assembler features.
+
+
+DK251/C251 COMPILER - RESTRICTIONS IN THE EVAL VERSION
+
+1.  The 251 compiler, assembler, linker, and debugger are limited to 2 Kbytes of object code but source code can be any size. Programs generating more than 4 Kbytes of object code will not compile, assemble, or link.
+
+2.  The debugger supports 2 Kbyte files or smaller. 
+
+3.  It is not possible to generate assembler source files or use in-line assembler features.
+

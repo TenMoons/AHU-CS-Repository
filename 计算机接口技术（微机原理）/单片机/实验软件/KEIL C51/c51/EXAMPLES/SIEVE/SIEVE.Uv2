@@ -1,0 +1,193 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (Small Model), 0x0000 // Tools: 'MCS-51'
+Target (Large Model), 0x0000 // Tools: 'MCS-51'
+
+Group (Source Code)
+Group (Documentation)
+
+File 1,1,<.\Sieve.c><Sieve.c>
+File 2,5,<.\Abstract.txt><Abstract.txt>
+
+
+Options 1,0,0  // Target 'Small Model'
+ Device (80C51FA)
+ Vendor (Philips)
+ Cpu (IRAM(0 - 0xFF) CLOCK(33000000))
+ Rgf (REG51F.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ UseEnv=0
+ EnvBin (C:\Keil\C51\BIN\)
+ EnvInc (C:\Keil\C51\INC\)
+ EnvLib (C:\Keil\C51\LIB\)
+ EnvReg (ÿPhilips\)
+ OrgReg (ÿPhilips\)
+ TgStat=0
+ OutDir (.\)
+ OutName (Sieve)
+ GenApp=1
+ GenLib=0
+ GenHex=1
+ Debug=1
+ Browse=1
+ LstDir (.\)
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ MODEL5=0
+ RTOS5=0
+ ROMSZ5=0
+ DHOLD5=0
+ XHOLD5=0
+ T51FL=16
+ CBANKS5=0
+ XBANKS5=0
+ RCB51 { 0,0,0,0,0,0,0,1,0 }
+ RXB51 { 0,0,0,0,0,0,0,0,0 }
+ OCM51 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCR51 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IRO51 { 0,0,0,0,0,0,0,0,0 }
+ IRA51 { 0,0,0,0,0,0,1,0,0 }
+ XRA51 { 0,0,0,0,0,0,0,0,0 }
+ C51FL=21597456
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+ AX51FL=4
+ AX51MSC ()
+ AX51SET ()
+ AX51RST ()
+ INCA5 ()
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ BankNo=65535
+ LX51FL=292
+ LX51OVL ()
+ LX51MSC ()
+ LX51DWN ()
+ LX51LFI ()
+ LX51ASN ()
+ LX51RES ()
+ LX51CCL ()
+ LX51UCL ()
+ LX51CSC ()
+ LX51UCS ()
+ LX51COB ()
+ LX51XDB ()
+ LX51PDB ()
+ LX51BIB ()
+ LX51DAB ()
+ LX51IDB ()
+ LX51PRC ()
+ LX51STK ()
+ LX51COS ()
+ LX51XDS ()
+ LX51BIS ()
+ LX51DAS ()
+ LX51IDS ()
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51R)(S8051.DLL)()(TP51.DLL)(-p51R)
+  OPTDBG 48125,0,()()()()()()()()()() ()()()()
+EndOpt
+
+Options 2,0,0  // Target 'Large Model'
+ Device (80C51FA)
+ Vendor (Philips)
+ Cpu (IRAM(0 - 0xFF) CLOCK(33000000))
+ Rgf (REG51F.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ UseEnv=0
+ EnvBin (C:\Keil\C51\BIN\)
+ EnvInc (C:\Keil\C51\INC\)
+ EnvLib (C:\Keil\C51\LIB\)
+ EnvReg (ÿPhilips\)
+ OrgReg (ÿPhilips\)
+ TgStat=0
+ OutDir (.\)
+ OutName (Sieve)
+ GenApp=1
+ GenLib=0
+ GenHex=0
+ Debug=1
+ Browse=1
+ LstDir (.\)
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ MODEL5=2
+ RTOS5=0
+ ROMSZ5=2
+ DHOLD5=0
+ XHOLD5=0
+ T51FL=16
+ CBANKS5=0
+ XBANKS5=0
+ RCB51 { 0,0,0,0,0,0,0,0,0 }
+ RXB51 { 0,0,0,0,0,0,0,0,0 }
+ OCM51 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCR51 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IRO51 { 0,0,0,0,0,0,0,0,0 }
+ IRA51 { 0,0,0,0,0,0,1,0,0 }
+ XRA51 { 0,0,0,0,0,0,0,0,0 }
+ C51FL=21597456
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+ AX51FL=4
+ AX51MSC ()
+ AX51SET ()
+ AX51RST ()
+ INCA5 ()
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ BankNo=65535
+ LX51FL=292
+ LX51OVL ()
+ LX51MSC ()
+ LX51DWN ()
+ LX51LFI ()
+ LX51ASN ()
+ LX51RES ()
+ LX51CCL ()
+ LX51UCL ()
+ LX51CSC ()
+ LX51UCS ()
+ LX51COB ()
+ LX51XDB ()
+ LX51PDB ()
+ LX51BIB ()
+ LX51DAB ()
+ LX51IDB ()
+ LX51PRC ()
+ LX51STK ()
+ LX51COS ()
+ LX51XDS ()
+ LX51BIS ()
+ LX51DAS ()
+ LX51IDS ()
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51R)(S8051.DLL)()(TP51.DLL)(-p51R)
+  OPTDBG 509,0,()()()()()()()()()() ()()()()
+EndOpt
+

@@ -1,0 +1,525 @@
+<html>
+
+<head>
+<title>MON390 (Monitor for Dallas Contiguous) Release Notes</title>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<meta name="GENERATOR" content="Microsoft FrontPage 4.0">
+<meta name="ProgId" content="FrontPage.Editor.Document">
+<style>
+<!--
+p            { font-family: Verdana; font-size: 10pt }
+.Release     { background-color: #CCCCCC; font-weight: bold; padding: 6 }
+.ToolT       { font-size: 8pt; color: #808080 }
+.TinyT       { font-size: 8pt; text-align: Center }
+ul           { font-family: Verdana; font-size: 10pt; list-style-type: square }
+ol           { font-family: Verdana; font-size: 10pt }
+h1           { font-family: Verdana; font-size: 18pt; color: #000080; font-weight: bold; 
+               text-align: Center; margin-right: 3 }
+h2           { font-family: Verdana; font-size: 14pt; color: #000080; font-weight: bold; 
+               background-color: #CCCCCC; margin-top: 24; margin-bottom: 3; 
+               padding: 6 }
+h3           { font-family: Verdana; font-size: 10pt; font-weight: bold; background-color: 
+               #CCCCCC; margin-top: 24; margin-bottom: 3; padding: 6 }
+h4           { font-family: Verdana; font-size: 10pt; font-weight: bold; margin-top: 24; 
+               margin-bottom: 3 }
+pre          { font-family: Courier New; font-size: 10pt; background-color: #CCFFCC; 
+               margin-left: 24; margin-right: 24 }
+li           { margin-top: 6; margin-bottom: 6 }
+-->
+
+</style>
+</head>
+
+<body>
+
+<h1>Release Notes for MON390<br>
+<font size="2">Monitor for Dallas Contiguous Mode</font></h1>
+
+<p align="center">This file contains release notes and last minute changes that
+are not found in the printed manuals.</p>
+
+<p class="TinyT">Information in this file, the accompany manuals, and software
+is<br>
+Copyright © Keil Software, Inc and Keil Elektronik GmbH.<br>
+All rights reserved.</p>
+
+<hr>
+<h2>Contents</h2>
+<ol>
+  <li><a href="#Overview">MON390 Overview</a>
+  <li><a href="#Philosophy">How MON390 Works</a>
+  <li><a href="#Integration">Setup MON390 on Your Hardware</a>
+  <li><a href="#Configuration">Configure µVision2 for MON390</a>
+  <li><a href="#Tool Configuration">Tool Configuration for MON390</a>
+  <li><a href="#Debugging">Debug with MON390</a>
+  <li><a href="#Troubleshooting">Troubleshooting</a>
+  <li><a href="#KnownProblems">Known Problems</a>
+  <li><a href="#TechnicalSupport">Technical Support</a>
+  <li><a href="#ContactDetails">Contact Details</a>
+</ol>
+<h2><a name="Overview"></a>MON390 - Monitor for Dallas Contiguous Mode</h2>
+
+<p>The MON390 is a Monitor program that allows you to debug applications on your
+target hardware using the Keil µVision2 Debugger. You connect the µVision2
+Debugger with a serial cable to a target board that uses a Dallas CPU&nbsp;(like
+DS80C390, or DS80C400)&nbsp;running in Contiguous Mode. In this mode up to
+16MByte memory are supported.<br>
+</p>
+
+<p>To get started, you must:</p>
+
+<ul>
+  <li>Configure and install the MON390 on your target hardware as described
+    under <a href="#Integration">Setup MON390 on your hardware</a>.
+  <li>Select the correct Debug Driver as explained under <a href="#Configuration">Configure
+    µVision2 for MON390</a>.
+  <li>You need to adjust the project settings for your application as explained
+    under ...
+</ul>
+
+<p>We recommend that you test your MON390 installation with an example project
+available in the Keil\C51\MON390 folder before you start debugging with your own
+test program.</p>
+
+<h3>Features</h3>
+<ul>
+  <li>Controlled program execution with single-stepping and multiple software
+    breakpoints.
+  <li>Viewing and changing CPU registers and memory.
+  <li>Access to Special Function Registers (SFRs).
+  <li>Execution of user programs in full speed <u>when no conditional
+    breakpoints are set</u>.
+  <li>MON390 is transparent for a user program's interrupt system.
+</ul>
+<h3>Requirements</h3>
+<ul>
+  <li>One UART (can be shared with the user application in non-interrupt mode).
+    MON390 uses a serial interface with a timer as baudrate generator.
+  <li>2K bytes of code memory for MON390 program code.
+  <li>32 bytes of xdata memory (von Neumann mapped)&nbsp;for MON390 data.
+  <li>8 bytes stack space in the user program to be tested.
+  <li>Code space for the user application must be configured as von-Neumann
+    memory.
+</ul>
+<h2><a name="Philosophy"></a>How MON390 Works</h2>
+
+<p>MON390 connects to the µVision2 Debugger via the serial interface. MON390 is
+fully transparent for the user application. There are only a few issues to keep
+in mind when you are using MON390:</p>
+
+<ul>
+  <li>MON390 requires that the programs you debug are located in RAM&nbsp;space.
+    This is necessary because breakpoints are set by replacing instructions in
+    your program with ACALL&nbsp;instructions. This operation, while completely
+    transparent, may have side effects that affect the operation of your target
+    program. Refer to Breakpoint Side Effects later in this section for more
+    information.<br>
+  <li>You may need to relocate your startup code, program code segments, and
+    interrupt vector table.<br>
+  <li>You may enable or disable the HALT command of the µVision2 Debugger. This
+    is configured with the <b>Enable Serial Break</b> under <b>Options for
+    Target - Debug: Use: MON390: Dallas Contiguous Mode - Settings</b>. If this
+    is enabled the µVision2 Debugger and the MON390 use the serial interrupt
+    vector to signal that the target program should stop running.<br>
+</ul>
+<h3>Breakpoint Side Effects</h3>
+
+<p>Breakpoints are required to stop the user application for checking of the
+system variables. To perform a breakpoint MON390 inserts a ACALL instruction in
+the user program. This method avoids extra hardware for the breakpoint logic.
+However, breakpoints can only be set in RAM memory. Another drawback is that a
+ACALL instruction occupies up to three bytes. Therefore breakpoints may have
+side effects when set before a label (jump target) on a one or two byte
+CPU&nbsp;instruction. The following example demonstrates this problem.<br>
+</p>
+
+<p><b>User Program</b></p>
+
+<pre>8000  E4        CLR     A
+8001  74 03     MOV     A,#3
+ :&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:
+
+			
+ :&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:
+
+			
+8010  80 ED     SJMP    8001
+</pre>
+
+<p>First, the user program is executed until address 8010 with a Debugger
+command like&nbsp;<b>G, 8010</b>.</p>
+
+<p>Then, a breakpoint is set at address 8000. The breakpoint is realized by
+writing a ACALL instruction into the user program; this means that the user
+program is modified by the breakpoint.<br>
+</p>
+
+<p><b>User Program Modified Due to Breakpoints</b></p>
+
+<pre>8000  XX        ACALL           ; An ACALL instruction is
+8001  XX XX     ???             ; written at address 8000. 
+ :&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:
+
+			
+ :&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;:
+
+			
+8010  80 ED     SJMP    8001
+</pre>
+
+<p>When the user program continues execution at address 8010 the program jumps
+to address 8001. However, this memory location is overwritten with the second
+op-code byte of the ACALL instruction that is inserted due to the breakpoint at
+address 8000. Therefore, the MOV&nbsp;A,#3 instruction will be not executed and
+the behavior of the user program is unpredictable.</p>
+
+<p>In real C&nbsp;applications such conditions are rare, however, you should
+keep in mind that the ACALL instruction might influence the user program. In
+such situations, you may single step in the user program. During single stepping
+all instructions are executed without conflicts, since the debugger takes care
+about conflicts.</p>
+
+<h3>Program Execution</h3>
+
+<p>When only exection breakpoints are defined, the user program is executed in
+full speed.&nbsp; You may also use <b>access </b>or <b>conditional </b>breakpoints.
+In this case, the application is executed in single steps and not in real time.
+Single step execution is at least 1000 times slower.</p>
+
+<h2><a name="Integration"></a>Setup MON390 on Your Hardware</h2>
+
+<p>Preconfigured Mon390 version are available in the folder <b>Keil\C51\MON390\</b>.
+If your target board is not available, you need to configure the <b>User Monitor</b>
+for your target hardware.</p>
+
+<p>The following steps are required to customize the <b>User Monitor</b>
+project:</p>
+
+<ol>
+  <li>Open the <b>Keil\C51\MON390\User Monitor\MON390.uv2 </b>Project.
+  <li>Open <b>Install.A51</b> with the editor.
+  <li>Check the configurations settings in <b>Install.A51</b> and modify them,
+    if necessary, to match your target hardware.
+  <li>Customize the baudrate initialization code.&nbsp; You may use the
+    µVision2 simulator to verify your settings.
+  <li>Build target and load it into the target hardware device with the
+    appropriate tool (depends on your hardware), or burn it to the boot ROM.
+  <li>When you have Verify that the monitor starts up, by checking a blinking
+    sequence on Port1, which the monitor generates after the initialization.
+</ol>
+
+<p>Program that may be used to verify the settings for a user Mon390 can be
+found in the folder <b>Keil\C51\MON390\Examples</b>.</p>
+
+<h2><a name="Configuration"></a>Configure µVision2 for MON390</h2>
+
+<p>Once you have installed the MON390 firmware to the target hardware you may
+configure the µVision2 Debugger for communication with the Dallas Contiguous
+Mode target system.</p>
+
+<ol>
+  <li>Start MON390 on the target system (typically with a
+    CPU&nbsp;reset)&nbsp;before you start the uVision2 Debugger.
+  <li>In µVision2, open the dialog <b>Project - Options for Target - Debug.</b>
+  <li>Select<b> Use: MON390: Dallas Contiguous Mode</b>.
+  <li>Enable <b>Load Application at Startup</b> to load the user program to the
+    target hardware.
+  <li>You may enable <b>Go till main</b> to execute the user program until the
+    main() function is reached.
+  <li>Configure the options below with <b>MON390: Dallas Contiguous Mode -
+    Settings</b>:
+</ol>
+<blockquote>
+  <h3>COM Port Settings</h3>
+  <ul>
+    <li><b>Port</b>: PC COM port used to connect the target hardware.
+    <li><b>Baudrate</b>: Communication baud rate with the target hardware.
+  </ul>
+  <h3>Cache Options</h3>
+
+  <p>The MON390 driver implements data caches to speed-up screen updates.</p>
+
+  <ul>
+    <li>Disable the cache options to view actual (un-cached) memory content of
+      DATA (and SFR), IDATA, or XDATA space when you halt program execution.
+      This way you can be certain you are viewing the current values of I/O
+      ports, timers, or memory-mapped peripherals.
+    <li>Enable the cache options to obtain maximum performance. This enhances
+      especially the code disassembly and displaying of huge memory areas.
+  </ul>
+  <h3>Target Options</h3>
+</blockquote>
+<ul>
+  <blockquote>
+  </blockquote>
+  <li><b>Enable Serial Break </b>allows you to the HALT program exection. When
+    this is enabled MON390 uses the serial interrupt vector and the serial line
+    cannot be shared with the user program I/O&nbsp;routines. When this is
+    disabled the user program may use putchar and getkey routines to perform
+    character I/O&nbsp;via the serial interface in non-interrupt mode.
+</ul>
+<h2><a name="Tool Configuration"></a>Tool Configuration for MON390</h2>
+
+<p>When using MON390, the complete target application is stored in von-Neumann
+mapped RAM. This means that the <b>code</b> memory and <b>xdata</b> memory are
+accessing the same physical memory space. This is required, since the target
+hardware is not able to write into code space and the MON390 changes the program
+code to set breakpoints in your application.</p>
+
+<p>Therefore the EPROM and RAM areas that are entered in the dialog <b>Project -
+Options for Target – Target – Off-chip Memory</b> must be non-overlapping
+physical memory areas. These ranges are supplied to the Linker if you have
+enabled the option <b>Use Memory Layout from Target Dialog </b>in the <b>LX51
+Locate</b> dialog page. Therefore you should also check that this option is set.</p>
+
+<p>Refer to the µVision2 projects in the folder <b>Keil\C51\MON390\Examples </b>and
+review the tool configuration of this applications if you are not sure about the
+tool configuration.</p>
+
+<h3>Additional Settings when MON390 is Install at Address 0</h3>
+
+<p>When the Monitor is installed at address 0 interrupt vectors will be
+redirected as specified with the <b>INT_ADR_OFF</b> definition in the <b>INSTALL.A51
+</b>file. Therefore you need to modify the START390.A51 startup code and you may
+need to set an interrupt vector offset. The initial <b>LJMP</b> instruction
+needs to be exchanged by an <b>AJMP</b> instruction. The Monitor-390 already
+switches the CPU into contiguous mode, and therefore the <b>AJMP</b> instruction
+can have a jump target anywhere in the 64KB CODE memory class that is used in
+the <b>START390.A51</b>. The modification in the START390.A51 is as shown below:
+<pre>?C_STARTUP      LABEL   NEAR
+                ;DB      02H     ; LJMP in Classic 8051 Mode
+                ;DW      WORD0 STARTUP1
+	        AJMP    STARTUP1 ; AJMP in Contigous Mode</pre>
+
+<p>The other modifications depend on the redirection address. If you just change
+the interrupt vector address offset to a different 64KB segment (for example
+C:0x010000) you need to enter the start address of the under <b>Project -
+Options for Target - Target - Off-Chip Code memory</b>. For example: EPROM #1:
+Start: 0x10000 Size: 0x40000. The uVision2 IDE converts this into a LX51
+Linker/Locater CLASSES directive that will contain a CODE memory class that
+starts at C:0x10000. If you redirect the start address to a page offset (for
+example to C:0x008000 or C:0x018000), you need in addition also a change for the
+?C_CPURESET?0 segment in START390.A51 as shown below:
+<pre>?C_CPURESET?0   SEGMENT CODE OFFS 8000H
+                RSEG    ?C_CPURESET?0</pre>
+<h2><a name="Debugging"></a>Debugging with MON390</h2>
+
+<p>Once the µVision2 Debugger is configured, you may start debugging with <b>Debug
+- Start/Stop Debug Session</b>. The µVision2 Debugger connects to the Dallas
+target system via the <b>MON390: Dallas Contiguous Mode </b>driver.</p>
+
+<p>MON390 supports most µVision2 debugger features. For instance, you may
+single-step through code, set breakpoints, and run your application. Variables
+may be viewed and modified using the standard debugger features. Changing the
+values of SFRs and memory of any type can be done in the Watch Windows or the
+the Register tab.</p>
+
+<p>More information about debugging with MON390 can be found in the User's Guide
+<i>Getting Started with µVision2</i>, <b>Chapter 5. Testing Programs</b> and <b>Chapter
+11. Debugging with Monitor-51</b>.</p>
+
+<h3>µVision2 Restrictions When Using MON390</h3>
+
+<p>There are several restrictions you must consider when using MON390 and the
+µVision2 Debugger.</p>
+
+<ul>
+  <li>It is not possible to use Debug - Memory Map to change the memory mapping
+    of the 8051 system. This is because the memory mapping of the 8051 target
+    system depends on hardware components.
+  <li>The Performance Analyzer, Call Stack, Code Coverage, and Step Out command
+    are not available with MON390.
+  <li>The Periodic Window Update Option may not be used with MON390.
+</ul>
+<h2><a name="Troubleshooting"></a>Troubleshooting</h2>
+
+<p>The following section gives you tips to solve common problems.</p>
+
+<h3>If the Debugger does not connect...</h3>
+
+<p>... it is typically a problem of MON390 code and xdata locations or the
+initialization of the serial interface.<br>
+</p>
+
+<p>You should first verify that the target system's serial interface is
+correctly configured. You may check this by using the µVision2 Simulation as
+follows:</p>
+
+<ol>
+  <li>Open the µVision2 project that you have used to configure MON390, i.e. <b>Keil\C51\MON390\User
+    Monitor\MON390.uv2</b>.
+  <li>Select <b>Project - Options for Target - Debug: Use Simulator</b>.
+  <li>Start program simulation with <b>Debug - Start/Stop Debug Session</b>.
+    This loads the monitor program in simulation mode.
+  <li>Start running the simulation (Debug - Go).
+  <li>Verify the settings of the UART with the Serial Port Dialog (Peripherals -
+    Serial). The baudrate is displayed correctly if you have entered the correct
+    XTAL frequency in <b>Project - Options for Target - Target - Xtal</b>.
+    Typically, the baudrate will not match the PC baud rate 100%, but it should
+    be within 2.5% tolerance.
+  <li>Check serial communications:
+    <ul>
+      <li>Open the serial communication window (View - Serial Window).
+      <li>Right-click in the Serial Window and select Hex Mode from the context
+        menu.
+      <li>Enter <b>s0in=0xFF</b>&lt;ENTER&gt; in the Command Window to Input a
+        0xFF character in the serial input stream.
+    </ul>
+    The µVision2 should show the Monitor identification 0xFE, 0xA5 in the
+    serial window now.
+
+    <p>If everything is correctly configured and you are still unable to connect
+    to the hardware, you'll try to link the following test-program with your
+    monitor install code and load it into your hardware. It shoud echo all
+    inputs on the keyboard back in your Hyperterminal.</p>
+
+    <pre>/*
+ * Test Function: verify serial communication with HyperTerminal
+ */
+#include &lt;REG390.H&gt;
+
+void main (void) {
+  char c = 'A';
+ 
+  //  init serial interface 19200 baud @ 20MHz
+  PCON  |= 0x80;
+  SCON0  = 0x50;   
+  TMOD  |= 0x21;
+  TH1    = 0xF8;
+  CKCON |= 0x10;
+  TCON   = 0x50;
+
+  TI = 1;
+  while (1) { 
+    if (RI) { 
+      c = SBUF; 
+      RI = 0; }
+    while (!TI);
+      TI = 0;
+      SBUF = c;
+  }   
+}</pre>
+</ol>
+
+<p>If the serial channel is correctly configured and you are still unable to
+connect to the target hardware, the MON390 code or xdata space might not be
+accessable.</p>
+
+<h3>If MON390 stops working or behaves strange during debugging...</h3>
+
+<p>... your application is most likely overwriting the user application program.
+This might happen when the user application makes xdata write accesses to the
+program code locations. Code and xdata memory must be non-overlapping areas,
+since the MON390 requires von Neumann wired code space, which means that code
+and xdata space are physically the same memory area. You should therefore check
+the XDATA and CODE MEMORY MAPPING that is listed in the Linker MAP file and
+verify that code and xdata space are not overlapping.</p>
+
+<p>If MON390 does not single step CPU instructions or if you cannot read or
+write SFR data locations the MON390 xdata memory area cannot be accessed from
+code space. The MON390 data memory must be also von Neumann mapped xdata/code
+space.</p>
+
+<p>During operation, MON390 may report the following errors:</p>
+
+<p><b>CONNECTION TO TARGET SYSTEM LOST</b>: µVision2 has lost the serial
+connection to the MON390 program. This error might occur because your program
+re-initializes the serial interface used by MON390. This error also occurs when
+you single step in the serial I/O routines of your application.</p>
+
+<p><b>NO CODE MEMORY AT ADDRESS xxxxx</b>: you try to download code into ROM
+space or non-existing memory. The code memory must be von-Neumann mapped xdata/code
+RAM.</p>
+
+<p><b>CANNOT WRITE INTERRUPT VECTOR</b>:<b> </b>MON390 program cannot install
+the interrupt vectors for the serial interface. This error occurs when the code
+memory at address 0 cannot be accessed. Most likely this space is not
+von-Neumann mapped.</p>
+
+<h2><a name="TechnicalSupport"></a>Technical Support</h2>
+
+<p>At Keil Software, we are dedicated to providing you with the best development
+tools and technical support. That's why we offer numerous ways you can get the
+technical support you need to complete your embedded projects.</p>
+
+<ul>
+  <li><a href="http://www.keil.com/support"><b>Technical Support Knowledgebase</b></a><br>
+    More than 1500 technical support questions and answers are available in the
+    Support Solutions Knowledgebase. When a new question arises, it is added to
+    the knowledgebase which is continuously published to the Web. This enables
+    you to get technical support at times when our support staff is unavailable.
+  <li><a href="http://www.keil.com/appnotes"><b>Application Notes</b></a><br>
+    Numerous Application Notes help you decipher complex features and implement
+    robust applications.
+  <li><a href="http://www.keil.com/download"><b>Example Programs and Files</b></a><br>
+    Utility programs, example code, and sample projects are regularly added to
+    the Download File section of the web site.
+  <li><a href="http://www.keil.com/discuss"><b>Discussion Forum</b></a><br>
+    Post questions, comments, and suggestions to the Keil Software Discussion
+    Forum and interact with other Keil users around the world.
+</ul>
+
+<p>Many of the features of our Technical Support Knowledgebase and Web Site are
+the results of your suggestions. If you have any ideas that will improve them,
+please <a href="http://www.keil.com/support/feedback.asp">give us your feedback</a>!</p>
+
+<h2><a name="ContactDetails"></a>Contact Details</h2>
+
+<p>If you experience any problems or have any questions about this product,
+contact one of our <a href="http://www.keil.com/distis">distributors</a> or
+offices for assistance.</p>
+
+<div align="center">
+  <center>
+  <table border="0" cellpadding="5" cellspacing="0">
+    <tr>
+      <td valign="top" nowrap bgcolor="#FFFFCC" style="border: 1 solid #800000">
+
+        <p><b>In the USA...<br>
+        </b><br>
+        <b>Keil Software, Inc.</b><br>
+        1501 10th Street, Suite 110<br>
+        Plano, TX&nbsp; 75074<br>
+        USA<br>
+        <br>
+        800-348-8051 - Sales<br>
+        972-312-1107 - Support<br>
+        972-312-1159 - Fax<br>
+        <a href="mailto:sales.us@keil.com"><br>
+        sales.us@keil.com</a> - Sales E-Mail<a href="mailto:E-Mailsupport.us@keil.com"><br>
+        support.us@keil.com</a> - Support E-mail&nbsp;<br>
+        &nbsp;&nbsp;</p>
+
+      </td>
+      <td valign="top" width="30" nowrap></td>
+      <td valign="top" nowrap style="border: 1 solid #800000" bgcolor="#FFFFCC">
+
+        <p><b>In Europe...<br>
+        </b><br>
+        <b>Keil Elektronik GmbH<br>
+        </b>Bretonischer Ring 15<br>
+        D-85630 Grasbrunn<br>
+        Germany<br>
+        <br>
+        +49 89 456040-0 - Sales<br>
+        +49 89 456040-24 - Support<br>
+        +49 89 468162 - Fax<br>
+        <a href="mailto:sales.intl@keil.com"><br>
+        sales.intl@keil.com</a> - Sales E-Mail<a href="mailto:E-Mailsupport.intl@keil.com"><br>
+        support.intl@keil.com</a> - Support E-Mail<br>
+        &nbsp;&nbsp;</p>
+
+      </td>
+    </tr>
+  </table>
+  </center>
+</div>
+<hr>
+
+<p class="TinyT">Copyright © Keil Software, Inc. and Keil Elektronik GmbH.<br>
+All rights reserved.<br>
+Visit our web site at <a href="http://www.keil.com">www.keil.com</a>.</p>
+
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+LPC932 EXAMPLE:	CREATING A PWM SIGNAL USING A TIMER IN MODE 6
+by Christian Kulig, Philips Semiconductor 12/06/02
+
+INTRODUCTION:
+The LPC932 can be used to create a Pulse Width Modulated PWM signal. 
+That's an analog signal, with only 2 discrete levels, for example 0V 
+and 5V and a  constant period. The current value of this signal at a 
+certain point of time is proportional to its Duty Cycle. That's the 
+High Time during one period divided by the period. It can also be 
+calculated as the average value during a particular period. That 
+means after low pass filtering, (e.g. RC circuit) the signal becomes 
+analog, with an actual value controlled by the microcontroller. The 
+PWM functionality enables the LPC932 to control for example the speed 
+of DC motors or the brightness of electric lighting.
+
+DESCRIPTION:
+The general purpose timer T1 of the LPC932 is set up to PWM Mode 6. 
+In this mode it becomes a  8 bit up-counter with a special 8 bit 
+reload on overflow. The reload values are alternating and represent 
+the High Time and one period minus the High Time (=Low Time) of the 
+PWM signal. On each overflow there can be an interrupt or a toggle of 
+a certain port pin. 
+
+The assigned port pin of T1 is P0.7.
+
+The example alternately increases and decreases the Duty Cycle of the 
+PWM signal on port pin P0.7 between 0% and 100%.
+
+Please note, that on the Keil MCB900 Board this port pin is not 
+connected to any of the LEDs, nevertheless the PWM can be displayed 
+with a oscilloscope.

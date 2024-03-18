@@ -1,0 +1,53 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (1MB Constants on Classic 8051), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Files),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,0,0,0,0,0,<.\MAIN.C><MAIN.C> 
+OPTFFF 1,2,2,0,0,0,0,0,<.\L51_BANK.A51><L51_BANK.A51> 
+OPTFFF 1,3,1,218103808,0,0,0,0,<.\TextA.c><TextA.c> 
+OPTFFF 1,4,1,201326592,0,0,0,0,<.\TextB.c><TextB.c> 
+OPTFFF 2,5,5,2,0,1,1,0,<.\ABSTRACT.TXT><ABSTRACT.TXT> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,21,0,0,0,22,0,0,0,235,2,0,0,171,1,0,0 }
+
+ExtF <.\ABSTRACT.TXT> 1,1,0,{ 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,21,0,0,0,22,0,0,0,235,2,0,0,171,1,0,0 }
+
+TARGOPT 1, (1MB Constants on Classic 8051)
+ CLK51=33000000
+  OPTTT 1,1,1,0
+  OPTHX 1,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,1,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\DALLAS\80C320up.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(User's Guide)<DATASHTS\DALLAS\HSMICRO_USERGUIDE.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p320)(S8051.DLL)()(TP51.DLL)(-p320)
+  OPTDBG 509,0,()()()()()()()()()() ()()()()
+  OPTKEY 0,(DLGDP51)((98=-1,-1,-1,-1,0)(82=-1,-1,-1,-1,0)(83=1054,284,1316,409,0)(84=-1,-1,-1,-1,0)(85=-1,-1,-1,-1,0)(99=278,441,546,792,0)(101=-1,-1,-1,-1,0)(91=-1,-1,-1,-1,0)(92=-1,-1,-1,-1,0)(94=-1,-1,-1,-1,0)(104=-1,-1,-1,-1,0)(5065=-1,-1,-1,-1,0))
+  OPTBB 0,0,0,1,-16775725,0,0,0,0,1,<>()(C?CLDPTR)
+  OPTWA 0,1,(text0)
+  OPTWA 1,1,(text1)
+  OPTWA 2,1,(text2)
+  OPTWA 3,1,(text3)
+  OPTMM 1,0,(B:0x8000)
+  OPTMM 2,0,(msg_st0)
+  OPTMM 3,0,(LanguageC_Menu)
+  OPTMM 4,0,(&y)
+  OPTDF 0x81
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

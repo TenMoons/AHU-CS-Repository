@@ -1,0 +1,43 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Simulator: Small Model), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Group 1),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,0,0,0,0,0,<.\TRAFFIC.C><TRAFFIC.C> 
+OPTFFF 1,2,1,0,0,0,0,0,<.\SERIAL.C><SERIAL.C> 
+OPTFFF 1,3,1,0,0,0,0,0,<.\GETLINE.C><GETLINE.C> 
+OPTFFF 2,4,5,0,0,0,0,0,<.\ABSTRACT.TXT><ABSTRACT.TXT> 
+OPTFFF 2,5,1,0,0,0,0,0,<.\README.C><README.C> 
+
+
+TARGOPT 1, (Simulator: Small Model)
+ CLK51=12000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,1
+  OPTFL 1,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\INTEL\87C51F.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Instruction Set Manual)<DATASHTS\INTEL\ISM51.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51R)(S8051.DLL)()(TP51.DLL)(-p51R)
+  OPTDBG 497,0,()()()()(Traffic.inc)()()()()() ()()()()
+  OPTBT 0,(Push for Walk)(push_key ())
+  OPTDF 0x80000086
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

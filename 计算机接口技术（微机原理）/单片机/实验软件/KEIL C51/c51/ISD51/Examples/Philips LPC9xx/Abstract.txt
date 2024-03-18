@@ -1,0 +1,8 @@
+The ISD51_Demo project for the Philips LPC932 shows how to use the
+ISD51 In-System-Debugger with flash breakpoints.
+ 
+This example just blinks with one LED on the Keil MCB900 evaluation 
+board and echoes all characters on the serial interface.
+
+
+

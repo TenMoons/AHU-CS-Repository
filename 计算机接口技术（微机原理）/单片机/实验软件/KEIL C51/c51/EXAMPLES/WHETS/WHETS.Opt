@@ -1,0 +1,42 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Simulator), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Code),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,0,0,0,0,0,<.\Whets.c><Whets.c> 
+OPTFFF 1,2,1,0,0,0,0,0,<.\Time.c><Time.c> 
+OPTFFF 2,3,5,0,0,0,0,0,<.\Abstract.txt><Abstract.txt> 
+OPTFFF 2,4,1,0,0,0,0,0,<..\Infineon C517\README.C><README.C> 
+
+
+TARGOPT 1, (Simulator)
+ CLK51=20000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\ATMELWM\C8051F000.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Instruction Set Manual)<DATASHTS\Infineon\M500.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51F00)(S8051.DLL)()(TP51.DLL)(-p51F00)
+  OPTDBG 497,0,()()()()(WHETS.INI)()()()()() ()()()()
+  OPTKEY 0,(DLGDP51)((98=-1,-1,-1,-1,0)(82=-1,-1,-1,-1,0)(83=-1,-1,-1,-1,0)(84=-1,-1,-1,-1,0)(85=-1,-1,-1,-1,0)(99=-1,-1,-1,-1,0)(91=-1,-1,-1,-1,0)(92=-1,-1,-1,-1,0)(93=-1,-1,-1,-1,0))
+  OPTDF 0x80000080
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

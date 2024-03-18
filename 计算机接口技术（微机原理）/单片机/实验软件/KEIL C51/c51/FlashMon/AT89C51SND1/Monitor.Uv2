@@ -1,0 +1,119 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+Target (Monitor for Flash), 0x0000 // Tools: 'MCS-51'
+
+Group (Configuration)
+Group (Monitor Code)
+Group (Documentation)
+
+File 1,5,<.\CONFIG.INC><CONFIG.INC> 0x0 
+File 2,2,<.\INSTALL.A51><INSTALL.A51> 0x0 
+File 2,4,<.\MON51.LIB><MON51.LIB> 0x3E775CF4 
+File 3,5,<.\ABSTRACT.TXT><ABSTRACT.TXT> 0x0 
+
+
+Options 1,0,0  // Target 'Monitor for Flash'
+ Device (AT8xC51SND1)
+ Vendor (Atmel)
+ Cpu (IRAM(0 - 0xFF) XRAM(0 - 0x7FF) IROM(0-0xFFFF) CLOCK(24000000))
+ FlashUt ("batchisp.EXE" (-device AT89C51SND1 -hardware USB - operation ERASE -operation PROGRAM #H))
+ StupF ("LIB\STARTUP.A51" ("Standard 8051 Startup Code"))
+ FlashDR ()
+ Rgf (AT8xC51SND1.H)
+ Mem ()
+ C ()
+ A ()
+ RL ()
+ OH ()
+ UseEnv=0
+ EnvBin ()
+ EnvInc ()
+ EnvLib ()
+ EnvReg (ÿATMELWM\)
+ OrgReg (ÿATMELWM\)
+ TgStat=0
+ OutDir (.\)
+ OutName (Monitor)
+ GenApp=1
+ GenLib=0
+ GenHex=1
+ Debug=1
+ Browse=1
+ LstDir (.\)
+ HexSel=0
+ MG32K=0
+ TGMORE=0
+ RunUsr 0 0 <>
+ RunUsr 1 0 <>
+ BrunUsr 0 0 <>
+ BrunUsr 1 0 <>
+ SVCSID <>
+ MODEL5=0
+ RTOS5=0
+ ROMSZ5=2
+ DHOLD5=0
+ XHOLD5=0
+ T51FL=98425
+ CBANKS5=0
+ XBANKS5=0
+ RCB51 { 0,0,0,0,0,255,255,0,0 }
+ RXB51 { 0,0,0,0,0,0,0,0,0 }
+ OCM51 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ OCR51 { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IRO51 { 1,0,0,0,0,0,0,1,0 }
+ IRA51 { 0,0,0,0,0,0,1,0,0 }
+ XRA51 { 0,0,0,0,0,0,8,0,0 }
+ XRA512 { 0,0,0,0,0,0,0,0,0 }
+ C51FL=21630224
+ C51VA=0
+ C51MSC ()
+ C51DEF ()
+ C51UDF ()
+ INCC5 ()
+ AX51FL=4
+ AX51MSC ()
+ AX51SET ()
+ AX51RST ()
+ INCA5 ()
+ PropFld { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ IncBld=1
+ AlwaysBuild=0
+ GenAsm=0
+ AsmAsm=0
+ PublicsOnly=0
+ StopCode=3
+ CustArgs ()
+ LibMods ()
+ BankNo=65535
+ LX51FL=292
+ LX51OVL ()
+ LX51MSC ()
+ LX51DWN ()
+ LX51LFI ()
+ LX51ASN ()
+ LX51RES ()
+ LX51CCL ()
+ LX51UCL ()
+ LX51CSC ()
+ LX51UCS (STACK(8), INITSEG, INSTALLCODE, STOPSEG, CODE_AREA,\~XDATA_BEGIN, XDATA_AREA)
+ LX51COB (0XE000-0XEFFE)
+ LX51XDB ()
+ LX51PDB ()
+ LX51BIB ()
+ LX51DAB ()
+ LX51IDB ()
+ LX51PRC (STACK(8))
+ LX51STK ()
+ LX51COS (INITSEG (07000H), INSTALLCODE, EXECUTE_AREA,STOPSEG, CODE_AREA, GOCODE_AREA)
+ LX51XDS (XDATA_AREA (00300H))
+ LX51BIS ()
+ LX51DAS ()
+ LX51IDS ()
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51SND1)(S8051.DLL)()(TP51.DLL)(-p51XC)
+  OPTDBG 510,-1,()()()()()()()()()() (Sle66Mon\SLE66MON.DLL)()()()
+ FLASH1 { 2,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 }
+ FLASH2 ()
+ FLASH3 ("batchisp.EXE" (-device AT89C51SND1 -hardware ATMEL_RS232 -port COM1 -baudrate 38400 -operation ERASE f  PROGRAM #H WSBV 0xE0))
+EndOpt
+

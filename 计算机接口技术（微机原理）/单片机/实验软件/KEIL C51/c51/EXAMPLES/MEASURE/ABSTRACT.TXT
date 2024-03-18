@@ -1,0 +1,9 @@
+The MEASURE program uses the analog inputs of the C515 to
+simulate a datalogger.  This example shows how you can use
+signal functions in dScope to simulate a signal coming into
+one of the analog inputs of the C515.
+
+The MEASURE program is available in different targets:
+  Simulator:   MEASURE example in SMALL model for Simulation
+  Monitor51:   MEASURE example in SMALL model for the
+               MCB517AC Eval Board

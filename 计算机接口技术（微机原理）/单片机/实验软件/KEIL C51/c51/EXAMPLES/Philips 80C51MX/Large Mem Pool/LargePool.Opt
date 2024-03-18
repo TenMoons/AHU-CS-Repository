@@ -1,0 +1,43 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Target 1), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Group 1),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,2,0,1,10,0,<.\main.c><main.c> { 44,0,0,0,0,0,0,0,1,0,0,0,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,255,112,0,0,0,112,0,0,0,74,4,0,0,110,2,0,0 }
+OPTFFF 1,2,1,0,0,0,0,0,<.\POOL.C><POOL.C> 
+OPTFFF 2,3,5,0,0,0,0,0,<.\abstract.txt><abstract.txt> 
+
+
+TARGOPT 1, (Target 1)
+ CLK51=24000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Datasheet)<DATASHTS\Philips\P87C51MX2_1.PDF>
+  OPTBL 1,(Programmer's Guide & Instruction Set Manual)<DATASHTS\PHILIPS\UPROGGUI.PDF>
+  OPTDL (S51MX.DLL)()(DP51.DLL)(-p51M)(S51MX.DLL)()(TP51.DLL)(-p51M)
+  OPTDBG 509,0,()()()()()()()()()() ()()()()
+  OPTKEY 0,(DLGDP51)((98=-1,-1,-1,-1,0)(82=-1,-1,-1,-1,0)(83=-1,-1,-1,-1,0)(84=-1,-1,-1,-1,0)(85=-1,-1,-1,-1,0)(5028=-1,-1,-1,-1,0)(5030=-1,-1,-1,-1,0)(91=-1,-1,-1,-1,0)(92=-1,-1,-1,-1,0)(94=-1,-1,-1,-1,0)(95=-1,-1,-1,-1,0)(100=-1,-1,-1,-1,0)(5031=-1,-1,-1,-1,0))
+  OPTBB 0,0,24,1,-8388416,0,0,0,0,1,<main.c>()(\MAIN\24)
+  OPTWA 0,1,(f)
+  OPTMM 1,0,(p2)
+  OPTDF 0x80
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

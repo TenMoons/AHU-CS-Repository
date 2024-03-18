@@ -1,0 +1,27 @@
+LPC932 EXAMPLE:	COMMUNICATION WITH THE PC USING THE SERIAL INTERFACE (UART)
+Christian Kulig, 12/05/02
+
+INTRODUCTION:
+The LPC932 has an enhanced UART which is compatible with the conventional 80C51 
+UART. It can be used directly as a serial interface to exchange data with other 
+microcontrollers. To communicate with a PC it is necessary to use a levelshifter 
+like the MAX563 or similar. To transfer data, the UART uses a certain baud rate 
+(bits per second), which must be the same for the transmitter and the receiver. 
+For PCs there are standard baud rates like 1200, 4800, 9600 and so on, which 
+should be used for the UART of the microcontroller as well. On the LPC932 the 
+source for the baud rate can be e.g. the Timer 1 overflow or the independent 
+Baud Rate Generator (BRG). Both divide the clock frequency (Crystal, internal 
+RC oscillator) by a certain factor, so that many different baud rates can be 
+achieved.
+
+DESCRIPTION:
+This example shows how to use the UART to communicate with a PC:
+It sets up the 8 data bits mode with 1 stop bit and no parity bit. The baud 
+rate source is the internal Baud Rate Generator, which is set up to provide 
+a baud rate of 9600 at an oscillator frequency of 12 MHz (=external resonator).
+To have access to the com port of the PC, start the program 'Hyperterminal'.
+(START -> PROGRAMS -> ACCESSOIRES -> COMMUNICATIONS -> HYPERTERMINAL)
+Click on 'Properties' and check the following settings: 9600 baud, 8 data 
+bits, 1 stop bit and no flow control. To begin the communication click on 'Call'.
+The LPC932 waits for a command ('S'), which is sent by 'Hyperterminal' and sends
+back a response which is displayed on the screen.

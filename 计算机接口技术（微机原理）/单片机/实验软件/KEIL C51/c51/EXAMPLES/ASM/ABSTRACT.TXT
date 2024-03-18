@@ -1,0 +1,3 @@
+ASAMPLE is an assembly program that writes text to the
+serial port of the 8052.  The ASAMPLE runs on the 
+simulator.

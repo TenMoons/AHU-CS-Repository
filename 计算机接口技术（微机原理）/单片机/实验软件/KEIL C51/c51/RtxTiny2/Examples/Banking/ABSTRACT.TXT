@@ -1,0 +1,10 @@
+This example program shows how to use RTX51 Tiny in Code Banking
+Applications.  The system contains 4 tasks and is very similar
+to the RTX51 Tiny Example EX2.  
+
+However, the system avoids Round-Robin task switching by using the
+os_switch_task function in Task2.  Therefore the round-robin timeout
+is disabled with the setting TIMESHARING 0 in the configuration file
+Conf_tny.A51.  Task 2 also uses the new os_set_run function to pass 
+the counter overrun to task 3.
+

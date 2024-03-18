@@ -1,0 +1,15 @@
+/*******************************************************************/
+/*                                                                 */
+/*  Additional Information for RTX-51 Tiny Version 1 Source Code   */
+/*                                                                 */
+/*******************************************************************/
+
+
+Description of Disk Files
+=========================
+
+RTX51TNY.A51   RTX-51 Tiny function calls source file
+CONF_TNY.A51   RTX-51 Tiny configurartion file
+VERS.A51       RTX-51 Tiny version number file
+RIGHT.A51      RTX-51 Tiny copyright information file
+GENRTX.BAT     RTX-51 Tiny batch file for generation

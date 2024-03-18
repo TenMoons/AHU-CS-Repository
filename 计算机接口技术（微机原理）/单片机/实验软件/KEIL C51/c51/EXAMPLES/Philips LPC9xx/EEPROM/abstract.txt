@@ -1,0 +1,16 @@
+LPC932 EXAMPLE:	USING THE EEPROM TO SAVE DATA DURING POWER OFF
+by Christian Kulig, Philips Semiconductor 12/06/02
+
+INTRODUCTION:
+The EEPROM of the LPC932 is a nonvolatile memory for storing parameter or certain data.
+The interface to the EEPROM consists of three SFRs which allow to write single bytes, 
+fill rows (64 bytes), fill the whole block (512 bytes), and to read bytes.
+
+DESCRIPTION:
+This sample shows the usage of the three EEPROM SFRs for writing and reading bytes. 
+The application is to count power cycles. That means, on every power on, a counter 
+is incremented and displayed on the LED bar of the MCB900 board. Since on every 
+power off or reset the RAM and all SFR are reset to default values, this counter 
+must be saved to the EEPROM. On the occurrence of a power up or after a reset, the 
+previous counter value is read from the EEPROM, incremented by one and written back 
+to the EEPROM. Then the new valued is displayed on the LED bar connected to Port 2.

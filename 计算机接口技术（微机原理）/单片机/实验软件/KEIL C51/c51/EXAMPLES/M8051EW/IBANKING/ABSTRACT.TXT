@@ -1,0 +1,6 @@
+This example demonstrates bank switching with the Mentor M8051EW
+Memory Extension.  It uses the IBANKING linker/locater directive.
+
+The example is available in two targets:
+  LX51:  for the extended LX51 Linker/Locater
+  BL51:  for the standard BL51 Linker/Locater

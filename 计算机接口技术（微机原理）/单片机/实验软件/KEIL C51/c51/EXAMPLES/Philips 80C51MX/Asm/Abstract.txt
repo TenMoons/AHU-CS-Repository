@@ -1,0 +1,6 @@
+For using the Philips 80C51MX, you need to have an PK51 package.
+Details about the Philips 80C51MX are discussed in the Application
+Note 160 available at www.keil.com.
+
+This program uses the additional instructions of the Philips
+80C51MX architecture.

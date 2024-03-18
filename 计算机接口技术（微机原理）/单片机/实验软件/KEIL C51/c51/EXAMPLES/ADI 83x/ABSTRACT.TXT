@@ -1,0 +1,43 @@
+The ADI project shows how to setup the tools for using
+the extended features of the Analog Devices ADuC83x.
+
+Compared to the classic 8051 architecture the ADuC83x
+core provides you with following enhancements:
+  -  fast dual DPTR with auto increment and auto toggle.
+  -  extended stack space in on-chip XRAM.
+  -  24-bit DPTR for up to 16MB off-chip RAM space.
+These features are fully supported by the Keil C51 Compiler
+and the uVision2 debugger.
+
+This sample project shows the tool configuration for the
+ADuC83x.  It contains a special START_AD.A51 startup file
+that is required to configure the ADuC83x device. This
+startup file allows you to configure the on-chip XRAM and
+the extended stack space.
+
+The project uses also the dual DPTR feature of the ADuC83x
+to accelerate the library functions strcpy, strcmp, memcpy, 
+memmove, memcmp and intrinsic struct copy function.
+
+Far memory support for up to 16MB RAM is also included. C51 
+provides you with the 'far' memory type that can be used to
+access large memory.  The memory accesses itself is performed in
+the XBANKING.A51 configuration file.  The example includes a 
+configured version of the XBANKING.A51 file that accesses the
+large 16M Byte external address space via the extended DPP 
+register of the ADuC824B2 device.  To use the 'far' memory 
+support, enable the following options under Project - Options
+for Target:
+  - 'far' memory type support
+  - Save address extension SFR in interrupts.
+
+The 'far' memory type is handled at linker level via the memory 
+class HDATA.  You can enter the address range in uVision2 under
+Options for Target - LX51 Locate - User Classes as shown below: 
+   HDATA (X:0x010000-X:0x02FFFF) /* put 'far' into X:0x10000 - X:0x2FFFF */
+
+*** IMPORTANT NOTE ***
+*** Far Memory Support is only available in the PK51 package.
+*** If you have an CA51, DK51, or Evaluation Package the far memory
+*** support is not available and this example will not work.
+

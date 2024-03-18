@@ -1,0 +1,60 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (Small Model), 0x0000 // Tools: 'MCS-51'
+Target (Large Model), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Code),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,0,0,49,55,0,<.\Sieve.c><Sieve.c> { 44,0,0,0,0,0,0,0,1,0,0,0,0,0,0,0,10,2,0,0,252,255,255,255,233,255,255,255,44,0,0,0,44,0,0,0,33,3,0,0,103,1,0,0 }
+OPTFFF 2,2,5,0,0,0,0,0,<.\Abstract.txt><Abstract.txt> 
+
+
+TARGOPT 1, (Small Model)
+ CLK51=12000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTLT 1,1,1,0,1,1,0,1,1,0,1
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,0
+  OPTBL 0,(Data Sheet)<DATASHTS\PHILIPS\8XC52_54.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Programmer's Guide & Instruction Set Manual)<DATASHTS\PHILIPS\UPROGGUI.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51R)(S8051.DLL)()(TP51.DLL)(-p51R)
+  OPTDBG 48125,0,()()()()()()()()()() ()()()()
+  OPTMM 1,0,(\measure\main\cmdbuf)
+  OPTMM 2,0,(\measure\save_record)
+  OPTDF 0x90
+  OPTLE <>
+  OPTLC <>
+EndOpt
+
+TARGOPT 2, (Large Model)
+ CLK51=33000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTLT 1,1,1,0,1,1,0,1,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\PHILIPS\8XC52_54.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Programmer's Guide & Instruction Set Manual)<DATASHTS\PHILIPS\UPROGGUI.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51R)(S8051.DLL)()(TP51.DLL)(-p51R)
+  OPTDBG 509,0,()()()()()()()()()() ()()()()
+  OPTMM 1,0,(c:0x11b1)
+  OPTMM 2,0,(\measure\save_record)
+  OPTDF 0x90
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

@@ -1,0 +1,10 @@
+This MEASURE example is adapted for the Philips LPC932.
+It shows you how to implement a datalogger.
+
+*** NOTE: ***
+THIS EXAMPLE REQUIRES A FULL LICENSE OF THE CA51/DK51/PK51 or 
+the PKLPC-8K TO BUILD THIS PROJECT.
+*************
+
+
+

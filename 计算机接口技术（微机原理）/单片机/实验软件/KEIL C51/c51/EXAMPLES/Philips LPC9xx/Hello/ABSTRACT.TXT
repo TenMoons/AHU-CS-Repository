@@ -1,0 +1,16 @@
+The HELLO program is a very simple program that prints "Hello World"
+to the serial port of the LPC9xx controller.  When you can successfully 
+build and run this program, you have used the entire toolset including:
+
+The uVision2 integrated development environment.
+The C51 compiler, linker and the µVision2 simulator/debugger.
+
+This HELLO program is available in several targets:
+
+  Simulator:         for µVision2 Debugger testing with simulator
+  MCB900 - Run:      for MCB900 board in Run Mode
+  EPM900 - Emulator: for EPM900 Emulator/Programmer Module
+
+Use the following jumper settings on the MCB900 board:
+     RUN: ON    RESET: OFF   PROG: OFF
+

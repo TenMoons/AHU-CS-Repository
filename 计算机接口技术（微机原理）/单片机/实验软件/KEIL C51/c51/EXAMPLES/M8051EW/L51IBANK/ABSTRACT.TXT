@@ -1,0 +1,3 @@
+This example demonstrates bank switching with the Mentor M8051EW
+Memory Extension.  It uses the L51IBANK.A51 configuration file
+that allows maxium flexiblity.

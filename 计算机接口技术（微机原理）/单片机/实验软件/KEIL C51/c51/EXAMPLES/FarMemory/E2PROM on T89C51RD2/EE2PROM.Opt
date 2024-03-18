@@ -1,0 +1,45 @@
+### uVision2 Project, (C) Keil Software
+### Do not modify !
+
+ cExt (*.c)
+ aExt (*.a*; *.src)
+ oExt (*.obj)
+ lExt (*.lib)
+ tExt (*.txt)
+ pExt (*.plm)
+ CppX (*.cpp)
+ DaveTm { 0,0,0,0,0,0,0,0 }
+
+Target (89C51RD2 eeprom demo), 0x0000 // Tools: 'MCS-51'
+GRPOPT 1,(Source Files),1,0,0
+GRPOPT 2,(Documentation),1,0,0
+
+OPTFFF 1,1,1,671088640,0,0,0,0,<.\MAIN.C><MAIN.C> 
+OPTFFF 1,2,2,1526726656,0,0,0,0,<.\XBANKING.A51><XBANKING.A51> 
+OPTFFF 1,3,1,0,0,0,0,0,<.\eeprom.c><eeprom.c> 
+OPTFFF 2,4,5,0,0,0,0,0,<.\ABSTRACT.TXT><ABSTRACT.TXT> 
+
+
+TARGOPT 1, (89C51RD2 eeprom demo)
+ CLK51=40000000
+  OPTTT 1,1,1,0
+  OPTHX 0,65535,0,0,0
+  OPTLX 120,65,8,<.\>
+  OPTOX 16
+  OPTLT 1,1,1,0,1,1,0,1,1,0,0,0
+  OPTXL 1,1,1,1,1,1,1,0,0
+  OPTFL 1,0,1
+  OPTBL 0,(Data Sheet)<DATASHTS\ATMELWM\T89C51rd2.PDF>
+  OPTBL 1,(Add on databooks)<DATASHTS\ADDBOOKS.PDF>
+  OPTBL 2,(Instruction Set Manual)<DATASHTS\Infineon\M500.PDF>
+  OPTDL (S8051.DLL)()(DP51.DLL)(-p51rd2)(S8051.DLL)()(TP51.DLL)(-p51rd2)
+  OPTDBG 509,0,()()()()()()()()()() ()()()()
+  OPTBB 0,0,59,1,-16775337,0,0,0,0,1,<MAIN.C>()()
+  OPTWA 0,1,(esample1)
+  OPTWA 0,2,(esample2)
+  OPTMM 1,0,(V:0)
+  OPTDF 0x80
+  OPTLE <>
+  OPTLC <>
+EndOpt
+

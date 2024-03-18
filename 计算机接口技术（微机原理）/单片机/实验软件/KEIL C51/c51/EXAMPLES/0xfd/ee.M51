@@ -1,0 +1,92 @@
+BL51 BANKED LINKER/LOCATER V5.01                                                        10/03/2002  13:08:26  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V5.01, INVOKED BY:
+D:\KEIL\C51\BIN\BL51.EXE ee.obj TO ee
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  ee.obj (EE)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_STARTUP)
+  D:\KEIL\C51\LIB\C51S.LIB (STRLEN)
+  D:\KEIL\C51\LIB\C51S.LIB (?C_INIT)
+  D:\KEIL\C51\LIB\C51S.LIB (?C?CLDPTR)
+
+
+LINK MAP OF MODULE:  ee (EE)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     004FH     UNIT         ?DT?EE
+            DATA    0057H     0002H     UNIT         _DATA_GROUP_
+            IDATA   0059H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+            CODE    0003H     008CH     UNIT         ?C_C51STARTUP
+            CODE    008FH     0053H     UNIT         ?C_INITSEG
+            CODE    00E2H     0029H     UNIT         ?PR?MAIN?EE
+            CODE    010BH     0019H     UNIT         ?C?LIB_CODE
+            CODE    0124H     0015H     UNIT         ?PR?_STRLEN?STRLEN
+
+
+
+OVERLAY MAP OF MODULE:   ee (EE)
+
+
+SEGMENT                          DATA_GROUP 
+  +--> CALLED SEGMENT          START    LENGTH
+----------------------------------------------
+?C_C51STARTUP                  -----    -----
+  +--> ?PR?MAIN?EE
+  +--> ?C_INITSEG
+
+?PR?MAIN?EE                    0057H    0002H
+  +--> ?PR?_STRLEN?STRLEN
+
+
+
+SYMBOL TABLE OF MODULE:  ee (EE)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        EE
+BL51 BANKED LINKER/LOCATER V5.01                                                      10/03/2002  13:08:26  PAGE 2
+
+
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  C:00E2H         PUBLIC        main
+  D:0008H         PUBLIC        cc
+  -------         PROC          MAIN
+  -------         DO            
+  D:0007H         SYMBOL        c1
+  D:0006H         SYMBOL        i
+  D:0057H         SYMBOL        b1
+  -------         ENDDO         
+  C:00E2H         LINE#         9
+  C:00E2H         LINE#         12
+  C:00EBH         LINE#         13
+  C:00F2H         LINE#         14
+  C:0106H         LINE#         15
+  C:0109H         LINE#         16
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        EE
+
+  -------         MODULE        STRLEN
+  C:0124H         PUBLIC        _STRLEN
+  -------         ENDMOD        STRLEN
+
+  -------         MODULE        ?C?CLDPTR
+  C:010BH         PUBLIC        ?C?CLDPTR
+  -------         ENDMOD        ?C?CLDPTR
+
+Program Size: data=90.0 xdata=0 code=313
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
