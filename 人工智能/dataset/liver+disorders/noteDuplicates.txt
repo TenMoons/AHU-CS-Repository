@@ -1,0 +1,7 @@
+Thanks to Leon for mentioning that there are duplicates in this data set.
+--UCI ML Librarian
+
+row 84 and 86:   94,58,21,18,26,2.0,2
+row 141 and 318:   92,80,10,26,20,6.0,1
+row 143 and 150:   91,63,25,26,15,6.0,1
+row 170 and 176:   97,71,29,22,52,8.0,1
