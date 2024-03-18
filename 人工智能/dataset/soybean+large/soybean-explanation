@@ -1,0 +1,657 @@
+Received: from ics.uci.edu by Paris.ics.uci.edu id aa03411; 4 Jun 92 7:50 PDT
+Received: from gmuvax2.gmu.edu by q2.ics.uci.edu id aa03350; 4 Jun 92 7:49 PDT
+Received: from aic.gmu.edu by gmuvax2.gmu.edu (5.64/1.35)
+	id AA28176; Thu, 4 Jun 92 10:52:34 -0400
+Received: from magritte.aic by aic.gmu.edu (4.1/SMI-4.1)
+	id AA01505; Thu, 4 Jun 92 10:44:04 EDT
+Date: Thu, 4 Jun 92 10:44:04 EDT
+From: Eric Bloedorn <bloedorn@aic.gmu.EDU>
+Message-Id: <9206041444.AA01505@aic.gmu.edu>
+To: pmurphy@ics.uci.edu
+Subject: Soybean data explanation
+Cc: aha@blaze.cs.jhu.EDU
+
+
+ Dear Pat Murphy:
+
+It has come to my attention that the soybean data found in the UCI repository
+is different from that used in the Michalski and Chilausky paper (which is
+kept at George Mason University). An explanation for this was put together
+by Marion Buck. A copy of the explanation follows:
+
+____________________________________________________________________________
+
+From @VTVM2.CC.VT.EDU:marion@buck.ac.uk Fri Aug  2 04:48:57 1991
+Return-Path: <@VTVM2.CC.VT.EDU:marion@buck.ac.uk>
+Received: from VTVM2.CC.VT.EDU by aic.gmu.edu (4.1/SMI-4.1)
+        id AA02660; Fri, 2 Aug 91 04:48:50 EDT
+Received: from UKACRL.BITNET by VTVM2.CC.VT.EDU (IBM VM SMTP V2R1)
+   with BSMTP id 2415; Fri, 02 Aug 91 04:45:51 EDT
+Received: from RL.IB by UKACRL.BITNET (Mailer R2.07) with BSMTP id 9392; Fri,
+ 02 Aug 91 09:47:00 BST
+Received:
+           from RL.IB by UK.AC.RL.IB (Mailer R2.07) with BSMTP id 7648; Fri, 02
+            Aug 91 09:46:55 BST
+Via:        UK.AC.UKC;  2 AUG 91  9:46:43 BST
+Received:   from buck.ac.uk by kestrel.Ukc.AC.UK   with UUCP  id aa24837;
+            2 Aug 91 9:40 BS
+From: Marion Edwards <marion%buck.ac.uk@VTVM2.CC.VT.EDU>
+Date:       Fri, 2 Aug 91 09:05:17 BST
+Message-Id: <9477.9108020805@buck.ac.uk>
+To: hieb <hieb@aic.gmu.edu>
+Subject:    Soybean Disease Diagnosis
+Status: RO
+
+
+I had a copy of the message saved - here it is ...
+
+Michael,
+
+     Sometime ago I contacted you over problems I was having with the version ofMichalski's soybean data set which I had obtained from the UCI Repository of
+Machine Learning Databases.  You kindly sent me another version of the data.
+I have had a fairly detailed look at both data sets and I thought you may be
+interested in the conclusions I have reached.
+
+     At the end of the email is a note which I have written (primarily for
+myself, but it should be intelligable to anyone familiar with the data) which
+discusses the differences between Michalski and Chilausky's 1980 paper, the
+soybean files from UCI and the soybean data which you sent.  I feel I have come
+up with a plausible explanation of how the contradictions between the condition
+of the plant stem and stem lodging arose.  Fortunately, removal of the
+contradictions has surprisingly little effect on my analyses.
+
+     Thank you for you help, which has enabled me to clarify certain points
+about the data.  I am sending a "paper" copy of the note directly to
+ Professor Michalski.
+
+     Marion Edwards
+
+===============================================================================
+
+
+
+          Soybeans : Resolving the Contradictions
+                       Marion Edwards
+
+
+     The soybean data obtained from the  UCI  Repository  of
+Machine  Learning  Databases was found to contain contradic-
+tions (See Soybean Disease Diagnosis, Appendix 1 and 2).   I
+suspected  that  the  data files were not identical to those
+used by Michalski and Chilausky (1980).  I contacted Michal-
+ski  and  was  sent  a  further  file  of soybean data and a
+description of the attributes used.  The file was very  dif-
+ferent from that obtained from UCI:
+
+1.   There was no  distinction  between  test  and  training
+     data.
+
+2.   Only 17 cases of each disease were given.
+ 
+3.   Fifty attributes were used to describe  each  case  (35
+     are given in the UCI data set).
+ 
+While this data set was clearly not the one used in the ori-
+ginal  analysis,  it  was  felt  that  it could provide some
+insight into the contradictions and inconsistencies  in  the
+UCI data set.
+ 
+1.  Inconsistencies in the Expert-Derived Rules
+ 
+There were  problems  with  two  expert-derived  rules  (see
+Apparent  Inconsistencies  in  the  Expert-Derived  Rules, 2
+October 1990):
+ 
+1.1.  Rhizoctonia Root Rot
+ 
+The expert derived rule contained the condition:
+ 
+                    precipitation < n
+ 
+The instances in the UCI data set were:
+ 
+                    env( precipitation) = g     (10)
+ 
+Michalski's data set contained:
+ 
+                    env( precipitation) = l      (1)
+                    env( precipitation) = n      (6)
+                    env( precipitation) = g     (10)
+
+ 
+This suggests that it is appropriate to replace  the  condi-
+tion with:
+ 
+                    precipitation > n
+ 
+All the analyses (unless otherwise stated) were  done  using
+the modified condition.
+ 
+1.2.  Phyllosticta Leaf Spot
+ 
+The expert derived rule contained the condition:
+ 
+                    precipitation >= n
+ 
+While the induced rule contained the condition:
+ 
+                    precipitation <= n
+ 
+ie. the two rules were contradictory.
+The instances in the UCI data set were:
+ 
+                    env( precipitation) = l      (4)
+                    env( precipitation) = n      (6)
+ 
+Michalski's data set contained:
+ 
+                    env( precipitation) = n      (9)
+                    env( precipitation) = g      (8)
+ 
+ 
+There is an inconsistency between  the  two  data  sets  and
+either  the expert-derived rule is incorrect, or the data is
+incorrect.
+ 
+     Initial tests were carried out assuming that  the  data
+was correct and used a modified rule with the condition:
+ 
+                    env( precipitation) = [l,n]
+ 
+The following results were obtained (using the ranked  rules
+and [prop] strategy):
+ 
+                    % identification  = 50
+                    Indecision Ratio  = 1.9
+                    Specificity Index = 6.4
+ 
+When the data was modified so that:
+ 
+                    env( precipitation) = g      (4)
+                    env( precipitation) = n      (6)
+ 
+and the rule condition used was:
+ 
+                    env( precipitation) = [g,n]
+ 
+The results obtained (using the  same  rules  and  strategy)
+were:
+ 
+                    % identification  = 50
+                    Indecision Ratio  = 2.3
+                    Specificity Index = 7.5
+The changes in the Indecision Ratio were due to three  extra
+false positive identifications of cases of phyllosticta leaf
+spot as brown spot and one false positive identification  of
+phyllosticta  leaf  spot as frog eye leaf spot.  The changes
+in the Specificity Index were due to eight  cases  of  brown
+spot,   and  three  cases  of  alternaria  leaf  spot  being
+incorrectly identified as phyllosticta leaf spot.
+ 
+     On the information available  it  is  not  possible  to
+determine  which is the correct value for the precipitation,
+however, so long as the rule and data  used  are  consistent
+there does not appear to be a significant difference in per-
+formance between the two alternatives.  The  data  has  been
+analysed using  env( precipitation) <= n  (ie. modifying the
+rule condition as opposed to the data).
+ 
+2.  Contradictory Values in the Data
+ 
+2.1.  Ambiguous Contradict Facts
+ 
+The description of the attributes provided with  Michalski's
+data set clarified two points:
+ 
+2.1.1.  Stem cankers and canker lesion colour
+ 
+     Michalski and Chilausky (1980) do not specify any  con-
+tradictions between these two conditions, initially I speci-
+fied two:
+ 
+1.   If stem cankers are absent then  canker  lesion  colour
+     must also be absent.
+ 
+2.   If stem cankers are present then a canker lesion colour
+     must also be present.
+ 
+The additional information states that the  cankers  may  be
+the  same colour as the stem, so canker lesion colour may be
+absent without contradicting the presence of  stem  cankers.
+Removal  of this second contradiction removes all contradic-
+tions relating to diaporthe stem canker.
+ 
+2.1.2.  Plant Stem and Fruiting Bodies
+ 
+     The relationship between fruiting bodies  on  the  stem
+and  the condition of the stem is unclear from Michalski and
+Chilausky  (1980).   However,  the  additional   information
+states  that  fruiting bodies on the stem are an abnormality
+so the correct contradiction is:
+ 
+contradict( char( plant( stem), [n]), char( stem( fruit), [p])).
+ 
+There are no instances of this  contradiction  in  the  data
+set.
+ 
+2.2.  Contradictory Data Values
+ 
+Five different groups of contradictions occur  in  the  data
+set:
+ 
+2.2.1.  Plant stem and stem lodging
+ 
+     The table below  shows  the  frequency  of  values  for
+plant( stem)  and  stem( lodging) for the two different data
+sets:
+_______________________________________________________________
+ plant stem   stem lodging   UCI   Michalski   UCI - corrected
+_______________________________________________________________
+  * normal         no          4      137            146 
+    normal        yes        144       -              -  
+  abnormal         no         20      104            128 
+  abnormal        yes        128       14             22 
+  abnormal      unknown       44       -              44 
+_______________________________________________________________
+ 
+* Indicates the contradictory attributes
+ 
+It can be seen that in Michalski's data set the incidence of
+stem lodging is low and is restricted to:
+ 
+     diaporthe stem canker (4)
+     rhizoctonia root rot (3)
+     phytophthora root rot (3)
+     brown stem rot (3)
+     anthracnose (1)
+ 
+It was felt that the majority  of  the  contradictions  were
+eliminated  if the values for stem( lodging) in the UCI data
+set were simply inverted (this leaves only  four  contradic-
+tions  which  will be discussed later).  This means that the
+only diseases showing stem  lodging  in  the  UCI  data  set
+become:
+ 
+     diaporthe stem canker (4)
+     charcoal rot (1)
+     rhizoctonia root rot (1)
+     brown stem rot (10)
+     anthracnose (3)
+     frog eye leaf spot (3)
+ 
+The decision to invert the values is  further  supported  if
+the  descriptions  of the attributes given with the two data
+sets are considered  (where  the  order  of  the  attributes
+specifies the number with which they are represented):
+ 
+UCI:        stem lodging = (yes, no, unknown)
+Michalski:  stem lodging = (does not apply, absent, present)
+ 
+Stem( lodging) is the only yes/no attribute in  either  data
+set, others are represented by absent/present, ie. the order
+of the attributes is reversed and it is  assumed  that  this
+where the error arises.
+ 
+     If the values in the UCI data set are  inverted,  there
+are only four contradictions of:
+        plant( stem) = normal, stem( lodging) = yes
+ 
+1.   Frog eye leaf spot (2 cases): the stems of these plants
+     are clearly abnormal as both have stem cankers and evi-
+     dence of external decay.  The condition of the stem  is
+     altered to:
+                     plant( stem) = abnormal
+ 
+2.   Purple Seed Stain (2 cases): appart from the  two  con-
+     tradictory  cases,  there  are  four  cases with normal
+     stems and no lodging and four cases of  abnormal  stems
+     and lodging where lodging is the only abnormality.  The
+     contradictions can be removed by altering either condi-
+     tion,  but  as there are no other abnormal stem charac-
+     ters  and  as  there  are  no  stem  abnormalities   in
+     Michalski's   data  set,  the  contradiction  has  been
+     removed by:
+           plant( stem) = normal, stem( lodging) = no
+ 
+2.2.2.  Stem canker and canker lesion colour
+ 
+The contradictions relating to stem canker and canker lesion
+colour  are summarised, for both data sets, in the following
+table:
+ 
+______________________________________________________________________
+      Disease         stem canker     canker colour   UCI   Michalski
+______________________________________________________________________
+ Charcoal Rot           * absent           tan        10        0
+                          absent         absent        0       10
+                       near soil           tan         0        1
+                     below 2nd node        tan         0        2
+                     below 2nd node    brown/black     0        4
+______________________________________________________________________
+ Phytopthora root    above 2nd node    brown/black    22        0
+ rot                   near soil       brown/black    12        3
+                       below soil      brown/black     6        0
+                        * absent       brown/black     6        0
+                          absent         absent        0       11
+                       near soil          brown        0        3
+______________________________________________________________________
+ Brown stem rot           absent         absent       12       17
+                        * absent           tan        12        0
+______________________________________________________________________
+ Brown Spot          above 2nd node       brown       23        8
+                        * absent           tan         1        0
+                          absent         absent       28        9
+______________________________________________________________________
+ Purple seed stain        absent         absent        0       17
+                        * absent           tan        10        0
+______________________________________________________________________
+These contradictions have been removed by ensuring  that  if
+stem( canker)  is absent that canker( lesion colour) is also
+absent, this may not be the only possible solution,  but  it
+is always supported by Michalski's data set.
+
+2.2.3.  Fruit pods and fruit spots
+ 
+Brown spot contains one contradiction between fruit pods and
+fruit spots:
+       _____________________________________________
+        fruit pods    fruit spots   UCI   Michalski
+       _____________________________________________
+           normal       absent      49       13  
+         * normal      coloured      1        0  
+          diseased    brown/black    2        0  
+          diseased      absent       0        2  
+        few present     absent       0        2  
+       _____________________________________________
+ 
+There is no evidence in any other case of coloured spots, so
+the contradiction is removed by:
+ 
+                    fruit( spots) = absent
+ 
+ 
+2.2.4.  Pland seeds
+ 
+Contradictions occur with the plant seeds for both bacterial
+pustule and alternaria leaf spot:
+ 
+1.   Bacterial Pustule:
+        ___________________________________________
+         plant seeds   seed size   UCI   Michalski
+        ___________________________________________
+            normal      normal      3       11
+          * normal     < normal     1        0   
+           abnormal     normal      5        2   
+           abnormal    < normal     1        4   
+        ___________________________________________
+ 
+     Although either condition may be altered, the  contrad-
+     iction is removed by:
+ 
+                         seed( size) = normal
+ 
+ 
+2.   Alternaria leaf spot:
+ 
+     __________________________________________________
+      plant seeds   seed discoloured   UCI   Michalski
+     __________________________________________________
+         normal          absent        42        4
+       * normal         present         1        0
+        abnormal         absent         1        0
+        abnormal        present         7       13
+     __________________________________________________
+
+     As the majority of cases in the UCI data  set  show  no
+     seed abnormality, the contradiction is removed by:
+ 
+                         seed( discoloured) = absent
+ 
+3.  Effect of Removing the Contradictions
+ 
+     In order to look at the effect of removing the contrad-
+ictions,  the  corrected  data was analysed using the ranked
+rules and [prop] strategy.  The confusion matrices  for  the
+two  data  sets are given in tables 1 and 2, and the results
+are summarised in table 3.
+ 
+     The unmodified data gave a total  of  1136  identifica-
+tions,  the  modified  (non-contradictory) data 1065, with a
+total of 83 differences (6 gains and 77 losses) of these  74
+changes  concern  Brown  stem  rot  (73 fewer false positive
+identifications) this is not surprising as it  is  the  only
+rule  which  condition  which relates to stem lodging.  Both
+the % identification and Indecision Ratios of Brown stem rot
+are  only  changed  slightly,  but  the Specificity Index is
+reduced from 4.12 to 1.21 indicating the reduction in  false
+positive  identifications.   The  new  Specificity Index for
+Brown stem rot is  then  lower  than  that  calculated  from
+Michalski and Chilausky's (1980) results (2.04).
+ 
+     For the following  three  reasons  it  is  felt  it  is
+unnecessary  to  repeat  all  the analyses with the modified
+data set:
+ 
+1.   The effect of removing the contradictions is small.
+ 
+2.   The effect is largely restricted to one species  (Brown
+     stem  rot)  and  one performance statistic (Specificity
+     Index).
+ 
+3.   The same data set is used to  compare  different  rules
+     and  evaluation  strategies  and as such it is not con-
+     cerned so much with the absolute values of the  statis-
+     tics,  but with their relative values between different
+     tests.
+_________________________________________________________________
+                                 Assigned Decision %
+   Expert Diagnosis  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+_________________________________________________________________
+ 1 Diaporthe stem 10100          60                   10 
+     canker
+ 2 Charcoal rot   10   100       10
+ 
+ 3 Rhizoctonia    10       70
+     root rot
+ 4 Phytophthora   48 50    54 98  6 88 58 88 83 88 12    88 37 88
+     root rot
+ 5 Brown stem     24             71        4                17 12
+     rot 
+ 6 Powdery mildew 10               100
+ 
+ 7 Downy mildew   10                   80100                60 40
+ 
+ 8 Brown spot     52 44     2    46      100          42 31 54 36
+ 
+ 9 Bacterial      10                         80 40
+     blight
+10 Bacterial      10                      80 60 60 20    10
+     pustule
+11 Purple seed    10             30                80
+     stain
+12 Anthracnose    24 75     4    58                54 62
+ 
+13 Phyllosticta   10                      70             50 40 30
+     leaf spot
+14 Alternaria     51                     100       16       94 67
+     leaf spot
+15 Frog eye       51  4          61      100               100 98
+     leaf spot
+_________________________________________________________________
+ 
+Table 1.    Confusion matrix for the  original  (unmodified)
+            data using the ranked rules and [prop] strategy.
+            Figures in bold differ between the two analyses.
+_________________________________________________________________
+                                 Assigned Decision %
+                    _____________________________________________
+   Expert Diagnosis  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15
+_________________________________________________________________
+ 1 Diaporthe stem 10100          40                   10 
+     canker
+ 2 Charcoal rot   10   100
+ 
+ 3 Rhizoctonia    10       70    10
+     root rot
+ 4 Phytophthora   48 50    54 96    88 58 88 83 88 12    88 37 88
+     root rot
+ 5 Brown stem     24             75        4                17
+     rot
+ 6 Powdery mildew 10               100
+ 
+ 7 Downy mildew   10                   80100                60 40
+ 
+ 8 Brown spot     52 44     2            100          44 31 54 36
+ 
+ 9 Bacterial      10                         80 40
+     blight
+10 Bacterial      10                      80 60 60 20    10
+     pustule
+11 Purple seed    10                               80
+     stain
+12 Anthracnose    24 75     4    12                54 62
+ 
+13 Phyllosticta   10                      70             50 40 30
+     leaf spot
+14 Alternaria     51                     100       14       94 67
+     leaf spot
+15 Frog eye       51  4     2  2  6      100           2   100 98
+     leaf spot
+_________________________________________________________________
+ 
+Table 2.    Confusion matrix for the non-contradictory  data
+            using  the  ranked  rules  and  [prop] strategy.
+            Figures in bold differ between the two analyses.
+ 
+___________________________________________________________________
+                            Unmodified Data        Modified Data
+                         ___________________________________________
+    Expert Diagnosis        %      IR    SI       %      IR    SI
+____________________________________________________________________
+ Diaporthe stem canker    100     1.7    7.7    100     1.5    7.7
+ Charcoal rot             100     1.1    1.0    100     1.0    1.0
+ Rhizoctonia root rot      70     0.7    3.5     70     0.8    3.6
+ Phytophthora root rot     98     8.37   0.98    96     8.29   0.98
+ Brown stem rot            71     1.04   4.12    75     0.96   1.21
+ Powdery mildew           100     1.0    5.2    100     1.0    5.2
+ Downy mildew              80     2.8    3.6     80     2.8    3.6
+ Brown spot               100     3.56   4.27   100     3.16   4.27
+ Bacterial blight          80     1.2    5.4     80     1.2    5.4
+ Bacterial pustule         60     2.3    5.2     60     2.3    5.2
+ Purple seed stain         80     1.1    3.7     80     0.8    3.6
+ Anthracnose               62     2.54   1.58    62     2.08   1.67
+ Phyllosticta leaf spot    50     1.9    6.4     50     1.9    6.4
+ Alternaria leaf spot      94     2.76   3.12    94     2.74   3.12
+ Frog eye leaf spot        98     3.63   3.04    98     3.14   2.98
+____________________________________________________________________
+ Mean                      82.9   2.38   3.92    83.0   2.24   3.73
+____________________________________________________________________
+ 
+Table 3.    Summary of the confusion matrices  for  the  two
+            data      sets.       IR = Indecision     Ratio,
+            SI = Specificity Index.  Figures in bold  differ
+            between the two analyses.
+ 
+References
+ 
+Michalski, R.S. and Chilausky, R.L.  (1980a).   Learning  by
+     Being  Told and Learning from Examples: An Experimental
+     Comparison of the Two Methods of Knowledge  Acquisition
+     in  the Context of Developing an Expert System for Soy-
+     bean Disease Diagnosis.  International Journal of  Pol-
+     icy Analysis and Information Systems, 4(2), 125-161.
+
+------------------------------------------------------------------------------
+
+Dear Professor Michalski,
+
+        I wrote to you in June 1990 concerning the data of your work on soybean
+disease diagnosis.  I have since obtained the data from the UCI Repository of
+Machine Learning Databases.  Unfortunately, when analysing the test cases of thediseases I have come across several problems:
+
+1.  The data contains contradictions.  There are 144 cases where the plant stem
+    is defined as normal, but stem lodging is also present; and 39 cases where
+    stem cankers are absent, but a canker lesion colour is present.
+
+2.  I have tried "hand testing" some of the data using your evaluation scheme
+    for the expert-derived rules, and I have been unable to reproduce your
+    results, even for straight forward rules such as brown stem rot.
+ 
+    The above suggest to me, that the data which I have is not identical to thaton which you performed your analyses.  Do you still have your original data? If
+so I would be very grateful if I could have a copy as I suspect it would solve
+these ambiguities.
+ 
+    In addition, while I find that the information given in your paper in the
+International Journal of Policy Analysis and Information Systems, 4, 125-161,
+sufficient to evaluate simple rules, it is not clear how all aspects of the
+rules are evaluated, and you refer to another paper for further details:
+ 
+    Michalski, R.S. (1981).
+    An experimental comparison of several many-valued logic inference
+    techniques in the context of computer diagnosis of soybean diseases.
+    International Journal of Man-Machine Studies.
+ 
+Unfortunately, I have been unable to trace this reference, would it be possible
+for you to give me a complete reference, or details of any papers containing
+equivalent information?
+ 
+        Yours sincerely,
+ 
+        Marion Edwards
+ 
+        JANET address:  marion%buck@uk.ac.ukc
+
+
+From: Marion Edwards <marion%buck.ac.uk@pucc.PRINCETON.EDU>
+Date:       Tue, 19 Mar 91 17:55:00 GMT
+Message-Id: <3490.9103191755@buck.ac.uk>
+To: hieb <hieb@aic.gmu.edu>
+Subject:    Soybean Disease Diagnosis
+Cc: marion@buck.ac.uk
+Status: RO
+ 
+Michael,
+ 
+     Thank you for looking into the problem of the soybean data.  I most
+certainly do NOT have the data file which you have been looking at! I received
+a total of three data sets from UCI:
+ 
+1.   A "small" data set (47 events and 35 attributes) (I have not looked at
+     this data set).
+2.   The training data set of Michalski and Chilausky (1980) - this contains
+     19 classes with 307 events and 35 attributes (only 15 classes and 290
+     events are used in the paper - the last four classes (17 events) are
+     omitted).
+3.   The test data set of Michalski and Chilausky (1980) - this contains
+     19 classes with 376 events and 35 attributes (only 15 classes and 340
+     events are used in the paper - the last four classes (36 events) are
+     omitted).
+ 
+     The frequency of the events in the different classes is as described in
+Michalski and Chilausky's paper.  So the data I have appears to be a variant of
+the data used in the original analysis.
+ 
+     The numbering of the attributes is also different between the files I have
+and yours - mine are ordered as in Michalski and Chilausky (1980) so stem-normalis attribute 19, and stem-lodging attribute 20 similarly attributes 21 and 22
+are for stem-canker and canker-lesion-colour respectively.
+ 
+     I would be interested in seeing your data set, which I presume is a
+combination/extension of the original training and test data sets, as this may
+solve some of the problems I have had.
+ 
+     I am grateful for your help - I realise that the data is rather "old", for
+anyone to remember precise details about it - but it is exactly suited to my
+problem.
+ 
+     Many Thanks,
+ 
+     Marion Edwards
+     Teaching Fellow
+     University of Buckingham
+
+______________________________________________________________________________
+
+If there are any questions, please let me know.
+
+-Eric Bloedorn
+bloedorn@aic.gmu.edu

@@ -1,0 +1,60 @@
+1. Title: Small Soybean Database
+
+2. Sources:
+     (a) Michalski,R.S. Learning by being told and learning from
+         examples: an experimental comparison of the two methodes of knowledge
+         acquisition in the context of developing an expert system for soybean
+         desease diagnoiss", International Journal of Policy Analysis and
+         Information Systems, 1980, 4(2), 125-161.
+     (b) Donor: Doug Fisher (dfisher%vuse@uunet.uucp)
+     (c) Date: 1987
+
+3. Past Usage:
+     See the soybean-large.names
+
+4. Relevant Information Paragraph:
+     A small subset of the original soybean database.  See the reference
+     for Fisher and Schlimmer in soybean-large.names for more information.
+    
+     Steven Souders wrote:
+
+    > Figure 15 in the Michalski and Stepp paper (PAMI-82) says that the
+    > discriminant values for the attribute CONDITION OF FRUIT PODS for the
+    > classes Rhizoctonia Root Rot and Phytophthora Rot are "few or none"
+    > and "irrelevant" respectively.  However, in the SOYBEAN-SMALL dataset
+    > I got from UCI, the value for this attribute is "dna" (does not apply)
+    > for both classes.  I show the actual data below for cases D3
+    > (Rhizoctonia Root Rot) and D4 (Phytophthora Rot).  According to the
+    > attribute names given in soybean-large.names, FRUIT-PODS is attribute
+    > #28.  If you look at column 28 in the data below (marked with arrows)
+    > you'll notice that all cases of D3 and D4 have the same value.  Thus,
+    > the SOYBEAN-SMALL dataset from UCI could NOT have produced the results
+    > in the Michalski and Stepp paper.
+
+    I do not have that paper, but have found what is probably a later
+    variation of that figure in Stepp's dissertation, which lists the
+    value "normal" for the first 2 classes and "irrelevant" for the latter
+    2 classes.  I believe that "irrelevant" is used here as a synonym for
+    "not-applicable", "dna", and "does-not-apply".  I believe that there
+    is a mis-print in the figure he read in their PAMI-83 article.
+ 
+    I have checked over each attribute value in this database.  It 
+    corresponds exactly with the copies listed in both Stepp's and Fisher's
+    dissertations.
+     
+5. Number of Instances: 47
+
+6. Number of Attributes: 35 (all have been nominalized)
+     -- All attributes here appear with numeric values
+ 
+7. Attribute Information: 
+     -- derivable from soybean-large.names
+
+8. Number of Missing Attribute Values: 0
+
+9. Class Distribution: 
+   1. D1: 10
+   2. D2: 10
+   3. D3: 10
+   4. D4: 17
+

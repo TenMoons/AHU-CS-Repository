@@ -1,0 +1,23 @@
+From: Raymond Mooney <mooney@cs.utexas.edu>
+Date: Mon, 12 Mar 90 19:19:58 CST
+
+Regarding the data we used.  We used a later version of the soybean
+data sent to us by Bob Stepp which I believe to be the version used by
+Reinke in his MS thesis on the GEM system (this has 17 diseases as
+referenced by Spackman, ML88).  I also got the version you have (19
+diseases, 35 features) from Bob Stepp which I believe is the version
+used in the original experiments from Michalski & Chilausky (this has
+missing features which is why we decided to use the 17 disease version
+in our experiments).  The M&C paper references only 15 diseases (35
+features) and the first 15 diseases in my 19 disease set match those
+in the M&C paper.  I guess the last 4 diseases just weren't reported
+in the paper (wonder why??).  The existence of the 4 disease
+clustering set adds even more confusion to any reference to using
+soybean data.
+
+Hope this helps some.
+
+-Ray
+
+
+
