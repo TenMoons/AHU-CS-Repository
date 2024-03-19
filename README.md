@@ -15,18 +15,6 @@
 ### Gitee链接（不一定能及时同步）
 [AHU-CS Repository](https://gitee.com/supersy/ahu-cs-repository)
 
-### 更新说明
-
-2021/09/15 
-
-- `D`：院系老师
-- `A`：操作系统、软件工程综合实践、软件构造、软件设计与体系结构、网络原理、夏令营&预推免材料
-
-2021/12/15
-
-- `A`: 软件需求分析、大数据技术实践 （Contributor: [MakinoharaShoko](https://github.com/MakinoharaShoko)）
-
-
 
 ### 其他
 
@@ -34,7 +22,8 @@
 
 E-mail: tenmoons@foxmail.com
 
-WeChat: _NoBoundaries
+WeChat: undefined__me
 
 ## 广告位
-本人现就职于美团平台，欢迎安大的学弟学妹投递美团，内推码WFMV33N，有疑问沟通交流、push进度可以加我微信(联系方式在上方)
+- 有意继续深造的同学：对西北工业大学计算机学院的情况感兴趣可以联系我
+- 有意参加工作的同学：对美团有兴趣也可以联系我
